@@ -1,0 +1,10 @@
+C:\OOP-Repo\OOP-2-Assignments\Demo\Week02DemoB\Week02DemoB\bin\Debug\Week02DemoB.exe.config
+C:\OOP-Repo\OOP-2-Assignments\Demo\Week02DemoB\Week02DemoB\bin\Debug\Week02DemoB.exe
+C:\OOP-Repo\OOP-2-Assignments\Demo\Week02DemoB\Week02DemoB\bin\Debug\Week02DemoB.pdb
+C:\OOP-Repo\OOP-2-Assignments\Demo\Week02DemoB\Week02DemoB\obj\Debug\Week02DemoB.csproj.AssemblyReference.cache
+C:\OOP-Repo\OOP-2-Assignments\Demo\Week02DemoB\Week02DemoB\obj\Debug\Week02DemoB.fmrMain.resources
+C:\OOP-Repo\OOP-2-Assignments\Demo\Week02DemoB\Week02DemoB\obj\Debug\Week02DemoB.Properties.Resources.resources
+C:\OOP-Repo\OOP-2-Assignments\Demo\Week02DemoB\Week02DemoB\obj\Debug\Week02DemoB.csproj.GenerateResource.cache
+C:\OOP-Repo\OOP-2-Assignments\Demo\Week02DemoB\Week02DemoB\obj\Debug\Week02DemoB.csproj.CoreCompileInputs.cache
+C:\OOP-Repo\OOP-2-Assignments\Demo\Week02DemoB\Week02DemoB\obj\Debug\Week02DemoB.exe
+C:\OOP-Repo\OOP-2-Assignments\Demo\Week02DemoB\Week02DemoB\obj\Debug\Week02DemoB.pdb
