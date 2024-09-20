@@ -12,20 +12,26 @@ using System.Threading.Tasks;
 
 namespace ClassExercise1
 {
+    /// <summary>
+    /// All of the settings for the project
+    /// </summary>
     internal class Settings
     {
         #region Guess The Number Defaults
         public const int DEF_DIFFICULTY = 0;
         public const int DEF_GUESSCOUNT = 0;
         public const int DEF_GUESSVALUE = 0;
+        #endregion
 
+        #region Ice Cream
         public const decimal SMALL = 1m;
         public const decimal MEDIUM = 2m;
         public const decimal LARGE = 3m;
         public const decimal SLUSHIE = 2.5m;
         public const decimal POPCICLE = 1.25m;
         public const decimal FUDGECICLE = 1.50m;
-
         #endregion
+
+
     }
 }
