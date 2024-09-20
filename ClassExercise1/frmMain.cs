@@ -313,6 +313,4 @@ namespace ClassExercise1
 
     }
 
-
-
 }
