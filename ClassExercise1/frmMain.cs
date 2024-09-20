@@ -211,22 +211,22 @@ namespace ClassExercise1
                 switch (lbxIceCreamSelection.SelectedIndex)
                 {
                     case 0:
-                        itemPrice = 1m;
+                        itemPrice = Settings.SMALL;
                         break;
                     case 1:
-                        itemPrice = 2m;
+                        itemPrice = Settings.MEDIUM;
                         break;
                     case 2:
-                        itemPrice = 3m;
+                        itemPrice = Settings.LARGE;
                         break;
                     case 3:
-                        itemPrice = 2.50m;
+                        itemPrice = Settings.SLUSHIE;
                         break;
                     case 4:
-                        itemPrice = 1.25m;
+                        itemPrice = Settings.POPCICLE;
                         break;
                     case 5:
-                        itemPrice = 1.50m;
+                        itemPrice = Settings.FUDGECICLE;
                         break;
                     default:
                         break;
@@ -258,22 +258,22 @@ namespace ClassExercise1
                     switch (IceCreamChoice)
                     {
                         case "Small - $1":
-                            itemPrice = 1m;
+                            itemPrice = Settings.SMALL;
                             break;
                         case "Medium - $2":
-                            itemPrice = 2m;
+                            itemPrice = Settings.MEDIUM;
                             break;
-                        case "Lagre - $3":
-                            itemPrice = 3m;
+                        case "Large - $3":
+                            itemPrice = Settings.LARGE;
                             break;
-                        case "Slushie - 2.50":
-                            itemPrice = 2.50m;
+                        case "Slushie - $2.50":
+                            itemPrice = Settings.SLUSHIE;
                             break;
-                        case "Popcicle - 1.25":
-                            itemPrice = 1.25m;
+                        case "Popcicle - $1.25":
+                            itemPrice = Settings.POPCICLE;
                             break;
-                        case "Fudgecicle - 1.50":
-                            itemPrice = 1.50m;
+                        case "Fudgecicle - $1.50":
+                            itemPrice = Settings.FUDGECICLE;
                             break;
                         default:
                             break;
@@ -283,6 +283,29 @@ namespace ClassExercise1
                     lblTotalPrice.Text = currentTotal.ToString("0.00");
 
                 }
+            }
+        }
+
+        /// <summary>
+        /// A method to calculate the change for the payment.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        /// Partially obtained from co-piolot, using a prompt asking about how to handle the ternary operator.
+        private void btnPay_Click(object sender, EventArgs e)
+        {
+            if (decimal.TryParse(lblTotalPrice.Text, out decimal totalAmount) &&
+       decimal.TryParse(txtProvidedPayment.Text, out decimal amountProvided))
+            {
+                decimal changeDue = amountProvided - totalAmount;
+                lblChangeDue.Text = changeDue >= 0 ? changeDue.ToString("0.00") : "Insufficient amount provided";
+            }
+
+            if (decimal.TryParse(lblChangeDue.Text, out decimal changePaid) &&
+                decimal.TryParse(lblTillAmount.Text, out decimal moneyLeft))
+            {
+                moneyLeft -= changePaid;
+                lblTillAmount.Text = moneyLeft.ToString("0.00");
             }
         }
 

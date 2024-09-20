@@ -18,15 +18,16 @@ namespace ClassExercise1
     {
 
         private static Random random = new Random();
-
+        
+        /// <summary>
+        /// Method to generate a random number.
+        /// </summary>
+        /// <param name="min"></param>
+        /// <param name="max"></param>
+        /// <returns></returns>
         public static int RandomInt(int min, int max)
         {
             return random.Next(min, max);
-        }
-
-        public static Color RandomColor()
-        {
-            return Color.FromArgb(255, RandomInt(0, 255), RandomInt(0, 255), RandomInt(0, 255));
         }
 
     }

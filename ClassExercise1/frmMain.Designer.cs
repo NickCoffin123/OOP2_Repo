@@ -35,7 +35,7 @@
             this.lblMenuTitle = new System.Windows.Forms.Label();
             this.panGTN = new System.Windows.Forms.Panel();
             this.panIceCream = new System.Windows.Forms.Panel();
-            this.lblTill = new System.Windows.Forms.Label();
+            this.lblPayHere = new System.Windows.Forms.Label();
             this.lblTotalPrice = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
             this.btnRemove = new System.Windows.Forms.Button();
@@ -60,6 +60,12 @@
             this.lblGTNTitle = new System.Windows.Forms.Label();
             this.btnExit = new System.Windows.Forms.Button();
             this.toolTips = new System.Windows.Forms.ToolTip(this.components);
+            this.lblPayment = new System.Windows.Forms.Label();
+            this.txtProvidedPayment = new System.Windows.Forms.TextBox();
+            this.btnPay = new System.Windows.Forms.Button();
+            this.lblChangeDue = new System.Windows.Forms.Label();
+            this.lblTill = new System.Windows.Forms.Label();
+            this.lblTillAmount = new System.Windows.Forms.Label();
             this.panMenu.SuspendLayout();
             this.panGTN.SuspendLayout();
             this.panIceCream.SuspendLayout();
@@ -140,7 +146,13 @@
             this.panIceCream.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panIceCream.Controls.Add(this.lblTillAmount);
             this.panIceCream.Controls.Add(this.lblTill);
+            this.panIceCream.Controls.Add(this.lblChangeDue);
+            this.panIceCream.Controls.Add(this.btnPay);
+            this.panIceCream.Controls.Add(this.txtProvidedPayment);
+            this.panIceCream.Controls.Add(this.lblPayment);
+            this.panIceCream.Controls.Add(this.lblPayHere);
             this.panIceCream.Controls.Add(this.lblTotalPrice);
             this.panIceCream.Controls.Add(this.lblTotal);
             this.panIceCream.Controls.Add(this.btnRemove);
@@ -154,14 +166,14 @@
             this.panIceCream.TabIndex = 0;
             this.panIceCream.Visible = false;
             // 
-            // lblTill
+            // lblPayHere
             // 
-            this.lblTill.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTill.Location = new System.Drawing.Point(15, 220);
-            this.lblTill.Name = "lblTill";
-            this.lblTill.Size = new System.Drawing.Size(101, 23);
-            this.lblTill.TabIndex = 0;
-            this.lblTill.Text = "Pay Here";
+            this.lblPayHere.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPayHere.Location = new System.Drawing.Point(77, 262);
+            this.lblPayHere.Name = "lblPayHere";
+            this.lblPayHere.Size = new System.Drawing.Size(101, 23);
+            this.lblPayHere.TabIndex = 0;
+            this.lblPayHere.Text = "Pay Here";
             // 
             // lblTotalPrice
             // 
@@ -181,7 +193,7 @@
             // 
             // btnRemove
             // 
-            this.btnRemove.Location = new System.Drawing.Point(105, 176);
+            this.btnRemove.Location = new System.Drawing.Point(103, 217);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(75, 23);
             this.btnRemove.TabIndex = 5;
@@ -192,7 +204,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(20, 176);
+            this.btnAdd.Location = new System.Drawing.Point(18, 217);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 4;
@@ -203,7 +215,9 @@
             // 
             // lbxIceCreamSelection
             // 
+            this.lbxIceCreamSelection.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbxIceCreamSelection.FormattingEnabled = true;
+            this.lbxIceCreamSelection.ItemHeight = 20;
             this.lbxIceCreamSelection.Items.AddRange(new object[] {
             "Small - $1",
             "Medium - $2",
@@ -211,9 +225,9 @@
             "Slushie - $2.50",
             "Popcicle - $1.25",
             "Fudgecicle - $1.50"});
-            this.lbxIceCreamSelection.Location = new System.Drawing.Point(20, 55);
+            this.lbxIceCreamSelection.Location = new System.Drawing.Point(18, 55);
             this.lbxIceCreamSelection.Name = "lbxIceCreamSelection";
-            this.lbxIceCreamSelection.Size = new System.Drawing.Size(160, 95);
+            this.lbxIceCreamSelection.Size = new System.Drawing.Size(160, 144);
             this.lbxIceCreamSelection.TabIndex = 3;
             this.toolTips.SetToolTip(this.lbxIceCreamSelection, "Ice cream selection");
             // 
@@ -230,10 +244,12 @@
             // 
             this.lbxIceCreamOrder.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.lbxIceCreamOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbxIceCreamOrder.FormattingEnabled = true;
+            this.lbxIceCreamOrder.ItemHeight = 20;
             this.lbxIceCreamOrder.Location = new System.Drawing.Point(198, 55);
             this.lbxIceCreamOrder.Name = "lbxIceCreamOrder";
-            this.lbxIceCreamOrder.Size = new System.Drawing.Size(169, 147);
+            this.lbxIceCreamOrder.Size = new System.Drawing.Size(169, 144);
             this.lbxIceCreamOrder.TabIndex = 6;
             // 
             // btnGTNPlayAgain
@@ -417,6 +433,59 @@
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
+            // lblPayment
+            // 
+            this.lblPayment.AutoSize = true;
+            this.lblPayment.Location = new System.Drawing.Point(84, 296);
+            this.lblPayment.Name = "lblPayment";
+            this.lblPayment.Size = new System.Drawing.Size(92, 13);
+            this.lblPayment.TabIndex = 0;
+            this.lblPayment.Text = "Payment provided";
+            // 
+            // txtProvidedPayment
+            // 
+            this.txtProvidedPayment.Location = new System.Drawing.Point(82, 326);
+            this.txtProvidedPayment.Name = "txtProvidedPayment";
+            this.txtProvidedPayment.Size = new System.Drawing.Size(87, 20);
+            this.txtProvidedPayment.TabIndex = 7;
+            // 
+            // btnPay
+            // 
+            this.btnPay.Location = new System.Drawing.Point(82, 376);
+            this.btnPay.Name = "btnPay";
+            this.btnPay.Size = new System.Drawing.Size(75, 23);
+            this.btnPay.TabIndex = 8;
+            this.btnPay.Text = "Pay";
+            this.toolTips.SetToolTip(this.btnPay, "Add selected ice cream");
+            this.btnPay.UseVisualStyleBackColor = true;
+            this.btnPay.Click += new System.EventHandler(this.btnPay_Click);
+            // 
+            // lblChangeDue
+            // 
+            this.lblChangeDue.Location = new System.Drawing.Point(79, 402);
+            this.lblChangeDue.Name = "lblChangeDue";
+            this.lblChangeDue.Size = new System.Drawing.Size(87, 21);
+            this.lblChangeDue.TabIndex = 9;
+            this.lblChangeDue.Text = "Change due:";
+            // 
+            // lblTill
+            // 
+            this.lblTill.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTill.Location = new System.Drawing.Point(245, 262);
+            this.lblTill.Name = "lblTill";
+            this.lblTill.Size = new System.Drawing.Size(40, 23);
+            this.lblTill.TabIndex = 10;
+            this.lblTill.Text = "Till";
+            // 
+            // lblTillAmount
+            // 
+            this.lblTillAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTillAmount.Location = new System.Drawing.Point(246, 311);
+            this.lblTillAmount.Name = "lblTillAmount";
+            this.lblTillAmount.Size = new System.Drawing.Size(39, 23);
+            this.lblTillAmount.TabIndex = 11;
+            this.lblTillAmount.Text = "100";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -475,7 +544,13 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Label lblTotalPrice;
+        private System.Windows.Forms.Label lblPayHere;
+        private System.Windows.Forms.Button btnPay;
+        private System.Windows.Forms.TextBox txtProvidedPayment;
+        private System.Windows.Forms.Label lblPayment;
+        private System.Windows.Forms.Label lblChangeDue;
         private System.Windows.Forms.Label lblTill;
+        private System.Windows.Forms.Label lblTillAmount;
     }
 }
 
