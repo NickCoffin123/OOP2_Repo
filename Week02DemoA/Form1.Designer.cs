@@ -45,8 +45,9 @@
             this.lblHeader.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHeader.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblHeader.Location = new System.Drawing.Point(-2, 1);
+            this.lblHeader.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(811, 65);
+            this.lblHeader.Size = new System.Drawing.Size(608, 53);
             this.lblHeader.TabIndex = 0;
             this.lblHeader.Text = "My Soccer Teams";
             this.lblHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -55,35 +56,38 @@
             // lbxSoccerTeams
             // 
             this.lbxSoccerTeams.FormattingEnabled = true;
-            this.lbxSoccerTeams.ItemHeight = 16;
-            this.lbxSoccerTeams.Location = new System.Drawing.Point(12, 133);
+            this.lbxSoccerTeams.Location = new System.Drawing.Point(9, 108);
+            this.lbxSoccerTeams.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lbxSoccerTeams.Name = "lbxSoccerTeams";
-            this.lbxSoccerTeams.Size = new System.Drawing.Size(369, 404);
+            this.lbxSoccerTeams.Size = new System.Drawing.Size(278, 329);
             this.lbxSoccerTeams.TabIndex = 3;
             this.lbxSoccerTeams.SelectedIndexChanged += new System.EventHandler(this.lbxSoccerTeams_SelectedIndexChanged);
             // 
             // lblMySoccerTeam
             // 
             this.lblMySoccerTeam.AutoSize = true;
-            this.lblMySoccerTeam.Location = new System.Drawing.Point(428, 95);
+            this.lblMySoccerTeam.Location = new System.Drawing.Point(321, 77);
+            this.lblMySoccerTeam.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMySoccerTeam.Name = "lblMySoccerTeam";
-            this.lblMySoccerTeam.Size = new System.Drawing.Size(77, 16);
+            this.lblMySoccerTeam.Size = new System.Drawing.Size(62, 13);
             this.lblMySoccerTeam.TabIndex = 2;
             this.lblMySoccerTeam.Text = "Enter Team";
             // 
             // txtMySoccerTeam
             // 
-            this.txtMySoccerTeam.Location = new System.Drawing.Point(511, 92);
+            this.txtMySoccerTeam.Location = new System.Drawing.Point(383, 75);
+            this.txtMySoccerTeam.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtMySoccerTeam.Name = "txtMySoccerTeam";
-            this.txtMySoccerTeam.Size = new System.Drawing.Size(279, 22);
+            this.txtMySoccerTeam.Size = new System.Drawing.Size(210, 20);
             this.txtMySoccerTeam.TabIndex = 1;
             // 
             // btnSave
             // 
             this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSave.Location = new System.Drawing.Point(506, 488);
+            this.btnSave.Location = new System.Drawing.Point(380, 396);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(142, 58);
+            this.btnSave.Size = new System.Drawing.Size(106, 47);
             this.btnSave.TabIndex = 4;
             this.btnSave.Text = "&Save";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -93,9 +97,10 @@
             // 
             this.btnExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnExit.Location = new System.Drawing.Point(654, 488);
+            this.btnExit.Location = new System.Drawing.Point(490, 396);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(142, 58);
+            this.btnExit.Size = new System.Drawing.Size(106, 47);
             this.btnExit.TabIndex = 5;
             this.btnExit.Text = "E&xit";
             this.btnExit.UseVisualStyleBackColor = true;
@@ -103,9 +108,10 @@
             // 
             // btnDeselect
             // 
-            this.btnDeselect.Location = new System.Drawing.Point(12, 88);
+            this.btnDeselect.Location = new System.Drawing.Point(9, 72);
+            this.btnDeselect.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnDeselect.Name = "btnDeselect";
-            this.btnDeselect.Size = new System.Drawing.Size(95, 23);
+            this.btnDeselect.Size = new System.Drawing.Size(71, 19);
             this.btnDeselect.TabIndex = 2;
             this.btnDeselect.Text = "&Deselect";
             this.btnDeselect.UseVisualStyleBackColor = true;
@@ -114,10 +120,10 @@
             // frmMain
             // 
             this.AcceptButton = this.btnSave;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnExit;
-            this.ClientSize = new System.Drawing.Size(808, 558);
+            this.ClientSize = new System.Drawing.Size(608, 460);
             this.Controls.Add(this.btnDeselect);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnSave);
@@ -125,10 +131,12 @@
             this.Controls.Add(this.lblMySoccerTeam);
             this.Controls.Add(this.lbxSoccerTeams);
             this.Controls.Add(this.lblHeader);
-            this.MinimumSize = new System.Drawing.Size(826, 605);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MinimumSize = new System.Drawing.Size(624, 499);
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "My Soccer Teams";
+            this.Load += new System.EventHandler(this.frmMain_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

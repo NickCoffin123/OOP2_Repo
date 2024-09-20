@@ -34,6 +34,15 @@
             this.btnGTN = new System.Windows.Forms.Button();
             this.lblMenuTitle = new System.Windows.Forms.Label();
             this.panGTN = new System.Windows.Forms.Panel();
+            this.panIceCream = new System.Windows.Forms.Panel();
+            this.lblTill = new System.Windows.Forms.Label();
+            this.lblTotalPrice = new System.Windows.Forms.Label();
+            this.lblTotal = new System.Windows.Forms.Label();
+            this.btnRemove = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.lbxIceCreamSelection = new System.Windows.Forms.ListBox();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.lbxIceCreamOrder = new System.Windows.Forms.ListBox();
             this.btnGTNPlayAgain = new System.Windows.Forms.Button();
             this.nudGTNGuessCount = new System.Windows.Forms.NumericUpDown();
             this.nudGTNActualNumber = new System.Windows.Forms.NumericUpDown();
@@ -53,6 +62,7 @@
             this.toolTips = new System.Windows.Forms.ToolTip(this.components);
             this.panMenu.SuspendLayout();
             this.panGTN.SuspendLayout();
+            this.panIceCream.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudGTNGuessCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudGTNActualNumber)).BeginInit();
             this.gbxGTNSettings.SuspendLayout();
@@ -61,7 +71,7 @@
             // 
             // panMenu
             // 
-            this.panMenu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.panMenu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panMenu.BackColor = System.Drawing.Color.Maroon;
             this.panMenu.Controls.Add(this.btnIceCream);
@@ -79,7 +89,9 @@
             this.btnIceCream.Size = new System.Drawing.Size(218, 34);
             this.btnIceCream.TabIndex = 2;
             this.btnIceCream.Text = "Ice Cream";
+            this.toolTips.SetToolTip(this.btnIceCream, "Select for ice cream tracker");
             this.btnIceCream.UseVisualStyleBackColor = true;
+            this.btnIceCream.Click += new System.EventHandler(this.btnIceCream_Click);
             // 
             // btnGTN
             // 
@@ -87,7 +99,7 @@
             this.btnGTN.Name = "btnGTN";
             this.btnGTN.Size = new System.Drawing.Size(218, 34);
             this.btnGTN.TabIndex = 1;
-            this.btnGTN.Text = "Guess the Numer";
+            this.btnGTN.Text = "Guess the Number";
             this.toolTips.SetToolTip(this.btnGTN, "Select to play guess the number");
             this.btnGTN.UseVisualStyleBackColor = true;
             this.btnGTN.Click += new System.EventHandler(this.btnGTN_Click);
@@ -104,9 +116,10 @@
             // 
             // panGTN
             // 
-            this.panGTN.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.panGTN.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panGTN.Controls.Add(this.panIceCream);
             this.panGTN.Controls.Add(this.btnGTNPlayAgain);
             this.panGTN.Controls.Add(this.nudGTNGuessCount);
             this.panGTN.Controls.Add(this.nudGTNActualNumber);
@@ -121,15 +134,116 @@
             this.panGTN.Size = new System.Drawing.Size(567, 451);
             this.panGTN.TabIndex = 1;
             this.panGTN.Visible = false;
-            this.panGTN.Paint += new System.Windows.Forms.PaintEventHandler(this.panGTN_Paint);
+            // 
+            // panIceCream
+            // 
+            this.panIceCream.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panIceCream.Controls.Add(this.lblTill);
+            this.panIceCream.Controls.Add(this.lblTotalPrice);
+            this.panIceCream.Controls.Add(this.lblTotal);
+            this.panIceCream.Controls.Add(this.btnRemove);
+            this.panIceCream.Controls.Add(this.btnAdd);
+            this.panIceCream.Controls.Add(this.lbxIceCreamSelection);
+            this.panIceCream.Controls.Add(this.lblTitle);
+            this.panIceCream.Controls.Add(this.lbxIceCreamOrder);
+            this.panIceCream.Location = new System.Drawing.Point(0, 0);
+            this.panIceCream.Name = "panIceCream";
+            this.panIceCream.Size = new System.Drawing.Size(567, 451);
+            this.panIceCream.TabIndex = 0;
+            this.panIceCream.Visible = false;
+            // 
+            // lblTill
+            // 
+            this.lblTill.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTill.Location = new System.Drawing.Point(15, 220);
+            this.lblTill.Name = "lblTill";
+            this.lblTill.Size = new System.Drawing.Size(101, 23);
+            this.lblTill.TabIndex = 0;
+            this.lblTill.Text = "Pay Here";
+            // 
+            // lblTotalPrice
+            // 
+            this.lblTotalPrice.Location = new System.Drawing.Point(423, 55);
+            this.lblTotalPrice.Name = "lblTotalPrice";
+            this.lblTotalPrice.Size = new System.Drawing.Size(111, 23);
+            this.lblTotalPrice.TabIndex = 0;
+            // 
+            // lblTotal
+            // 
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Location = new System.Drawing.Point(383, 55);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(34, 13);
+            this.lblTotal.TabIndex = 0;
+            this.lblTotal.Text = "Total:";
+            // 
+            // btnRemove
+            // 
+            this.btnRemove.Location = new System.Drawing.Point(105, 176);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.Size = new System.Drawing.Size(75, 23);
+            this.btnRemove.TabIndex = 5;
+            this.btnRemove.Text = "&Remove";
+            this.toolTips.SetToolTip(this.btnRemove, "Remove selected ice cream");
+            this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(20, 176);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnAdd.TabIndex = 4;
+            this.btnAdd.Text = "&Add";
+            this.toolTips.SetToolTip(this.btnAdd, "Add selected ice cream");
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // lbxIceCreamSelection
+            // 
+            this.lbxIceCreamSelection.FormattingEnabled = true;
+            this.lbxIceCreamSelection.Items.AddRange(new object[] {
+            "Small - $1",
+            "Medium - $2",
+            "Large - $3",
+            "Slushie - $2.50",
+            "Popcicle - $1.25",
+            "Fudgecicle - $1.50"});
+            this.lbxIceCreamSelection.Location = new System.Drawing.Point(20, 55);
+            this.lbxIceCreamSelection.Name = "lbxIceCreamSelection";
+            this.lbxIceCreamSelection.Size = new System.Drawing.Size(160, 95);
+            this.lbxIceCreamSelection.TabIndex = 3;
+            this.toolTips.SetToolTip(this.lbxIceCreamSelection, "Ice cream selection");
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Location = new System.Drawing.Point(13, 10);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(179, 33);
+            this.lblTitle.TabIndex = 3;
+            this.lblTitle.Text = "Order Here";
+            // 
+            // lbxIceCreamOrder
+            // 
+            this.lbxIceCreamOrder.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.lbxIceCreamOrder.FormattingEnabled = true;
+            this.lbxIceCreamOrder.Location = new System.Drawing.Point(198, 55);
+            this.lbxIceCreamOrder.Name = "lbxIceCreamOrder";
+            this.lbxIceCreamOrder.Size = new System.Drawing.Size(169, 147);
+            this.lbxIceCreamOrder.TabIndex = 6;
             // 
             // btnGTNPlayAgain
             // 
             this.btnGTNPlayAgain.Location = new System.Drawing.Point(329, 296);
             this.btnGTNPlayAgain.Name = "btnGTNPlayAgain";
             this.btnGTNPlayAgain.Size = new System.Drawing.Size(108, 23);
-            this.btnGTNPlayAgain.TabIndex = 8;
+            this.btnGTNPlayAgain.TabIndex = 6;
             this.btnGTNPlayAgain.Text = "Play Again";
+            this.toolTips.SetToolTip(this.btnGTNPlayAgain, "Play again");
             this.btnGTNPlayAgain.UseVisualStyleBackColor = true;
             this.btnGTNPlayAgain.Visible = false;
             this.btnGTNPlayAgain.Click += new System.EventHandler(this.btnGTNPlayAgain_Click);
@@ -140,7 +254,8 @@
             this.nudGTNGuessCount.Location = new System.Drawing.Point(426, 220);
             this.nudGTNGuessCount.Name = "nudGTNGuessCount";
             this.nudGTNGuessCount.Size = new System.Drawing.Size(120, 20);
-            this.nudGTNGuessCount.TabIndex = 7;
+            this.nudGTNGuessCount.TabIndex = 0;
+            this.nudGTNGuessCount.Visible = false;
             // 
             // nudGTNActualNumber
             // 
@@ -158,7 +273,7 @@
             0});
             this.nudGTNActualNumber.Name = "nudGTNActualNumber";
             this.nudGTNActualNumber.Size = new System.Drawing.Size(120, 20);
-            this.nudGTNActualNumber.TabIndex = 6;
+            this.nudGTNActualNumber.TabIndex = 0;
             this.nudGTNActualNumber.Value = new decimal(new int[] {
             1,
             0,
@@ -167,13 +282,13 @@
             // 
             // lblGTNGuessHistory
             // 
-            this.lblGTNGuessHistory.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.lblGTNGuessHistory.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblGTNGuessHistory.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblGTNGuessHistory.Location = new System.Drawing.Point(13, 350);
             this.lblGTNGuessHistory.Name = "lblGTNGuessHistory";
-            this.lblGTNGuessHistory.Size = new System.Drawing.Size(544, 89);
+            this.lblGTNGuessHistory.Size = new System.Drawing.Size(533, 90);
             this.lblGTNGuessHistory.TabIndex = 5;
             // 
             // btnGTNGuess
@@ -182,8 +297,9 @@
             this.btnGTNGuess.Location = new System.Drawing.Point(165, 262);
             this.btnGTNGuess.Name = "btnGTNGuess";
             this.btnGTNGuess.Size = new System.Drawing.Size(109, 58);
-            this.btnGTNGuess.TabIndex = 4;
+            this.btnGTNGuess.TabIndex = 5;
             this.btnGTNGuess.Text = "&Guess";
+            this.toolTips.SetToolTip(this.btnGTNGuess, "Select to enter guess");
             this.btnGTNGuess.UseVisualStyleBackColor = true;
             this.btnGTNGuess.Click += new System.EventHandler(this.btnGTNGuess_Click);
             // 
@@ -212,7 +328,8 @@
             this.cboGTNDificulty.Location = new System.Drawing.Point(75, 26);
             this.cboGTNDificulty.Name = "cboGTNDificulty";
             this.cboGTNDificulty.Size = new System.Drawing.Size(121, 21);
-            this.cboGTNDificulty.TabIndex = 5;
+            this.cboGTNDificulty.TabIndex = 3;
+            this.toolTips.SetToolTip(this.cboGTNDificulty, "Difficulty selecter");
             this.cboGTNDificulty.SelectedIndexChanged += new System.EventHandler(this.cboGTNDificulty_SelectedIndexChanged);
             // 
             // lblMaximumGuessNumber
@@ -266,7 +383,8 @@
             this.nudGTNGuess.Location = new System.Drawing.Point(165, 196);
             this.nudGTNGuess.Name = "nudGTNGuess";
             this.nudGTNGuess.Size = new System.Drawing.Size(109, 44);
-            this.nudGTNGuess.TabIndex = 2;
+            this.nudGTNGuess.TabIndex = 4;
+            this.toolTips.SetToolTip(this.nudGTNGuess, "Guess entry");
             // 
             // lblGTNGuess
             // 
@@ -293,8 +411,9 @@
             this.btnExit.Location = new System.Drawing.Point(679, 456);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(96, 42);
-            this.btnExit.TabIndex = 3;
+            this.btnExit.TabIndex = 7;
             this.btnExit.Text = "&Exit";
+            this.toolTips.SetToolTip(this.btnExit, "Exit");
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
@@ -313,6 +432,8 @@
             this.panMenu.ResumeLayout(false);
             this.panGTN.ResumeLayout(false);
             this.panGTN.PerformLayout();
+            this.panIceCream.ResumeLayout(false);
+            this.panIceCream.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudGTNGuessCount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudGTNActualNumber)).EndInit();
             this.gbxGTNSettings.ResumeLayout(false);
@@ -346,6 +467,15 @@
         private System.Windows.Forms.Label lblGTNGuessHistory;
         private System.Windows.Forms.ToolTip toolTips;
         private System.Windows.Forms.Button btnGTNPlayAgain;
+        private System.Windows.Forms.Panel panIceCream;
+        private System.Windows.Forms.ListBox lbxIceCreamOrder;
+        private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.ListBox lbxIceCreamSelection;
+        private System.Windows.Forms.Button btnRemove;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Label lblTotal;
+        private System.Windows.Forms.Label lblTotalPrice;
+        private System.Windows.Forms.Label lblTill;
     }
 }
 

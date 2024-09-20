@@ -46,5 +46,10 @@ namespace Week02DemoA
             lbxSoccerTeams.SelectedItems.Clear();
             txtMySoccerTeam.Clear();
         }
+
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

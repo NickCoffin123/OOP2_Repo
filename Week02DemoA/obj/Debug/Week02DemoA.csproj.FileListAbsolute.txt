@@ -8,3 +8,13 @@ C:\Users\nickc\source\repos\Demos\Week02DemoA\obj\Debug\Week02DemoA.csproj.Gener
 C:\Users\nickc\source\repos\Demos\Week02DemoA\obj\Debug\Week02DemoA.csproj.CoreCompileInputs.cache
 C:\Users\nickc\source\repos\Demos\Week02DemoA\obj\Debug\Week02DemoA.exe
 C:\Users\nickc\source\repos\Demos\Week02DemoA\obj\Debug\Week02DemoA.pdb
+C:\OOP-Repo\OOP2_Repo\Week02DemoA\bin\Debug\Week02DemoA.exe.config
+C:\OOP-Repo\OOP2_Repo\Week02DemoA\bin\Debug\Week02DemoA.exe
+C:\OOP-Repo\OOP2_Repo\Week02DemoA\bin\Debug\Week02DemoA.pdb
+C:\OOP-Repo\OOP2_Repo\Week02DemoA\obj\Debug\Week02DemoA.csproj.AssemblyReference.cache
+C:\OOP-Repo\OOP2_Repo\Week02DemoA\obj\Debug\Week02DemoA.frmMain.resources
+C:\OOP-Repo\OOP2_Repo\Week02DemoA\obj\Debug\Week02DemoA.Properties.Resources.resources
+C:\OOP-Repo\OOP2_Repo\Week02DemoA\obj\Debug\Week02DemoA.csproj.GenerateResource.cache
+C:\OOP-Repo\OOP2_Repo\Week02DemoA\obj\Debug\Week02DemoA.csproj.CoreCompileInputs.cache
+C:\OOP-Repo\OOP2_Repo\Week02DemoA\obj\Debug\Week02DemoA.exe
+C:\OOP-Repo\OOP2_Repo\Week02DemoA\obj\Debug\Week02DemoA.pdb
