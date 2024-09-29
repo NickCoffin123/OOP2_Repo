@@ -79,6 +79,11 @@ namespace Week02DemoC
                     // Text.
                     label.Text = "(" + (int)col.R + "," + (int)col.G + "," + (int)col.B + ")";
 
+                    // Event Handeler
+                    label.Click += new System.EventHandler(clickEvent);
+
+
+
                     // Add the label to array of labels
                     Settings.labels[x, y] = label;
 
@@ -128,6 +133,15 @@ namespace Week02DemoC
         private void btnClear_Click(object sender, EventArgs e)
         {
             ClearForm();
+        }
+
+        private void clickEvent(object sender, EventArgs e)
+        {
+            Label lbl = (Label)sender;
+
+            lbl.BackColor = Tools.RandomColor();
+            lbl.ForeColor = GetForeColor(lbl.BackColor);
+            lbl.Text = "(" + (int)lbl.BackColor.R + "," + (int)lbl.BackColor.G + "," + (int)lbl.BackColor.B + ")";
         }
     }
 }

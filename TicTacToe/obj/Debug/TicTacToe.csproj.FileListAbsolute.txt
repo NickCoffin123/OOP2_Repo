@@ -1,0 +1,10 @@
+C:\OOP-Repo\OOP2_Repo\TicTacToe\bin\Debug\TicTacToe.exe.config
+C:\OOP-Repo\OOP2_Repo\TicTacToe\bin\Debug\TicTacToe.exe
+C:\OOP-Repo\OOP2_Repo\TicTacToe\bin\Debug\TicTacToe.pdb
+C:\OOP-Repo\OOP2_Repo\TicTacToe\obj\Debug\TicTacToe.csproj.AssemblyReference.cache
+C:\OOP-Repo\OOP2_Repo\TicTacToe\obj\Debug\TicTacToe.Main.resources
+C:\OOP-Repo\OOP2_Repo\TicTacToe\obj\Debug\TicTacToe.Properties.Resources.resources
+C:\OOP-Repo\OOP2_Repo\TicTacToe\obj\Debug\TicTacToe.csproj.GenerateResource.cache
+C:\OOP-Repo\OOP2_Repo\TicTacToe\obj\Debug\TicTacToe.csproj.CoreCompileInputs.cache
+C:\OOP-Repo\OOP2_Repo\TicTacToe\obj\Debug\TicTacToe.exe
+C:\OOP-Repo\OOP2_Repo\TicTacToe\obj\Debug\TicTacToe.pdb
