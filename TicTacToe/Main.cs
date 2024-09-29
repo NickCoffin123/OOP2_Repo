@@ -30,7 +30,10 @@ namespace TicTacToe
             InitializeComponent();
             DefaultColours();
             CreateClickEvents();
-  
+
+            this.AcceptButton = btnStart;
+            this.CancelButton = btnExit;
+
         }
 
         #region Colour defaults

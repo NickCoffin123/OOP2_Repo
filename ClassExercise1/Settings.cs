@@ -17,6 +17,7 @@ namespace TicTacToe
     /// </summary>
     internal class Settings
     {
+       
 
     }
 }
