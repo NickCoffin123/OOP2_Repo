@@ -1,7 +1,7 @@
-﻿/* Nick Coffin - 100555045
- * ICE - 1
- * Settings file for project
- * September 29, 2024
+﻿/* Nick Coffin - 100555045.
+ * OOP - Assignment 1 Tic Tac Toe.
+ * September 29, 2024.
+ * Settings file for project.
  */
 
 using System;
@@ -17,7 +17,8 @@ namespace TicTacToe
     /// </summary>
     internal class Settings
     {
-       
+       // Everytime I tried to put something here it didn't work?
+       // It'd say something like does not exist in this context?
 
     }
 }
