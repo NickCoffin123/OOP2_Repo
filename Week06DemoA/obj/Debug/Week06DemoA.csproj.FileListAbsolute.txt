@@ -1,0 +1,10 @@
+C:\OOP-Repo\OOP2_Repo\Week06DemoA\bin\Debug\Week06DemoA.exe.config
+C:\OOP-Repo\OOP2_Repo\Week06DemoA\bin\Debug\Week06DemoA.exe
+C:\OOP-Repo\OOP2_Repo\Week06DemoA\bin\Debug\Week06DemoA.pdb
+C:\OOP-Repo\OOP2_Repo\Week06DemoA\obj\Debug\Week06DemoA.csproj.AssemblyReference.cache
+C:\OOP-Repo\OOP2_Repo\Week06DemoA\obj\Debug\Week06DemoA.Form1.resources
+C:\OOP-Repo\OOP2_Repo\Week06DemoA\obj\Debug\Week06DemoA.Properties.Resources.resources
+C:\OOP-Repo\OOP2_Repo\Week06DemoA\obj\Debug\Week06DemoA.csproj.GenerateResource.cache
+C:\OOP-Repo\OOP2_Repo\Week06DemoA\obj\Debug\Week06DemoA.csproj.CoreCompileInputs.cache
+C:\OOP-Repo\OOP2_Repo\Week06DemoA\obj\Debug\Week06DemoA.exe
+C:\OOP-Repo\OOP2_Repo\Week06DemoA\obj\Debug\Week06DemoA.pdb
