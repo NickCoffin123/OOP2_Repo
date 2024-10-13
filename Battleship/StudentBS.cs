@@ -12,13 +12,7 @@ namespace Battleship
         /// <returns>Returns true if it's a hit, false if it's a miss.</returns>
         public static bool CheckHit(int x, int y)
         {
-            // Check if the coordinates are within the bounds of the board
-            if (x < 1 || x > MAX_BOARD_SIZE || y < 1 || y > MAX_BOARD_SIZE)
-            {
-                throw new ArgumentOutOfRangeException("Shot is outside of the board.");
-            }
-
-            // Check the boatPositions array to see if there is a boat at the location
+            
             if (boatPositions[x, y] != Boats.NoBoat)
             {
                 // It's a hit!
@@ -32,5 +26,22 @@ namespace Battleship
                 return false;
             }
         }
+
+        public static bool IsShipSunk(Boats boat)
+        {
+            for (int x = 1; x <= MAX_BOARD_SIZE; x++)
+            {
+                for (int y = 1; y <= MAX_BOARD_SIZE; y++)
+                {
+                    if (boatPositions[x, y] == boat && board[x, y] != BoardStatus.Hit)
+                    {
+                        return false;
+                    }
+                }
+            }
+
+            return true;
+        }
+
     }
 }

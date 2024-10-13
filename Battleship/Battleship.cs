@@ -24,11 +24,8 @@ namespace Battleship
             CreateGrid();
             BS.RandomizeBoats();
 
-            // Enable KeyPreview
             this.KeyPreview = true;
-            this.KeyDown += new KeyEventHandler(Form_KeyDown);
 
-            // Select the first button initially
             SelectButton(0, 0);
 
             this.BackColor = ColorTranslator.FromHtml("#F0C808");
@@ -51,7 +48,7 @@ namespace Battleship
                     buttons[row, col].Size = new Size(buttonSize, buttonSize);
                     buttons[row, col].Location = new Point(col * buttonSize, (row * buttonSize) + yOffset);
                     buttons[row, col].Name = $"btn_{row}_{col}";
-                    buttons[row, col].BackColor = ColorTranslator.FromHtml("#07A0C3"); // Default button color
+                    buttons[row, col].BackColor = ColorTranslator.FromHtml("#07A0C3");
                     buttons[row, col].Click += new EventHandler(Button_Click);
 
                     this.Controls.Add(buttons[row, col]);
@@ -59,19 +56,11 @@ namespace Battleship
             }
         }
 
-        private void Form_KeyDown(object sender, KeyEventArgs e)
-        {
-            Console.WriteLine("Key pressed: " + e.KeyCode.ToString()); // Debug check to see if keypresses are captured
-            HandleKeyPress(e);
-        }
-
-        // Selects and highlights the current button
         private void SelectButton(int row, int col)
         {
-            // Deselect the previously selected button
             if (selectedRow >= 0 && selectedCol >= 0)
             {
-                buttons[selectedRow, selectedCol].BackColor = ColorTranslator.FromHtml("#07A0C3"); // Reset the previous button color
+                buttons[selectedRow, selectedCol].BackColor = ColorTranslator.FromHtml("#07A0C3");
             }
 
         }
@@ -81,65 +70,82 @@ namespace Battleship
     switch (e.KeyCode)
     {
         case Keys.Left:
-            if (selectedCol > 0) // Move left
+            if (selectedCol > 0)
                 selectedCol--;
             break;
         case Keys.Right:
-            if (selectedCol < BS.MAX_BOARD_SIZE - 1) // Move right
+            if (selectedCol < BS.MAX_BOARD_SIZE - 1)
                 selectedCol++;
             break;
         case Keys.Up:
-            if (selectedRow > 0) // Move up
+            if (selectedRow > 0)
                 selectedRow--;
             break;
         case Keys.Down:
-            if (selectedRow < BS.MAX_BOARD_SIZE - 1) // Move down
+            if (selectedRow < BS.MAX_BOARD_SIZE - 1)
                 selectedRow++;
             break;
         case Keys.Enter:
-            // Simulate a button click at the current position
             buttons[selectedRow, selectedCol].PerformClick();
             break;
     }
 
-    // Highlight the current button to show the active selection
     SelectButton(selectedRow, selectedCol);
 }
 
-
-        // Handles mouse clicks on buttons
         private void Button_Click(object sender, EventArgs e)
         {
             Button clickedButton = sender as Button;
             if (clickedButton != null)
             {
-                // Get coordinates from the clicked button's name
                 string[] coordinates = clickedButton.Name.Split('_');
                 int x = int.Parse(coordinates[1]);
                 int y = int.Parse(coordinates[2]);
 
-                // Process the turn
                 ProcessTurn(x, y);
             }
         }
 
         private void ProcessTurn(int x, int y)
         {
-            // Adjust coordinates for 1-based indexing
             bool isHit = BS.CheckHit(x + 1, y + 1);
 
             if (isHit)
             {
-                buttons[x, y].BackColor = ColorTranslator.FromHtml("#DD1C1A"); 
+                buttons[x, y].BackColor = ColorTranslator.FromHtml("#DD1C1A");
             }
             else
             {
-                buttons[x, y].BackColor = ColorTranslator.FromHtml("#F0C808"); 
+                buttons[x, y].BackColor = ColorTranslator.FromHtml("#F0C808");
             }
 
+            UpdateShipStatus();
             UpdateTurnCount();
         }
 
+        private void UpdateShipStatus()
+        {
+            if (BS.IsShipSunk(BS.Boats.Destroyer))
+            {
+                lblShipOne.BackColor = Color.Black;
+            }
+            if (BS.IsShipSunk(BS.Boats.Submarine))
+            {
+                lblShipTwo.BackColor = Color.Black;
+            }
+            if (BS.IsShipSunk(BS.Boats.Cruiser))
+            {
+                lblShipFive.BackColor = Color.Black;
+            }
+            if (BS.IsShipSunk(BS.Boats.Battleship))
+            {
+                lblShipFour.BackColor = Color.Black;
+            }
+            if (BS.IsShipSunk(BS.Boats.Carrier))
+            {
+                lblShipFive.BackColor = Color.Black;
+            }
+        }
 
 
         private void UpdateTurnCount()
