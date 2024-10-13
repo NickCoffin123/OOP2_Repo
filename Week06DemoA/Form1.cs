@@ -25,15 +25,30 @@ namespace Week06DemoA
         #region Control Event Handlers
         private void Form1_Load(object sender, EventArgs e)
         {
-          
-
-
-            
+            Droid.PopulateSampleDroids();
+            PopulateDroidList();
+            ResetDroidEntryForm();
         }
 
         private void btnSellDroid_Click(object sender, EventArgs e)
         {
-           
+            frmInputBox frm = new frmInputBox();
+
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                if (lboxDroids.SelectedIndex != -1)
+                {
+                    String dd = lboxDroids.SelectedItem.ToString();
+                    // Find this droid in the list of droids.
+                    Droid d = Droid.FindDroid(dd);
+
+                    if (d != null)
+                    {
+                        d.SellDroid(frm.InputValue, true);
+                        PopulateDroidDetails(d);
+                    }
+                }
+            }
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -59,29 +74,47 @@ namespace Week06DemoA
 
         private void lboxDroids_SelectedIndexChanged(object sender, EventArgs e)
         {
-          
+            if (lboxDroids.SelectedIndex != -1)
+            {
+                String dd = lboxDroids.SelectedItem.ToString();
+                // Find this droid in the list of droids.
+                Droid d = Droid.FindDroid(dd);
+
+                if (d != null)
+                {
+                    PopulateDroidDetails(d);
+                }
+            }
+
         }
 
         private void btnResetDroid_Click(object sender, EventArgs e)
         {
-           
+            ResetDroidEntryForm();
         }
 
         private void btnSaveDroid_Click(object sender, EventArgs e)
         {
-            Droid tempDroid = new Droid();
-            tempDroid.Designation = this.txtDesignation.Text.Trim();
-            tempDroid.Owner = this.txtOwner.Text.Trim();
-            tempDroid.IsInService = this.chkDetailsInService.Checked;
-            tempDroid.PrimaryColor = this.lblPrimaryColour.BackColor;
-            tempDroid.SecondaryColor = this.lblSecondaryColour.BackColor;
+            if (txtDesignation.Text.Trim().Length >= Droid.MIN_DESIGNATION_LENGTH && txtDesignation.Text.Trim().Length <= Droid.MAX_DESIGNATION_LENGTH)
+            {
+                Droid tempDroid = new Droid();
+                tempDroid.Designation = this.txtDesignation.Text.Trim();
+                tempDroid.Owner = this.txtOwner.Text.Trim();
+                tempDroid.IsInService = this.chkDetailsInService.Checked;
+                tempDroid.PrimaryColor = this.lblPrimaryColour.BackColor;
+                tempDroid.SecondaryColor = this.lblSecondaryColour.BackColor;
 
-            // Add to list of droids.
-            Droid.droids.Add(tempDroid);
+                // Add to list of droids.
+                Droid.droids.Add(tempDroid);
+            }
+
 
             // Update listbox to show new droid.
             PopulateDroidList();
-            
+            // Clear droid entry form.
+            ResetDroidEntryForm();
+
+
         }
         #endregion
 
@@ -96,6 +129,26 @@ namespace Week06DemoA
 
             }
         }
+
+        private void ResetDroidEntryForm()
+        {
+            txtDesignation.Text = String.Empty;
+            txtOwner.Text = String.Empty;
+            chkInService.Checked = false;
+            lblPrimaryColour.BackColor = Color.Gray;
+            lblSecondaryColour.BackColor = Color.Gray;
+            txtDesignation.Focus();
+        } 
+
+        private void PopulateDroidDetails(Droid droid)
+        {
+            lblDetailsDesignation.Text = droid.Designation;
+            lblDetailsOwner.Text = droid.Owner;
+            chkDetailsInService.Checked = droid.IsInService;
+            lblDetailsPrimaryColour.BackColor = droid.PrimaryColor;
+            lblDetailsSecondaryColour.BackColor= droid.SecondaryColor;
+        }
+
         #endregion
 
        

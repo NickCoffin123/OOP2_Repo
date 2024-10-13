@@ -74,6 +74,35 @@ namespace Week06DemoA
 
         #region Static Methods
 
+        /// <summary>
+        /// Temporary, just for testing.
+        /// </summary>
+        public static void PopulateSampleDroids()
+        {
+            Droid droid = new Droid("R2D2", "Obi-Won Kenobi", true, Color.Silver, Color.Navy);
+            droids.Add(droid);
+
+            droid = new Droid("C3PO", "Aankin Skywalker", true, Color.Gold, Color.Gold);
+            droids.Add(droid);
+
+            droid = new Droid("BB-8", "Poe Damerin", true, Color.White, Color.Orange);
+            droids.Add(droid);
+
+            droid = new Droid("R4D2", "Obi-Won Kenobi", true, Color.Silver, Color.Red);
+            droids.Add(droid);
+        }
+
+        public static Droid FindDroid(String droidDesignation)
+        {
+            
+            foreach(Droid droid in droids)
+            {
+                if (droid.Designation == droidDesignation) return droid; 
+            }
+            
+            return null;
+        }
+
         #endregion
     }
 }
