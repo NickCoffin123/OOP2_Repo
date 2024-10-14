@@ -5,7 +5,7 @@ namespace Battleship
     public static partial class BS
     {
         /// <summary>
-        /// This method checks if the shot hits or misses a boat.
+        /// A method checks if the shot hits or misses a boat.
         /// </summary>
         /// <param name="x">The x-coordinate of the shot</param>
         /// <param name="y">The y-coordinate of the shot</param>
@@ -15,18 +15,21 @@ namespace Battleship
             
             if (boatPositions[x, y] != Boats.NoBoat)
             {
-                // It's a hit!
                 board[x, y] = BoardStatus.Hit;
                 return true;
             }
             else
             {
-                // It's a miss
                 board[x, y] = BoardStatus.Miss;
                 return false;
             }
         }
 
+        /// <summary>
+        /// A method to check if a ship is sunk.
+        /// </summary>
+        /// <param name="boat"></param>
+        /// <returns>Returns true when ship sunk</returns>
         public static bool IsShipSunk(Boats boat)
         {
             for (int x = 1; x <= MAX_BOARD_SIZE; x++)

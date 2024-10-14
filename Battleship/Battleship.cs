@@ -10,6 +10,9 @@ using System.Windows.Forms;
 
 namespace Battleship
 {
+    /// <summary>
+    /// Main method for the form.
+    /// </summary>
     public partial class Battleship : Form
     {
         private Button[,] buttons;
@@ -18,21 +21,25 @@ namespace Battleship
         private int turnCount = 0;
         private Label turnLabel;
 
+        /// <summary>
+        /// Main constructor for the form.
+        /// </summary>
         public Battleship()
         {
             InitializeComponent();
             CreateGrid();
             BS.RandomizeBoats();
 
-            this.KeyPreview = true;
-
-            SelectButton(0, 0);
-
             this.BackColor = ColorTranslator.FromHtml("#F0C808");
             lblTitle.BackColor = ColorTranslator.FromHtml("#086788");
 
+            this.CancelButton = btnExit;
+
         }
 
+        /// <summary>
+        /// A method to create the labels and handle the click event.
+        /// </summary>
         private void CreateGrid()
         {
             int gridSize = BS.MAX_BOARD_SIZE;
@@ -56,6 +63,11 @@ namespace Battleship
             }
         }
 
+        /// <summary>
+        /// A method to highlight the selected button.
+        /// </summary>
+        /// <param name="row"></param>
+        /// <param name="col"></param>
         private void SelectButton(int row, int col)
         {
             if (selectedRow >= 0 && selectedCol >= 0)
@@ -65,6 +77,10 @@ namespace Battleship
 
         }
 
+        /// <summary>
+        /// A method for the arrowkeys. It only kind of works.
+        /// </summary>
+        /// <param name="e"></param>
         private void HandleKeyPress(KeyEventArgs e)
 {
     switch (e.KeyCode)
@@ -93,6 +109,11 @@ namespace Battleship
     SelectButton(selectedRow, selectedCol);
 }
 
+        /// <summary>
+        /// The method to handle the button clicks.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_Click(object sender, EventArgs e)
         {
             Button clickedButton = sender as Button;
@@ -106,6 +127,11 @@ namespace Battleship
             }
         }
 
+        /// <summary>
+        /// A method to process what happens on each click.
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
         private void ProcessTurn(int x, int y)
         {
             bool isHit = BS.CheckHit(x + 1, y + 1);
@@ -123,6 +149,9 @@ namespace Battleship
             UpdateTurnCount();
         }
 
+        /// <summary>
+        /// A method to update the labels on the side and make the you win label visible.
+        /// </summary>
         private void UpdateShipStatus()
         {
             if (BS.IsShipSunk(BS.Boats.Destroyer))
@@ -145,12 +174,77 @@ namespace Battleship
             {
                 lblShipFive.BackColor = Color.Black;
             }
+            if (BS.IsShipSunk(BS.Boats.Carrier) && BS.IsShipSunk(BS.Boats.Battleship) && BS.IsShipSunk(BS.Boats.Cruiser) 
+                && BS.IsShipSunk(BS.Boats.Submarine) && BS.IsShipSunk(BS.Boats.Destroyer))
+            {
+                lblWin.Visible = true;
+            } 
         }
 
-
+        /// <summary>
+        /// A method to update the turn count.
+        /// </summary>
         private void UpdateTurnCount()
         {
             nudShotCount.Value++;
-        }    
+        }
+
+        /// <summary>
+        /// A method to reset the game.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            BS.board = new BS.BoardStatus[BS.MAX_BOARD_SIZE + 1, BS.MAX_BOARD_SIZE + 1];
+            BS.boatPositions = new BS.Boats[BS.MAX_BOARD_SIZE + 1, BS.MAX_BOARD_SIZE + 1];
+
+            for (int row = 0; row < BS.MAX_BOARD_SIZE; row++)
+            {
+                for (int col = 0; col < BS.MAX_BOARD_SIZE; col++)
+                {
+                    buttons[row, col].BackColor = ColorTranslator.FromHtml("#07A0C3");
+                }
+            }
+
+            lblShipOne.BackColor = Color.White;
+            lblShipTwo.BackColor = Color.White;
+            lblShipThree.BackColor = Color.White;
+            lblShipFour.BackColor = Color.White;
+            lblShipFive.BackColor = Color.White;
+
+            turnCount = 0;
+            if (nudShotCount != null)
+            {
+                nudShotCount.Value = 0;
+            }
+
+            lblWin.Visible = false;
+            BS.RandomizeBoats();
+        }
+
+        /// <summary>
+        /// A method to exit the game.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you want to exit?", "Exit confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes) Application.Exit();
+        }
+
+        /// <summary>
+        /// A method to tell the user how to play.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnHowToPlay_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("You can play by clicking on the intended square or using the arrow keys.",
+                            "How to Play",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
+        }
+
     }
 }

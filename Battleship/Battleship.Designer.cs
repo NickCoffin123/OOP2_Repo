@@ -39,6 +39,8 @@
             this.nudShotCount = new System.Windows.Forms.NumericUpDown();
             this.btnReset = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
+            this.lblWin = new System.Windows.Forms.Label();
+            this.btnHowToPlay = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nudShotCount)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,7 +72,7 @@
             this.lblShipOne.Location = new System.Drawing.Point(444, 145);
             this.lblShipOne.Name = "lblShipOne";
             this.lblShipOne.Size = new System.Drawing.Size(36, 60);
-            this.lblShipOne.TabIndex = 112;
+            this.lblShipOne.TabIndex = 0;
             // 
             // lblShipTwo
             // 
@@ -78,7 +80,7 @@
             this.lblShipTwo.Location = new System.Drawing.Point(495, 145);
             this.lblShipTwo.Name = "lblShipTwo";
             this.lblShipTwo.Size = new System.Drawing.Size(36, 60);
-            this.lblShipTwo.TabIndex = 114;
+            this.lblShipTwo.TabIndex = 0;
             // 
             // lblShipThree
             // 
@@ -86,7 +88,7 @@
             this.lblShipThree.Location = new System.Drawing.Point(546, 145);
             this.lblShipThree.Name = "lblShipThree";
             this.lblShipThree.Size = new System.Drawing.Size(36, 60);
-            this.lblShipThree.TabIndex = 115;
+            this.lblShipThree.TabIndex = 0;
             // 
             // lblShipFour
             // 
@@ -94,7 +96,7 @@
             this.lblShipFour.Location = new System.Drawing.Point(597, 145);
             this.lblShipFour.Name = "lblShipFour";
             this.lblShipFour.Size = new System.Drawing.Size(36, 60);
-            this.lblShipFour.TabIndex = 116;
+            this.lblShipFour.TabIndex = 0;
             // 
             // lblShipFive
             // 
@@ -102,7 +104,7 @@
             this.lblShipFive.Location = new System.Drawing.Point(648, 145);
             this.lblShipFive.Name = "lblShipFive";
             this.lblShipFive.Size = new System.Drawing.Size(36, 60);
-            this.lblShipFive.TabIndex = 117;
+            this.lblShipFive.TabIndex = 0;
             // 
             // label1
             // 
@@ -120,31 +122,58 @@
             this.nudShotCount.Location = new System.Drawing.Point(513, 288);
             this.nudShotCount.Name = "nudShotCount";
             this.nudShotCount.Size = new System.Drawing.Size(120, 20);
-            this.nudShotCount.TabIndex = 119;
+            this.nudShotCount.TabIndex = 0;
             // 
             // btnReset
             // 
-            this.btnReset.Location = new System.Drawing.Point(513, 344);
+            this.btnReset.Location = new System.Drawing.Point(513, 391);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(120, 44);
-            this.btnReset.TabIndex = 120;
+            this.btnReset.TabIndex = 2;
             this.btnReset.Text = "&Reset";
             this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(513, 428);
+            this.btnExit.Location = new System.Drawing.Point(513, 455);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(120, 44);
-            this.btnExit.TabIndex = 121;
+            this.btnExit.TabIndex = 3;
             this.btnExit.Text = "&Exit";
             this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // lblWin
+            // 
+            this.lblWin.BackColor = System.Drawing.Color.Black;
+            this.lblWin.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWin.ForeColor = System.Drawing.Color.White;
+            this.lblWin.Location = new System.Drawing.Point(-2, 65);
+            this.lblWin.Name = "lblWin";
+            this.lblWin.Size = new System.Drawing.Size(438, 446);
+            this.lblWin.TabIndex = 122;
+            this.lblWin.Text = "YOU WIN";
+            this.lblWin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblWin.Visible = false;
+            // 
+            // btnHowToPlay
+            // 
+            this.btnHowToPlay.Location = new System.Drawing.Point(513, 329);
+            this.btnHowToPlay.Name = "btnHowToPlay";
+            this.btnHowToPlay.Size = new System.Drawing.Size(120, 44);
+            this.btnHowToPlay.TabIndex = 1;
+            this.btnHowToPlay.Text = "&How to play";
+            this.btnHowToPlay.UseVisualStyleBackColor = true;
+            this.btnHowToPlay.Click += new System.EventHandler(this.btnHowToPlay_Click);
             // 
             // Battleship
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(706, 511);
+            this.Controls.Add(this.btnHowToPlay);
+            this.Controls.Add(this.lblWin);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.nudShotCount);
@@ -176,6 +205,8 @@
         private System.Windows.Forms.NumericUpDown nudShotCount;
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.Label lblWin;
+        private System.Windows.Forms.Button btnHowToPlay;
     }
 }
 
