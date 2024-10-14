@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblShipsSunk = new System.Windows.Forms.Label();
             this.lblShipOne = new System.Windows.Forms.Label();
@@ -41,6 +42,7 @@
             this.btnExit = new System.Windows.Forms.Button();
             this.lblWin = new System.Windows.Forms.Label();
             this.btnHowToPlay = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.nudShotCount)).BeginInit();
             this.SuspendLayout();
             // 
@@ -131,6 +133,7 @@
             this.btnReset.Size = new System.Drawing.Size(120, 44);
             this.btnReset.TabIndex = 2;
             this.btnReset.Text = "&Reset";
+            this.toolTip1.SetToolTip(this.btnReset, "Reset game");
             this.btnReset.UseVisualStyleBackColor = true;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
@@ -141,6 +144,7 @@
             this.btnExit.Size = new System.Drawing.Size(120, 44);
             this.btnExit.TabIndex = 3;
             this.btnExit.Text = "&Exit";
+            this.toolTip1.SetToolTip(this.btnExit, "Exit game");
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
@@ -164,6 +168,7 @@
             this.btnHowToPlay.Size = new System.Drawing.Size(120, 44);
             this.btnHowToPlay.TabIndex = 1;
             this.btnHowToPlay.Text = "&How to play";
+            this.toolTip1.SetToolTip(this.btnHowToPlay, "How to play");
             this.btnHowToPlay.UseVisualStyleBackColor = true;
             this.btnHowToPlay.Click += new System.EventHandler(this.btnHowToPlay_Click);
             // 
@@ -207,6 +212,7 @@
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Label lblWin;
         private System.Windows.Forms.Button btnHowToPlay;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
 
