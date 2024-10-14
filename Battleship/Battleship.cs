@@ -37,6 +37,10 @@ namespace Battleship
 
         }
 
+
+        #region General Events
+        
+
         /// <summary>
         /// A method to create the labels and handle the click event.
         /// </summary>
@@ -64,6 +68,34 @@ namespace Battleship
         }
 
         /// <summary>
+        /// A method to tell the user how to play.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnHowToPlay_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("You can play by clicking on the intended square or using the arrow keys.",
+                            "How to Play",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
+        }
+
+        /// <summary>
+        /// A method to exit the game.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you want to exit?", "Exit confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes) Application.Exit();
+        }
+
+        #endregion
+
+
+        #region Battleship Gameplay
+
+        /// <summary>
         /// A method to highlight the selected button.
         /// </summary>
         /// <param name="row"></param>
@@ -82,32 +114,32 @@ namespace Battleship
         /// </summary>
         /// <param name="e"></param>
         private void HandleKeyPress(KeyEventArgs e)
-{
-    switch (e.KeyCode)
-    {
-        case Keys.Left:
-            if (selectedCol > 0)
-                selectedCol--;
-            break;
-        case Keys.Right:
-            if (selectedCol < BS.MAX_BOARD_SIZE - 1)
-                selectedCol++;
-            break;
-        case Keys.Up:
-            if (selectedRow > 0)
-                selectedRow--;
-            break;
-        case Keys.Down:
-            if (selectedRow < BS.MAX_BOARD_SIZE - 1)
-                selectedRow++;
-            break;
-        case Keys.Enter:
-            buttons[selectedRow, selectedCol].PerformClick();
-            break;
-    }
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.Left:
+                    if (selectedCol > 0)
+                        selectedCol--;
+                    break;
+                case Keys.Right:
+                    if (selectedCol < BS.MAX_BOARD_SIZE - 1)
+                        selectedCol++;
+                    break;
+                case Keys.Up:
+                    if (selectedRow > 0)
+                        selectedRow--;
+                    break;
+                case Keys.Down:
+                    if (selectedRow < BS.MAX_BOARD_SIZE - 1)
+                        selectedRow++;
+                    break;
+                case Keys.Enter:
+                    buttons[selectedRow, selectedCol].PerformClick();
+                    break;
+            }
 
-    SelectButton(selectedRow, selectedCol);
-}
+            SelectButton(selectedRow, selectedCol);
+        }
 
         /// <summary>
         /// The method to handle the button clicks.
@@ -174,11 +206,11 @@ namespace Battleship
             {
                 lblShipFive.BackColor = Color.Black;
             }
-            if (BS.IsShipSunk(BS.Boats.Carrier) && BS.IsShipSunk(BS.Boats.Battleship) && BS.IsShipSunk(BS.Boats.Cruiser) 
+            if (BS.IsShipSunk(BS.Boats.Carrier) && BS.IsShipSunk(BS.Boats.Battleship) && BS.IsShipSunk(BS.Boats.Cruiser)
                 && BS.IsShipSunk(BS.Boats.Submarine) && BS.IsShipSunk(BS.Boats.Destroyer))
             {
                 lblWin.Visible = true;
-            } 
+            }
         }
 
         /// <summary>
@@ -223,28 +255,13 @@ namespace Battleship
             BS.RandomizeBoats();
         }
 
-        /// <summary>
-        /// A method to exit the game.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Are you sure you want to exit?", "Exit confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes) Application.Exit();
-        }
+        #endregion
 
-        /// <summary>
-        /// A method to tell the user how to play.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnHowToPlay_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("You can play by clicking on the intended square or using the arrow keys.",
-                            "How to Play",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Information);
-        }
+
+
+
+
+
 
     }
 }
