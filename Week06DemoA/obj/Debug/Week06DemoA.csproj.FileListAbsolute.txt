@@ -9,3 +9,4 @@ C:\OOP-Repo\OOP2_Repo\Week06DemoA\obj\Debug\Week06DemoA.csproj.CoreCompileInputs
 C:\OOP-Repo\OOP2_Repo\Week06DemoA\obj\Debug\Week06DemoA.exe
 C:\OOP-Repo\OOP2_Repo\Week06DemoA\obj\Debug\Week06DemoA.pdb
 C:\OOP-Repo\OOP2_Repo\Week06DemoA\obj\Debug\Week06DemoA.frmInputBox.resources
+C:\OOP-Repo\OOP2_Repo\Week06DemoA\obj\Debug\Week06DemoA.frmDroidEditor.resources

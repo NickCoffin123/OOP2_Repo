@@ -59,6 +59,7 @@ namespace Week06DemoA
             this.grpSavedDroids = new System.Windows.Forms.GroupBox();
             this.grpCreator = new System.Windows.Forms.GroupBox();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.btnEditDroid = new System.Windows.Forms.Button();
             this.grpDroidDetails.SuspendLayout();
             this.grpSavedDroids.SuspendLayout();
             this.grpCreator.SuspendLayout();
@@ -275,6 +276,7 @@ namespace Week06DemoA
             // 
             // grpDroidDetails
             // 
+            this.grpDroidDetails.Controls.Add(this.btnEditDroid);
             this.grpDroidDetails.Controls.Add(this.btnSellDroid);
             this.grpDroidDetails.Controls.Add(this.lblDetailsSecondaryColour);
             this.grpDroidDetails.Controls.Add(this.lblDetailsPrimaryColour);
@@ -296,9 +298,9 @@ namespace Week06DemoA
             // 
             this.btnSellDroid.BackColor = System.Drawing.Color.Navy;
             this.btnSellDroid.ForeColor = System.Drawing.Color.White;
-            this.btnSellDroid.Location = new System.Drawing.Point(160, 169);
+            this.btnSellDroid.Location = new System.Drawing.Point(121, 171);
             this.btnSellDroid.Name = "btnSellDroid";
-            this.btnSellDroid.Size = new System.Drawing.Size(64, 30);
+            this.btnSellDroid.Size = new System.Drawing.Size(73, 30);
             this.btnSellDroid.TabIndex = 10;
             this.btnSellDroid.Text = "Sell Droid";
             this.btnSellDroid.UseVisualStyleBackColor = false;
@@ -380,6 +382,18 @@ namespace Week06DemoA
             this.lblTitle.Text = "Droid Factory";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btnEditDroid
+            // 
+            this.btnEditDroid.BackColor = System.Drawing.Color.Navy;
+            this.btnEditDroid.ForeColor = System.Drawing.Color.White;
+            this.btnEditDroid.Location = new System.Drawing.Point(14, 171);
+            this.btnEditDroid.Name = "btnEditDroid";
+            this.btnEditDroid.Size = new System.Drawing.Size(70, 30);
+            this.btnEditDroid.TabIndex = 11;
+            this.btnEditDroid.Text = "Edit Droid";
+            this.btnEditDroid.UseVisualStyleBackColor = false;
+            this.btnEditDroid.Click += new System.EventHandler(this.btnEditDroid_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -439,5 +453,6 @@ namespace Week06DemoA
         private System.Windows.Forms.GroupBox grpCreator;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Button btnSellDroid;
+        private System.Windows.Forms.Button btnEditDroid;
     }
 }
