@@ -186,6 +186,7 @@ namespace Battleship
         /// </summary>
         private void UpdateShipStatus()
         {
+            
             if (BS.IsShipSunk(BS.Boats.Destroyer))
             {
                 lblShipOne.BackColor = Color.Black;
@@ -206,11 +207,9 @@ namespace Battleship
             {
                 lblShipFive.BackColor = Color.Black;
             }
-            if (BS.IsShipSunk(BS.Boats.Carrier) && BS.IsShipSunk(BS.Boats.Battleship) && BS.IsShipSunk(BS.Boats.Cruiser)
-                && BS.IsShipSunk(BS.Boats.Submarine) && BS.IsShipSunk(BS.Boats.Destroyer))
-            {
-                lblWin.Visible = true;
-            }
+
+            CheckWin();
+            
         }
 
         /// <summary>
@@ -253,6 +252,15 @@ namespace Battleship
 
             lblWin.Visible = false;
             BS.RandomizeBoats();
+        }
+
+        private void CheckWin()
+        {
+            if (BS.IsShipSunk(BS.Boats.Carrier) && BS.IsShipSunk(BS.Boats.Battleship) && BS.IsShipSunk(BS.Boats.Cruiser)
+                && BS.IsShipSunk(BS.Boats.Submarine) && BS.IsShipSunk(BS.Boats.Destroyer))
+            {
+                lblWin.Visible = true;
+            }
         }
 
         #endregion

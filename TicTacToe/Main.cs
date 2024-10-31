@@ -263,8 +263,8 @@ namespace TicTacToe
 
             if (winner != "")
             {
-                UpdateScore(winner);
                 HighlightWinningLine(winningLabels);
+                UpdateScore(winner);
                 btnPlayAgain.Enabled = true;
             } else
             {
