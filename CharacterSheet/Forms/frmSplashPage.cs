@@ -15,11 +15,24 @@ using System.Windows.Forms;
 
 namespace CharacterSheet
 {
-    public partial class SplashPage : Form
+    public partial class frmSplashPage : Form
     {
-        public SplashPage()
+        public frmSplashPage()
         {
             InitializeComponent();
+        }
+
+        private void btnExitMain_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnEnter_Click(object sender, EventArgs e)
+        {
+            frmMain frm = new frmMain();
+            this.Hide();  
+            frm.ShowDialog();  
+            this.Show();   
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿/* Nick Coffin - 100555045.
  * OOP - Assignment 3 Character Sheet.
  * October 31, 2024.
- * Main form for project.
+ * Edit character form for project.
  */
 using System;
 using System.Collections.Generic;
@@ -15,11 +15,12 @@ using System.Windows.Forms;
 
 namespace CharacterSheet
 {
-    public partial class MainForm : Form
+    public partial class frmCharacterEdit : Form
     {
-        public MainForm()
+        public frmCharacterEdit()
         {
             InitializeComponent();
         }
+
     }
 }

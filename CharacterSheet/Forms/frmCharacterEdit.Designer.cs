@@ -1,0 +1,347 @@
+﻿namespace CharacterSheet
+{
+    partial class frmCharacterEdit
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.lblName = new System.Windows.Forms.Label();
+            this.lblClass = new System.Windows.Forms.Label();
+            this.cbxClass = new System.Windows.Forms.ComboBox();
+            this.cbxRace = new System.Windows.Forms.ComboBox();
+            this.lblRace = new System.Windows.Forms.Label();
+            this.cbxAlignment = new System.Windows.Forms.ComboBox();
+            this.lblAlignment = new System.Windows.Forms.Label();
+            this.lblGender = new System.Windows.Forms.Label();
+            this.txtGender = new System.Windows.Forms.TextBox();
+            this.lblStrength = new System.Windows.Forms.Label();
+            this.nudStrength = new System.Windows.Forms.NumericUpDown();
+            this.nudDexterity = new System.Windows.Forms.NumericUpDown();
+            this.lblDexterity = new System.Windows.Forms.Label();
+            this.nudConstitution = new System.Windows.Forms.NumericUpDown();
+            this.lblConstitution = new System.Windows.Forms.Label();
+            this.nudIntelligence = new System.Windows.Forms.NumericUpDown();
+            this.lblIntelligence = new System.Windows.Forms.Label();
+            this.nudWisdom = new System.Windows.Forms.NumericUpDown();
+            this.lblWisdom = new System.Windows.Forms.Label();
+            this.nudCharisma = new System.Windows.Forms.NumericUpDown();
+            this.lblCharisma = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.nudStrength)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDexterity)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudConstitution)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudIntelligence)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudWisdom)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCharisma)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // txtName
+            // 
+            this.txtName.Location = new System.Drawing.Point(110, 89);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(121, 20);
+            this.txtName.TabIndex = 0;
+            // 
+            // lblName
+            // 
+            this.lblName.Location = new System.Drawing.Point(60, 92);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(44, 23);
+            this.lblName.TabIndex = 1;
+            this.lblName.Text = "Name";
+            // 
+            // lblClass
+            // 
+            this.lblClass.Location = new System.Drawing.Point(60, 137);
+            this.lblClass.Name = "lblClass";
+            this.lblClass.Size = new System.Drawing.Size(44, 23);
+            this.lblClass.TabIndex = 3;
+            this.lblClass.Text = "Class";
+            // 
+            // cbxClass
+            // 
+            this.cbxClass.FormattingEnabled = true;
+            this.cbxClass.Location = new System.Drawing.Point(110, 134);
+            this.cbxClass.Name = "cbxClass";
+            this.cbxClass.Size = new System.Drawing.Size(121, 21);
+            this.cbxClass.TabIndex = 4;
+            // 
+            // cbxRace
+            // 
+            this.cbxRace.FormattingEnabled = true;
+            this.cbxRace.Location = new System.Drawing.Point(110, 180);
+            this.cbxRace.Name = "cbxRace";
+            this.cbxRace.Size = new System.Drawing.Size(121, 21);
+            this.cbxRace.TabIndex = 6;
+            // 
+            // lblRace
+            // 
+            this.lblRace.Location = new System.Drawing.Point(60, 183);
+            this.lblRace.Name = "lblRace";
+            this.lblRace.Size = new System.Drawing.Size(44, 23);
+            this.lblRace.TabIndex = 5;
+            this.lblRace.Text = "Race";
+            // 
+            // cbxAlignment
+            // 
+            this.cbxAlignment.FormattingEnabled = true;
+            this.cbxAlignment.Location = new System.Drawing.Point(110, 233);
+            this.cbxAlignment.Name = "cbxAlignment";
+            this.cbxAlignment.Size = new System.Drawing.Size(121, 21);
+            this.cbxAlignment.TabIndex = 8;
+            // 
+            // lblAlignment
+            // 
+            this.lblAlignment.Location = new System.Drawing.Point(44, 236);
+            this.lblAlignment.Name = "lblAlignment";
+            this.lblAlignment.Size = new System.Drawing.Size(60, 23);
+            this.lblAlignment.TabIndex = 7;
+            this.lblAlignment.Text = "Alignment";
+            // 
+            // lblGender
+            // 
+            this.lblGender.Location = new System.Drawing.Point(60, 288);
+            this.lblGender.Name = "lblGender";
+            this.lblGender.Size = new System.Drawing.Size(44, 23);
+            this.lblGender.TabIndex = 10;
+            this.lblGender.Text = "Gender";
+            // 
+            // txtGender
+            // 
+            this.txtGender.Location = new System.Drawing.Point(110, 285);
+            this.txtGender.Name = "txtGender";
+            this.txtGender.Size = new System.Drawing.Size(121, 20);
+            this.txtGender.TabIndex = 9;
+            // 
+            // lblStrength
+            // 
+            this.lblStrength.Location = new System.Drawing.Point(347, 25);
+            this.lblStrength.Name = "lblStrength";
+            this.lblStrength.Size = new System.Drawing.Size(65, 23);
+            this.lblStrength.TabIndex = 11;
+            this.lblStrength.Text = "Strength";
+            // 
+            // nudStrength
+            // 
+            this.nudStrength.Location = new System.Drawing.Point(350, 51);
+            this.nudStrength.Name = "nudStrength";
+            this.nudStrength.Size = new System.Drawing.Size(41, 20);
+            this.nudStrength.TabIndex = 12;
+            this.nudStrength.Value = new decimal(new int[] {
+            8,
+            0,
+            0,
+            0});
+            // 
+            // nudDexterity
+            // 
+            this.nudDexterity.Location = new System.Drawing.Point(350, 119);
+            this.nudDexterity.Name = "nudDexterity";
+            this.nudDexterity.Size = new System.Drawing.Size(41, 20);
+            this.nudDexterity.TabIndex = 14;
+            this.nudDexterity.Value = new decimal(new int[] {
+            8,
+            0,
+            0,
+            0});
+            // 
+            // lblDexterity
+            // 
+            this.lblDexterity.Location = new System.Drawing.Point(347, 93);
+            this.lblDexterity.Name = "lblDexterity";
+            this.lblDexterity.Size = new System.Drawing.Size(65, 23);
+            this.lblDexterity.TabIndex = 13;
+            this.lblDexterity.Text = "Dexterity";
+            // 
+            // nudConstitution
+            // 
+            this.nudConstitution.Location = new System.Drawing.Point(350, 190);
+            this.nudConstitution.Name = "nudConstitution";
+            this.nudConstitution.Size = new System.Drawing.Size(41, 20);
+            this.nudConstitution.TabIndex = 16;
+            this.nudConstitution.Value = new decimal(new int[] {
+            8,
+            0,
+            0,
+            0});
+            // 
+            // lblConstitution
+            // 
+            this.lblConstitution.Location = new System.Drawing.Point(347, 164);
+            this.lblConstitution.Name = "lblConstitution";
+            this.lblConstitution.Size = new System.Drawing.Size(65, 23);
+            this.lblConstitution.TabIndex = 15;
+            this.lblConstitution.Text = "Constitution";
+            // 
+            // nudIntelligence
+            // 
+            this.nudIntelligence.Location = new System.Drawing.Point(350, 264);
+            this.nudIntelligence.Name = "nudIntelligence";
+            this.nudIntelligence.Size = new System.Drawing.Size(41, 20);
+            this.nudIntelligence.TabIndex = 18;
+            this.nudIntelligence.Value = new decimal(new int[] {
+            8,
+            0,
+            0,
+            0});
+            // 
+            // lblIntelligence
+            // 
+            this.lblIntelligence.Location = new System.Drawing.Point(347, 238);
+            this.lblIntelligence.Name = "lblIntelligence";
+            this.lblIntelligence.Size = new System.Drawing.Size(65, 23);
+            this.lblIntelligence.TabIndex = 17;
+            this.lblIntelligence.Text = "Intelligence";
+            // 
+            // nudWisdom
+            // 
+            this.nudWisdom.Location = new System.Drawing.Point(350, 338);
+            this.nudWisdom.Name = "nudWisdom";
+            this.nudWisdom.Size = new System.Drawing.Size(41, 20);
+            this.nudWisdom.TabIndex = 20;
+            this.nudWisdom.Value = new decimal(new int[] {
+            8,
+            0,
+            0,
+            0});
+            // 
+            // lblWisdom
+            // 
+            this.lblWisdom.Location = new System.Drawing.Point(347, 312);
+            this.lblWisdom.Name = "lblWisdom";
+            this.lblWisdom.Size = new System.Drawing.Size(65, 23);
+            this.lblWisdom.TabIndex = 19;
+            this.lblWisdom.Text = "Wisdom";
+            // 
+            // nudCharisma
+            // 
+            this.nudCharisma.Location = new System.Drawing.Point(350, 405);
+            this.nudCharisma.Name = "nudCharisma";
+            this.nudCharisma.Size = new System.Drawing.Size(41, 20);
+            this.nudCharisma.TabIndex = 22;
+            this.nudCharisma.Value = new decimal(new int[] {
+            8,
+            0,
+            0,
+            0});
+            // 
+            // lblCharisma
+            // 
+            this.lblCharisma.Location = new System.Drawing.Point(347, 379);
+            this.lblCharisma.Name = "lblCharisma";
+            this.lblCharisma.Size = new System.Drawing.Size(65, 23);
+            this.lblCharisma.TabIndex = 21;
+            this.lblCharisma.Text = "Charisma";
+            // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(502, 86);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(96, 23);
+            this.label1.TabIndex = 24;
+            this.label1.Text = "Experience points";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(604, 83);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(121, 20);
+            this.textBox1.TabIndex = 23;
+            this.textBox1.Text = "27";
+            // 
+            // frmCharacterEdit
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.nudCharisma);
+            this.Controls.Add(this.lblCharisma);
+            this.Controls.Add(this.nudWisdom);
+            this.Controls.Add(this.lblWisdom);
+            this.Controls.Add(this.nudIntelligence);
+            this.Controls.Add(this.lblIntelligence);
+            this.Controls.Add(this.nudConstitution);
+            this.Controls.Add(this.lblConstitution);
+            this.Controls.Add(this.nudDexterity);
+            this.Controls.Add(this.lblDexterity);
+            this.Controls.Add(this.nudStrength);
+            this.Controls.Add(this.lblStrength);
+            this.Controls.Add(this.lblGender);
+            this.Controls.Add(this.txtGender);
+            this.Controls.Add(this.cbxAlignment);
+            this.Controls.Add(this.lblAlignment);
+            this.Controls.Add(this.cbxRace);
+            this.Controls.Add(this.lblRace);
+            this.Controls.Add(this.cbxClass);
+            this.Controls.Add(this.lblClass);
+            this.Controls.Add(this.lblName);
+            this.Controls.Add(this.txtName);
+            this.Name = "frmCharacterEdit";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Edit Character";
+            ((System.ComponentModel.ISupportInitialize)(this.nudStrength)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDexterity)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudConstitution)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudIntelligence)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudWisdom)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCharisma)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.Label lblClass;
+        private System.Windows.Forms.ComboBox cbxClass;
+        private System.Windows.Forms.ComboBox cbxRace;
+        private System.Windows.Forms.Label lblRace;
+        private System.Windows.Forms.ComboBox cbxAlignment;
+        private System.Windows.Forms.Label lblAlignment;
+        private System.Windows.Forms.Label lblGender;
+        private System.Windows.Forms.TextBox txtGender;
+        private System.Windows.Forms.Label lblStrength;
+        private System.Windows.Forms.NumericUpDown nudStrength;
+        private System.Windows.Forms.NumericUpDown nudDexterity;
+        private System.Windows.Forms.Label lblDexterity;
+        private System.Windows.Forms.NumericUpDown nudConstitution;
+        private System.Windows.Forms.Label lblConstitution;
+        private System.Windows.Forms.NumericUpDown nudIntelligence;
+        private System.Windows.Forms.Label lblIntelligence;
+        private System.Windows.Forms.NumericUpDown nudWisdom;
+        private System.Windows.Forms.Label lblWisdom;
+        private System.Windows.Forms.NumericUpDown nudCharisma;
+        private System.Windows.Forms.Label lblCharisma;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox1;
+    }
+}

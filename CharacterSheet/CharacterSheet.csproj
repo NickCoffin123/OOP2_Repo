@@ -46,34 +46,39 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forms\CharacterEdit.cs">
+    <Compile Include="Classes\Character.cs" />
+    <Compile Include="Classes\Class.cs" />
+    <Compile Include="Classes\Constants.cs" />
+    <Compile Include="Classes\Race.cs" />
+    <Compile Include="Classes\Tools.cs" />
+    <Compile Include="Forms\frmCharacterEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\CharacterEdit.Designer.cs">
-      <DependentUpon>CharacterEdit.cs</DependentUpon>
+    <Compile Include="Forms\frmCharacterEdit.Designer.cs">
+      <DependentUpon>frmCharacterEdit.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\MainForm.cs">
+    <Compile Include="Forms\frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
+    <Compile Include="Forms\frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\SplashPage.cs">
+    <Compile Include="Forms\frmSplashPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\SplashPage.Designer.cs">
-      <DependentUpon>SplashPage.cs</DependentUpon>
+    <Compile Include="Forms\frmSplashPage.Designer.cs">
+      <DependentUpon>frmSplashPage.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forms\CharacterEdit.resx">
-      <DependentUpon>CharacterEdit.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\frmCharacterEdit.resx">
+      <DependentUpon>frmCharacterEdit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SplashPage.resx">
-      <DependentUpon>SplashPage.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\frmSplashPage.resx">
+      <DependentUpon>frmSplashPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -83,6 +88,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -97,8 +103,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Classes\" />
+    <None Include="Resources\dnd.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

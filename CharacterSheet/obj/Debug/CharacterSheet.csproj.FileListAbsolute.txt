@@ -1,0 +1,12 @@
+C:\OOP-Repo\OOP2_Repo\CharacterSheet\bin\Debug\CharacterSheet.exe.config
+C:\OOP-Repo\OOP2_Repo\CharacterSheet\bin\Debug\CharacterSheet.exe
+C:\OOP-Repo\OOP2_Repo\CharacterSheet\bin\Debug\CharacterSheet.pdb
+C:\OOP-Repo\OOP2_Repo\CharacterSheet\obj\Debug\CharacterSheet.csproj.AssemblyReference.cache
+C:\OOP-Repo\OOP2_Repo\CharacterSheet\obj\Debug\CharacterSheet.Properties.Resources.resources
+C:\OOP-Repo\OOP2_Repo\CharacterSheet\obj\Debug\CharacterSheet.csproj.GenerateResource.cache
+C:\OOP-Repo\OOP2_Repo\CharacterSheet\obj\Debug\CharacterSheet.csproj.CoreCompileInputs.cache
+C:\OOP-Repo\OOP2_Repo\CharacterSheet\obj\Debug\CharacterSheet.exe
+C:\OOP-Repo\OOP2_Repo\CharacterSheet\obj\Debug\CharacterSheet.pdb
+C:\OOP-Repo\OOP2_Repo\CharacterSheet\obj\Debug\CharacterSheet.frmCharacterEdit.resources
+C:\OOP-Repo\OOP2_Repo\CharacterSheet\obj\Debug\CharacterSheet.frmMain.resources
+C:\OOP-Repo\OOP2_Repo\CharacterSheet\obj\Debug\CharacterSheet.frmSplashPage.resources
