@@ -50,8 +50,18 @@
             this.lblWisdom = new System.Windows.Forms.Label();
             this.nudCharisma = new System.Windows.Forms.NumericUpDown();
             this.lblCharisma = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lblExperience = new System.Windows.Forms.Label();
+            this.txtExperience = new System.Windows.Forms.TextBox();
+            this.lblArmourClass = new System.Windows.Forms.Label();
+            this.txtArmourClass = new System.Windows.Forms.TextBox();
+            this.lblSpeed = new System.Windows.Forms.Label();
+            this.txtSpeed = new System.Windows.Forms.TextBox();
+            this.lblHealth = new System.Windows.Forms.Label();
+            this.txtHealth = new System.Windows.Forms.TextBox();
+            this.lblInitiative = new System.Windows.Forms.Label();
+            this.txtInitative = new System.Windows.Forms.TextBox();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnAccept = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nudStrength)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudDexterity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudConstitution)).BeginInit();
@@ -258,29 +268,122 @@
             this.lblCharisma.TabIndex = 21;
             this.lblCharisma.Text = "Charisma";
             // 
-            // label1
+            // lblExperience
             // 
-            this.label1.Location = new System.Drawing.Point(502, 86);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(96, 23);
-            this.label1.TabIndex = 24;
-            this.label1.Text = "Experience points";
+            this.lblExperience.Location = new System.Drawing.Point(502, 86);
+            this.lblExperience.Name = "lblExperience";
+            this.lblExperience.Size = new System.Drawing.Size(96, 23);
+            this.lblExperience.TabIndex = 24;
+            this.lblExperience.Text = "Experience points";
             // 
-            // textBox1
+            // txtExperience
             // 
-            this.textBox1.Location = new System.Drawing.Point(604, 83);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(121, 20);
-            this.textBox1.TabIndex = 23;
-            this.textBox1.Text = "27";
+            this.txtExperience.Location = new System.Drawing.Point(604, 83);
+            this.txtExperience.Name = "txtExperience";
+            this.txtExperience.Size = new System.Drawing.Size(121, 20);
+            this.txtExperience.TabIndex = 23;
+            this.txtExperience.Text = "27";
+            // 
+            // lblArmourClass
+            // 
+            this.lblArmourClass.Location = new System.Drawing.Point(502, 137);
+            this.lblArmourClass.Name = "lblArmourClass";
+            this.lblArmourClass.Size = new System.Drawing.Size(96, 23);
+            this.lblArmourClass.TabIndex = 26;
+            this.lblArmourClass.Text = "Armour Class";
+            // 
+            // txtArmourClass
+            // 
+            this.txtArmourClass.Location = new System.Drawing.Point(604, 134);
+            this.txtArmourClass.Name = "txtArmourClass";
+            this.txtArmourClass.Size = new System.Drawing.Size(121, 20);
+            this.txtArmourClass.TabIndex = 25;
+            this.txtArmourClass.Text = "0";
+            // 
+            // lblSpeed
+            // 
+            this.lblSpeed.Location = new System.Drawing.Point(502, 183);
+            this.lblSpeed.Name = "lblSpeed";
+            this.lblSpeed.Size = new System.Drawing.Size(96, 23);
+            this.lblSpeed.TabIndex = 28;
+            this.lblSpeed.Text = "Speed";
+            // 
+            // txtSpeed
+            // 
+            this.txtSpeed.Location = new System.Drawing.Point(604, 180);
+            this.txtSpeed.Name = "txtSpeed";
+            this.txtSpeed.Size = new System.Drawing.Size(121, 20);
+            this.txtSpeed.TabIndex = 0;
+            this.txtSpeed.Text = "0";
+            // 
+            // lblHealth
+            // 
+            this.lblHealth.Location = new System.Drawing.Point(502, 236);
+            this.lblHealth.Name = "lblHealth";
+            this.lblHealth.Size = new System.Drawing.Size(96, 23);
+            this.lblHealth.TabIndex = 30;
+            this.lblHealth.Text = "Health points";
+            // 
+            // txtHealth
+            // 
+            this.txtHealth.Location = new System.Drawing.Point(604, 233);
+            this.txtHealth.Name = "txtHealth";
+            this.txtHealth.Size = new System.Drawing.Size(121, 20);
+            this.txtHealth.TabIndex = 29;
+            this.txtHealth.Text = "0";
+            // 
+            // lblInitiative
+            // 
+            this.lblInitiative.Location = new System.Drawing.Point(502, 288);
+            this.lblInitiative.Name = "lblInitiative";
+            this.lblInitiative.Size = new System.Drawing.Size(96, 23);
+            this.lblInitiative.TabIndex = 32;
+            this.lblInitiative.Text = "Initiative";
+            // 
+            // txtInitative
+            // 
+            this.txtInitative.Location = new System.Drawing.Point(604, 285);
+            this.txtInitative.Name = "txtInitative";
+            this.txtInitative.Size = new System.Drawing.Size(121, 20);
+            this.txtInitative.TabIndex = 31;
+            this.txtInitative.Text = "0";
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(591, 379);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(134, 43);
+            this.btnCancel.TabIndex = 33;
+            this.btnCancel.Text = "&Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // btnAccept
+            // 
+            this.btnAccept.Location = new System.Drawing.Point(97, 379);
+            this.btnAccept.Name = "btnAccept";
+            this.btnAccept.Size = new System.Drawing.Size(134, 43);
+            this.btnAccept.TabIndex = 34;
+            this.btnAccept.Text = "&Accept";
+            this.btnAccept.UseVisualStyleBackColor = true;
             // 
             // frmCharacterEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.btnAccept);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.lblInitiative);
+            this.Controls.Add(this.txtInitative);
+            this.Controls.Add(this.lblHealth);
+            this.Controls.Add(this.txtHealth);
+            this.Controls.Add(this.lblSpeed);
+            this.Controls.Add(this.txtSpeed);
+            this.Controls.Add(this.lblArmourClass);
+            this.Controls.Add(this.txtArmourClass);
+            this.Controls.Add(this.lblExperience);
+            this.Controls.Add(this.txtExperience);
             this.Controls.Add(this.nudCharisma);
             this.Controls.Add(this.lblCharisma);
             this.Controls.Add(this.nudWisdom);
@@ -341,7 +444,17 @@
         private System.Windows.Forms.Label lblWisdom;
         private System.Windows.Forms.NumericUpDown nudCharisma;
         private System.Windows.Forms.Label lblCharisma;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label lblExperience;
+        private System.Windows.Forms.TextBox txtExperience;
+        private System.Windows.Forms.Label lblArmourClass;
+        private System.Windows.Forms.TextBox txtArmourClass;
+        private System.Windows.Forms.Label lblSpeed;
+        private System.Windows.Forms.TextBox txtSpeed;
+        private System.Windows.Forms.Label lblHealth;
+        private System.Windows.Forms.TextBox txtHealth;
+        private System.Windows.Forms.Label lblInitiative;
+        private System.Windows.Forms.TextBox txtInitative;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnAccept;
     }
 }
