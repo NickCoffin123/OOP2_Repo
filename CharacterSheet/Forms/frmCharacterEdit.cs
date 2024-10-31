@@ -3,6 +3,7 @@
  * October 31, 2024.
  * Edit character form for project.
  */
+using CharacterSheet.Classes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,11 +21,22 @@ namespace CharacterSheet
         public frmCharacterEdit()
         {
             InitializeComponent();
+            Class.InitializeDefaultClasses();
+            PopulateClassComboBox();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void PopulateClassComboBox()
+        {
+            cbxClass.Items.Clear();
+            foreach (Class cls in Class.GetClasses())
+            {
+                cbxClass.Items.Add(cls.Name);
+            }
         }
     }
 }

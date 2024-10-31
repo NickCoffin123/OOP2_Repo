@@ -13,5 +13,68 @@ namespace CharacterSheet.Classes
 {
     internal class Class
     {
+
+        #region Class Scope Variables
+        
+        private static List<Class> classes = new List<Class>();
+
+        #endregion
+
+        #region Properties
+
+        public string Name {  get; private set; }
+        public string Description { get; private set; }
+
+        #endregion
+
+        #region Constructors
+
+        public Class() { }
+
+        public Class(string name, string description)
+        {
+            Name = name;
+            Description = description;
+        }
+
+        #endregion
+
+        #region Custom Methods
+        #endregion
+
+        #region Static Methods
+
+        public static void InitializeDefaultClasses()
+        {
+            Class barbarian = new Class("Barbarian", "A fierce warrior of primal rage");
+            classes.Add(barbarian);
+            Class bard = new Class("Bard", "An inspiring preformer of music, dance, and magic");
+            classes.Add(bard);
+            Class cleric = new Class("Cleric", "A miraculous priest of divine power");
+            classes.Add(cleric);
+            Class druid = new Class("Druid", "A nature priest of primal power");
+            classes.Add(druid);
+            Class fighter = new Class("Fighter", "A master of all arms and armor");
+            classes.Add(fighter);
+            Class monk = new Class("Monk", "A martial artist of supernatural focus");
+            classes.Add(monk);
+            Class paladin = new Class("Paladin", "A devout warrior of sacred oaths");
+            classes.Add(paladin);
+            Class ranger = new Class("Ranger", "A wandering warrior imbued with primal magic");
+            classes.Add(ranger);
+            Class rogue = new Class("Rogue", "A dexterous expert in stealth and subterfuge");
+            classes.Add(rogue);
+            Class sorcerer = new Class("Sorcerer", "A dazzling mage filled with innate magic");
+            classes.Add (sorcerer);
+            Class warlock = new Class("Warlock", "An occultist empowered by otherworldly pacts");
+            classes.Add(warlock);
+            Class wizard = new Class("Wizard", "A scholary magic user of arcane power");
+            classes.Add(wizard);
+        }
+
+        public static List<Class> GetClasses() { return classes; }
+
+        #endregion
+
     }
 }

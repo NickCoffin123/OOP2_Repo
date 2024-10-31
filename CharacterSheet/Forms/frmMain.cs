@@ -9,6 +9,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -21,6 +22,11 @@ namespace CharacterSheet
         {
             InitializeComponent();
         }
+
+        #region GLOBAL VARIABLES
+        #endregion
+
+        #region Control Event Handlers
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
@@ -40,5 +46,15 @@ namespace CharacterSheet
                 this.Show();
             }
         }
+
+
+        #endregion
+
+        #region Custom UI Functions and Methods
+
+
+        #endregion
+
+
     }
 }

@@ -13,5 +13,22 @@ namespace CharacterSheet.Classes
 {
     internal class Constants
     {
+
+        #region Class Scope Variables
+        #endregion
+
+        #region Properties
+        #endregion
+
+        #region Constructors
+        #endregion
+
+        #region Custom Methods
+        #endregion
+
+        #region Static Methods
+        #endregion
+
+
     }
 }
