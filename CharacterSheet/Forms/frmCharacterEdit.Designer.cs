@@ -62,6 +62,10 @@
             this.txtInitative = new System.Windows.Forms.TextBox();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnAccept = new System.Windows.Forms.Button();
+            this.lblClassDescription = new System.Windows.Forms.Label();
+            this.lblRaceDescription = new System.Windows.Forms.Label();
+            this.rtbClassDescription = new System.Windows.Forms.RichTextBox();
+            this.rtbRaceDescription = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudStrength)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudDexterity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudConstitution)).BeginInit();
@@ -72,14 +76,14 @@
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(110, 89);
+            this.txtName.Location = new System.Drawing.Point(110, 35);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(121, 20);
             this.txtName.TabIndex = 0;
             // 
             // lblName
             // 
-            this.lblName.Location = new System.Drawing.Point(60, 92);
+            this.lblName.Location = new System.Drawing.Point(60, 38);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(44, 23);
             this.lblName.TabIndex = 1;
@@ -87,7 +91,7 @@
             // 
             // lblClass
             // 
-            this.lblClass.Location = new System.Drawing.Point(60, 137);
+            this.lblClass.Location = new System.Drawing.Point(60, 83);
             this.lblClass.Name = "lblClass";
             this.lblClass.Size = new System.Drawing.Size(44, 23);
             this.lblClass.TabIndex = 3;
@@ -96,22 +100,23 @@
             // cbxClass
             // 
             this.cbxClass.FormattingEnabled = true;
-            this.cbxClass.Location = new System.Drawing.Point(110, 134);
+            this.cbxClass.Location = new System.Drawing.Point(110, 80);
             this.cbxClass.Name = "cbxClass";
             this.cbxClass.Size = new System.Drawing.Size(121, 21);
             this.cbxClass.TabIndex = 4;
+            this.cbxClass.SelectedIndexChanged += new System.EventHandler(this.cbxClass_SelectedIndexChanged);
             // 
             // cbxRace
             // 
             this.cbxRace.FormattingEnabled = true;
-            this.cbxRace.Location = new System.Drawing.Point(110, 180);
+            this.cbxRace.Location = new System.Drawing.Point(110, 126);
             this.cbxRace.Name = "cbxRace";
             this.cbxRace.Size = new System.Drawing.Size(121, 21);
             this.cbxRace.TabIndex = 6;
             // 
             // lblRace
             // 
-            this.lblRace.Location = new System.Drawing.Point(60, 183);
+            this.lblRace.Location = new System.Drawing.Point(60, 129);
             this.lblRace.Name = "lblRace";
             this.lblRace.Size = new System.Drawing.Size(44, 23);
             this.lblRace.TabIndex = 5;
@@ -120,14 +125,14 @@
             // cbxAlignment
             // 
             this.cbxAlignment.FormattingEnabled = true;
-            this.cbxAlignment.Location = new System.Drawing.Point(110, 233);
+            this.cbxAlignment.Location = new System.Drawing.Point(110, 179);
             this.cbxAlignment.Name = "cbxAlignment";
             this.cbxAlignment.Size = new System.Drawing.Size(121, 21);
             this.cbxAlignment.TabIndex = 8;
             // 
             // lblAlignment
             // 
-            this.lblAlignment.Location = new System.Drawing.Point(44, 236);
+            this.lblAlignment.Location = new System.Drawing.Point(44, 182);
             this.lblAlignment.Name = "lblAlignment";
             this.lblAlignment.Size = new System.Drawing.Size(60, 23);
             this.lblAlignment.TabIndex = 7;
@@ -135,7 +140,7 @@
             // 
             // lblGender
             // 
-            this.lblGender.Location = new System.Drawing.Point(60, 288);
+            this.lblGender.Location = new System.Drawing.Point(60, 234);
             this.lblGender.Name = "lblGender";
             this.lblGender.Size = new System.Drawing.Size(44, 23);
             this.lblGender.TabIndex = 10;
@@ -143,7 +148,7 @@
             // 
             // txtGender
             // 
-            this.txtGender.Location = new System.Drawing.Point(110, 285);
+            this.txtGender.Location = new System.Drawing.Point(110, 231);
             this.txtGender.Name = "txtGender";
             this.txtGender.Size = new System.Drawing.Size(121, 20);
             this.txtGender.TabIndex = 9;
@@ -270,7 +275,7 @@
             // 
             // lblExperience
             // 
-            this.lblExperience.Location = new System.Drawing.Point(502, 86);
+            this.lblExperience.Location = new System.Drawing.Point(489, 35);
             this.lblExperience.Name = "lblExperience";
             this.lblExperience.Size = new System.Drawing.Size(96, 23);
             this.lblExperience.TabIndex = 24;
@@ -278,7 +283,7 @@
             // 
             // txtExperience
             // 
-            this.txtExperience.Location = new System.Drawing.Point(604, 83);
+            this.txtExperience.Location = new System.Drawing.Point(591, 32);
             this.txtExperience.Name = "txtExperience";
             this.txtExperience.Size = new System.Drawing.Size(121, 20);
             this.txtExperience.TabIndex = 23;
@@ -286,7 +291,7 @@
             // 
             // lblArmourClass
             // 
-            this.lblArmourClass.Location = new System.Drawing.Point(502, 137);
+            this.lblArmourClass.Location = new System.Drawing.Point(489, 86);
             this.lblArmourClass.Name = "lblArmourClass";
             this.lblArmourClass.Size = new System.Drawing.Size(96, 23);
             this.lblArmourClass.TabIndex = 26;
@@ -294,7 +299,7 @@
             // 
             // txtArmourClass
             // 
-            this.txtArmourClass.Location = new System.Drawing.Point(604, 134);
+            this.txtArmourClass.Location = new System.Drawing.Point(591, 83);
             this.txtArmourClass.Name = "txtArmourClass";
             this.txtArmourClass.Size = new System.Drawing.Size(121, 20);
             this.txtArmourClass.TabIndex = 25;
@@ -302,7 +307,7 @@
             // 
             // lblSpeed
             // 
-            this.lblSpeed.Location = new System.Drawing.Point(502, 183);
+            this.lblSpeed.Location = new System.Drawing.Point(489, 132);
             this.lblSpeed.Name = "lblSpeed";
             this.lblSpeed.Size = new System.Drawing.Size(96, 23);
             this.lblSpeed.TabIndex = 28;
@@ -310,7 +315,7 @@
             // 
             // txtSpeed
             // 
-            this.txtSpeed.Location = new System.Drawing.Point(604, 180);
+            this.txtSpeed.Location = new System.Drawing.Point(591, 129);
             this.txtSpeed.Name = "txtSpeed";
             this.txtSpeed.Size = new System.Drawing.Size(121, 20);
             this.txtSpeed.TabIndex = 0;
@@ -318,7 +323,7 @@
             // 
             // lblHealth
             // 
-            this.lblHealth.Location = new System.Drawing.Point(502, 236);
+            this.lblHealth.Location = new System.Drawing.Point(489, 185);
             this.lblHealth.Name = "lblHealth";
             this.lblHealth.Size = new System.Drawing.Size(96, 23);
             this.lblHealth.TabIndex = 30;
@@ -326,7 +331,7 @@
             // 
             // txtHealth
             // 
-            this.txtHealth.Location = new System.Drawing.Point(604, 233);
+            this.txtHealth.Location = new System.Drawing.Point(591, 182);
             this.txtHealth.Name = "txtHealth";
             this.txtHealth.Size = new System.Drawing.Size(121, 20);
             this.txtHealth.TabIndex = 29;
@@ -334,7 +339,7 @@
             // 
             // lblInitiative
             // 
-            this.lblInitiative.Location = new System.Drawing.Point(502, 288);
+            this.lblInitiative.Location = new System.Drawing.Point(489, 237);
             this.lblInitiative.Name = "lblInitiative";
             this.lblInitiative.Size = new System.Drawing.Size(96, 23);
             this.lblInitiative.TabIndex = 32;
@@ -342,7 +347,7 @@
             // 
             // txtInitative
             // 
-            this.txtInitative.Location = new System.Drawing.Point(604, 285);
+            this.txtInitative.Location = new System.Drawing.Point(591, 234);
             this.txtInitative.Name = "txtInitative";
             this.txtInitative.Size = new System.Drawing.Size(121, 20);
             this.txtInitative.TabIndex = 31;
@@ -367,11 +372,47 @@
             this.btnAccept.Text = "&Accept";
             this.btnAccept.UseVisualStyleBackColor = true;
             // 
+            // lblClassDescription
+            // 
+            this.lblClassDescription.Location = new System.Drawing.Point(107, 266);
+            this.lblClassDescription.Name = "lblClassDescription";
+            this.lblClassDescription.Size = new System.Drawing.Size(89, 23);
+            this.lblClassDescription.TabIndex = 35;
+            this.lblClassDescription.Text = "Class Description";
+            // 
+            // lblRaceDescription
+            // 
+            this.lblRaceDescription.Location = new System.Drawing.Point(588, 266);
+            this.lblRaceDescription.Name = "lblRaceDescription";
+            this.lblRaceDescription.Size = new System.Drawing.Size(89, 23);
+            this.lblRaceDescription.TabIndex = 36;
+            this.lblRaceDescription.Text = "Race Description";
+            // 
+            // rtbClassDescription
+            // 
+            this.rtbClassDescription.Location = new System.Drawing.Point(63, 297);
+            this.rtbClassDescription.Name = "rtbClassDescription";
+            this.rtbClassDescription.Size = new System.Drawing.Size(168, 61);
+            this.rtbClassDescription.TabIndex = 37;
+            this.rtbClassDescription.Text = "";
+            // 
+            // rtbRaceDescription
+            // 
+            this.rtbRaceDescription.Location = new System.Drawing.Point(544, 297);
+            this.rtbRaceDescription.Name = "rtbRaceDescription";
+            this.rtbRaceDescription.Size = new System.Drawing.Size(168, 61);
+            this.rtbRaceDescription.TabIndex = 38;
+            this.rtbRaceDescription.Text = "";
+            // 
             // frmCharacterEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.rtbRaceDescription);
+            this.Controls.Add(this.rtbClassDescription);
+            this.Controls.Add(this.lblRaceDescription);
+            this.Controls.Add(this.lblClassDescription);
             this.Controls.Add(this.btnAccept);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.lblInitiative);
@@ -456,5 +497,9 @@
         private System.Windows.Forms.TextBox txtInitative;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnAccept;
+        private System.Windows.Forms.Label lblClassDescription;
+        private System.Windows.Forms.Label lblRaceDescription;
+        private System.Windows.Forms.RichTextBox rtbClassDescription;
+        private System.Windows.Forms.RichTextBox rtbRaceDescription;
     }
 }

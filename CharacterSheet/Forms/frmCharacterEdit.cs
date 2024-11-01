@@ -21,14 +21,30 @@ namespace CharacterSheet
         public frmCharacterEdit()
         {
             InitializeComponent();
+            LoadfrmCharacterEdit();
+        }
+
+        #region Global Variables
+        #endregion
+
+        #region Control Event Handlers
+
+        private void LoadfrmCharacterEdit()
+        {
             Class.InitializeDefaultClasses();
+            Race.InitializeDefaultRaces();
             PopulateClassComboBox();
+            PopulateRaceComboBox();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
+        #endregion
+
+        #region Custom UI Functions and Methods
 
         private void PopulateClassComboBox()
         {
@@ -38,5 +54,34 @@ namespace CharacterSheet
                 cbxClass.Items.Add(cls.Name);
             }
         }
+
+        private void PopulateRaceComboBox()
+        {
+            cbxRace.Items.Clear();
+            foreach (Race rc in Race.GetRaces())
+            {
+                cbxRace.Items.Add(rc.Name);
+            }
+        }
+
+        private void cbxClass_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbxClass.SelectedItem != null)
+            {
+                string selectedClassName = cbxClass.SelectedItem.ToString();
+                Class selectedClass = Class.GetClasses().FirstOrDefault(cls => cls.Name == selectedClassName);
+
+                if (selectedClass != null)
+                {
+                    rtbRaceDescription.Text = selectedClass.Description;
+                }
+            }
+        }
+
+
+            #endregion
+
     }
 }
+
+

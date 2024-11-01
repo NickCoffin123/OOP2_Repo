@@ -44,6 +44,10 @@ namespace CharacterSheet.Classes
 
         #region Static Methods
 
+        /// <summary>
+        /// A method to populate the classes
+        /// Descriptions pulled from D&D site
+        /// </summary>
         public static void InitializeDefaultClasses()
         {
             Class barbarian = new Class("Barbarian", "A fierce warrior of primal rage");

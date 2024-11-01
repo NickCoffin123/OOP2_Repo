@@ -116,6 +116,18 @@ namespace Week06DemoA
 
 
         }
+
+
+        private void btnEditDroid_Click(object sender, EventArgs e)
+        {
+            if (lboxDroids.SelectedIndex > -1)
+            {
+                frmDroidEditor frm = new frmDroidEditor(lboxDroids.SelectedItem.ToString());
+                frm.ShowDialog();
+                PopulateDroidList();
+                PopulateDroidDetails(null);
+            }
+        }
         #endregion
 
         #region Custom UI Functions and Methods
@@ -163,15 +175,5 @@ namespace Week06DemoA
 
         #endregion
 
-        private void btnEditDroid_Click(object sender, EventArgs e)
-        {
-            if (lboxDroids.SelectedIndex > -1)
-            {
-                frmDroidEditor frm = new frmDroidEditor(lboxDroids.SelectedItem.ToString());
-                frm.ShowDialog();
-                PopulateDroidList();
-                PopulateDroidDetails(null);
-            }
-        }
     }
 }
