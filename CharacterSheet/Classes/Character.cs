@@ -1,8 +1,8 @@
 ﻿/* Nick Coffin - 100555045.
- * OOP - Assignment 3 Character Sheet.
- * October 31, 2024.
- * Character class.
- */
+* OOP - Assignment 3 Character Sheet.
+* October 31, 2024.
+* Character class.
+*/
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,19 +22,19 @@ namespace CharacterSheet.Classes
 
         #region Properties
 
-        public string Name {  get; private set; }
-        public Class CharacterClass {  get; private set; }
+        public string Name { get; private set; }
+        public Class CharacterClass { get; private set; }
         public Race CharacterRace { get; private set; }
         public Constants.Alignment CharacterAlignment { get; set; }
-        public string Gender {  get; set; }
-        public int Level {  get; private set; }
+        public string Gender { get; set; }
+        public int Level { get; private set; }
         public int Strength { get; set; }
         public int Dexterity { get; set; }
-        public int Constitution {get; set; }
+        public int Constitution { get; set; }
         public int Intelligence { get; set; }
-        public int Wisdom {  get; set; }
-        public int Charisma {  get; set; }
-        public int ArmourClass {  get; set; }
+        public int Wisdom { get; set; }
+        public int Charisma { get; set; }
+        public int ArmourClass { get; set; }
         public int Initiative => Dexterity;
         public int HitPoints { get; private set; }
 
@@ -44,7 +44,7 @@ namespace CharacterSheet.Classes
 
         public Character() { }
 
-        public Character(string name, Class characterClass, Race characterRace, Constants.Alignment characterAlignment, string gender, 
+        public Character(string name, Class characterClass, Race characterRace, Constants.Alignment characterAlignment, string gender,
             int level, int strength, int dexterity, int constitution, int intelligence, int wisdom, int charisma, int armourClass, int hitPoints)
         {
             Name = name;
@@ -79,7 +79,7 @@ namespace CharacterSheet.Classes
 
             // Create the character using the retrieved class and race instances
             Character nick = new Character("Nick", druidClass, humanRace, Constants.Alignment.TrueNeutral, "Male", 1,
-                8, 8, 8, 8, 8, 8, 10,10);
+                8, 8, 8, 8, 8, 8, 10, 10);
             characters.Add(nick);
         }
 

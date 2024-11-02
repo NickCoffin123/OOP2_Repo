@@ -36,6 +36,7 @@ namespace CharacterSheet
 
         private void LoadfrmMain()
         {
+            lbxCharacters.DisplayMember = "Name";
             Class.InitializeDefaultClasses();
             Race.InitializeDefaultRaces();
             Character.DefaultCharacter();
@@ -51,7 +52,7 @@ namespace CharacterSheet
             lbxCharacters.Items.Clear();
             foreach (Character chr in Character.GetCharacters())
             {
-                lbxCharacters.Items.Add(chr.Name);
+                lbxCharacters.Items.Add(chr);
             }
         }
 
@@ -65,24 +66,12 @@ namespace CharacterSheet
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            if (lbxCharacters.SelectedIndex > -1)
+            if (lbxCharacters.SelectedItem is Character selectedCharacter)
             {
-                frmCharacterEdit frm = new frmCharacterEdit();
-                this.Hide();
-                frm.ShowDialog();
-                this.Show();
+                frmCharacterEdit editForm = new frmCharacterEdit(selectedCharacter);
+                editForm.ShowDialog();
+                PopulateListBoxCharacters();
             }
-
-            //private void btnEditDroid_Click(object sender, EventArgs e)
-            //{
-            //    if (lboxDroids.SelectedIndex > -1)
-            //    {
-            //        frmDroidEditor frm = new frmDroidEditor(lboxDroids.SelectedItem.ToString());
-            //        frm.ShowDialog();
-            //        PopulateDroidList();
-            //        PopulateDroidDetails(null);
-            //    }
-        
         }
 
 

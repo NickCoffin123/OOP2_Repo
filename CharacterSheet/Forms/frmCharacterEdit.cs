@@ -1,8 +1,8 @@
 ﻿/* Nick Coffin - 100555045.
- * OOP - Assignment 3 Character Sheet.
- * October 31, 2024.
- * Edit character form for project.
- */
+* OOP - Assignment 3 Character Sheet.
+* October 31, 2024.
+* Edit character form for project.
+*/
 using CharacterSheet.Classes;
 using System;
 using System.Collections.Generic;
@@ -247,4 +247,3 @@ namespace CharacterSheet
         #endregion
     }
 }
-
