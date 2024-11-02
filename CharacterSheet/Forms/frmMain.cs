@@ -3,6 +3,7 @@
  * October 31, 2024.
  * Main form for project.
  */
+using CharacterSheet.Classes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,12 +22,30 @@ namespace CharacterSheet
         public frmMain()
         {
             InitializeComponent();
+            LoadfrmMain();
         }
 
         #region GLOBAL VARIABLES
         #endregion
 
         #region Control Event Handlers
+
+        private void LoadfrmMain()
+        {
+            Class.InitializeDefaultClasses();
+            Race.InitializeDefaultRaces();
+            Character.DefaultCharacter();
+            PopulateListBoxCharacters();
+        }
+
+        private void PopulateListBoxCharacters()
+        {
+            lbxCharacters.Items.Clear();
+            foreach (Character chr in Character.GetCharacters())
+            {
+                lbxCharacters.Items.Add(chr.Name);
+            }
+        }
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
@@ -54,13 +73,13 @@ namespace CharacterSheet
 
 
 
+
         #endregion
 
         #region Custom UI Functions and Methods
 
 
         #endregion
-
 
     }
 }

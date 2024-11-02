@@ -31,10 +31,9 @@ namespace CharacterSheet
 
         private void LoadfrmCharacterEdit()
         {
-            Class.InitializeDefaultClasses();
-            Race.InitializeDefaultRaces();
             PopulateClassComboBox();
             PopulateRaceComboBox();
+            PopulateAlignmentComboBox();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -61,6 +60,15 @@ namespace CharacterSheet
             foreach (Race rc in Race.GetRaces())
             {
                 cbxRace.Items.Add(rc.Name);
+            }
+        }
+
+        private void PopulateAlignmentComboBox()
+        {
+            cbxAlignment.Items.Clear();
+            foreach (Constants.Alignment alignment in Enum.GetValues(typeof(Constants.Alignment)))
+            {
+                cbxAlignment.Items.Add(alignment.ToString());
             }
         }
 

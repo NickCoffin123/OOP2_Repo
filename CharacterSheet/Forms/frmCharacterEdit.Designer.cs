@@ -37,7 +37,6 @@
             this.cbxAlignment = new System.Windows.Forms.ComboBox();
             this.lblAlignment = new System.Windows.Forms.Label();
             this.lblGender = new System.Windows.Forms.Label();
-            this.txtGender = new System.Windows.Forms.TextBox();
             this.lblStrength = new System.Windows.Forms.Label();
             this.nudStrength = new System.Windows.Forms.NumericUpDown();
             this.nudDexterity = new System.Windows.Forms.NumericUpDown();
@@ -68,6 +67,7 @@
             this.rtbRaceDescription = new System.Windows.Forms.RichTextBox();
             this.cboLevel = new System.Windows.Forms.ComboBox();
             this.lblLevel = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudStrength)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudDexterity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudConstitution)).BeginInit();
@@ -148,13 +148,6 @@
             this.lblGender.Size = new System.Drawing.Size(44, 23);
             this.lblGender.TabIndex = 10;
             this.lblGender.Text = "Gender";
-            // 
-            // txtGender
-            // 
-            this.txtGender.Location = new System.Drawing.Point(110, 185);
-            this.txtGender.Name = "txtGender";
-            this.txtGender.Size = new System.Drawing.Size(121, 20);
-            this.txtGender.TabIndex = 9;
             // 
             // lblStrength
             // 
@@ -445,11 +438,24 @@
             this.lblLevel.TabIndex = 39;
             this.lblLevel.Text = "Level";
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Male",
+            "Female",
+            "Other"});
+            this.comboBox1.Location = new System.Drawing.Point(110, 187);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 41;
+            // 
             // frmCharacterEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.cboLevel);
             this.Controls.Add(this.lblLevel);
             this.Controls.Add(this.rtbRaceDescription);
@@ -481,7 +487,6 @@
             this.Controls.Add(this.nudStrength);
             this.Controls.Add(this.lblStrength);
             this.Controls.Add(this.lblGender);
-            this.Controls.Add(this.txtGender);
             this.Controls.Add(this.cbxAlignment);
             this.Controls.Add(this.lblAlignment);
             this.Controls.Add(this.cbxRace);
@@ -515,7 +520,6 @@
         private System.Windows.Forms.ComboBox cbxAlignment;
         private System.Windows.Forms.Label lblAlignment;
         private System.Windows.Forms.Label lblGender;
-        private System.Windows.Forms.TextBox txtGender;
         private System.Windows.Forms.Label lblStrength;
         private System.Windows.Forms.NumericUpDown nudStrength;
         private System.Windows.Forms.NumericUpDown nudDexterity;
@@ -546,5 +550,6 @@
         private System.Windows.Forms.RichTextBox rtbRaceDescription;
         private System.Windows.Forms.ComboBox cboLevel;
         private System.Windows.Forms.Label lblLevel;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
