@@ -281,6 +281,7 @@
             // 
             this.txtExperience.Location = new System.Drawing.Point(591, 32);
             this.txtExperience.Name = "txtExperience";
+            this.txtExperience.ReadOnly = true;
             this.txtExperience.Size = new System.Drawing.Size(121, 20);
             this.txtExperience.TabIndex = 23;
             this.txtExperience.Text = "27";
