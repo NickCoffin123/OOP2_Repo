@@ -17,8 +17,14 @@ using System.Windows.Forms;
 
 namespace CharacterSheet
 {
+    /// <summary>
+    /// Main method.
+    /// </summary>
     public partial class frmMain : Form
     {
+        /// <summary>
+        /// Main constructor.
+        /// </summary>
         public frmMain()
         {
             InitializeComponent();
@@ -34,6 +40,9 @@ namespace CharacterSheet
 
         #region Control Event Handlers
 
+        /// <summary>
+        /// Load event for form.
+        /// </summary>
         private void LoadfrmMain()
         {
             lbxCharacters.DisplayMember = "Name";
@@ -42,20 +51,21 @@ namespace CharacterSheet
             Character.DefaultCharacter();
         }
 
+        /// <summary>
+        /// Method to update the list box after the page is being re opened.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void frmMain_Activated(object sender, EventArgs e)
         {
             PopulateListBoxCharacters();
         }
 
-        private void PopulateListBoxCharacters()
-        {
-            lbxCharacters.Items.Clear();
-            foreach (Character chr in Character.GetCharacters())
-            {
-                lbxCharacters.Items.Add(chr);
-            }
-        }
-
+        /// <summary>
+        /// A method to create a character.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCreate_Click(object sender, EventArgs e)
         {
             frmCharacterEdit frm = new frmCharacterEdit();
@@ -64,6 +74,11 @@ namespace CharacterSheet
             this.Show();
         }
 
+        /// <summary>
+        /// A method to update a selected character.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnEdit_Click(object sender, EventArgs e)
         {
             if (lbxCharacters.SelectedItem is Character selectedCharacter)
@@ -74,19 +89,31 @@ namespace CharacterSheet
             }
         }
 
-
-
+        /// <summary>
+        /// A method to close the form.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnExitCharacter_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-
-
-
         #endregion
 
         #region Custom UI Functions and Methods
+
+        /// <summary>
+        /// A method to populate the character list box.
+        /// </summary>
+        private void PopulateListBoxCharacters()
+        {
+            lbxCharacters.Items.Clear();
+            foreach (Character chr in Character.GetCharacters())
+            {
+                lbxCharacters.Items.Add(chr);
+            }
+        }
 
 
         #endregion

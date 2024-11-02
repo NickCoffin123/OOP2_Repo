@@ -11,11 +11,17 @@ using System.Threading.Tasks;
 
 namespace CharacterSheet.Classes
 {
+    /// <summary>
+    /// Main method.
+    /// </summary>
     public class Constants
     {
 
         #region Alignment
 
+        /// <summary>
+        /// Enum for alignment.
+        /// </summary>
         public enum Alignment
         {
             LawfulGood,
@@ -33,6 +39,9 @@ namespace CharacterSheet.Classes
 
         #region Attribute
 
+        /// <summary>
+        /// Enum for attributes.
+        /// </summary>
         public enum Attribute
         {
             Strength,
@@ -47,6 +56,9 @@ namespace CharacterSheet.Classes
 
         #region General
 
+        /// <summary>
+        /// Enum for general.
+        /// </summary>
         public enum General
         {
             ArmourClass = 10,

@@ -11,6 +11,9 @@ using System.Threading.Tasks;
 
 namespace CharacterSheet.Classes
 {
+    /// <summary>
+    /// Main method.
+    /// </summary>
     public class Race
     {
 
@@ -36,8 +39,22 @@ namespace CharacterSheet.Classes
 
         #region Constructors
 
+        /// <summary>
+        /// Default constructor.
+        /// </summary>
         public Race() { }
 
+        /// <summary>
+        /// Paramaterized constructor.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="description"></param>
+        /// <param name="strength"></param>
+        /// <param name="dexterity"></param>
+        /// <param name="constitution"></param>
+        /// <param name="intelligence"></param>
+        /// <param name="wisdom"></param>
+        /// <param name="charisma"></param>
         public Race(string name, string description, int strength, int dexterity, int constitution, int intelligence, int wisdom, int charisma)
         {
             Name = name;
@@ -86,6 +103,10 @@ namespace CharacterSheet.Classes
             races.Add(githyanki);
         }
 
+        /// <summary>
+        /// Method to return the races.
+        /// </summary>
+        /// <returns></returns>
         public static List<Race> GetRaces() { return races; }
 
         #endregion

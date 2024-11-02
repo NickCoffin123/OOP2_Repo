@@ -15,18 +15,36 @@ using System.Windows.Forms;
 
 namespace CharacterSheet
 {
+    /// <summary>
+    /// Main method.
+    /// </summary>
     public partial class frmSplashPage : Form
     {
+        /// <summary>
+        /// Main constructor.
+        /// </summary>
         public frmSplashPage()
         {
             InitializeComponent();
         }
 
+        #region Control Event Handlers
+
+        /// <summary>
+        /// Method to close the form.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnExitMain_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        /// <summary>
+        /// Method to progress to the next page.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnEnter_Click(object sender, EventArgs e)
         {
             frmMain frm = new frmMain();
@@ -34,5 +52,7 @@ namespace CharacterSheet
             frm.ShowDialog();  
             this.Show();   
         }
+
+        #endregion
     }
 }

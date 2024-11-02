@@ -11,6 +11,9 @@ using System.Threading.Tasks;
 
 namespace CharacterSheet.Classes
 {
+    /// <summary>
+    /// Main method.
+    /// </summary>
     public class Class
     {
 
@@ -30,8 +33,17 @@ namespace CharacterSheet.Classes
 
         #region Constructors
 
+        /// <summary>
+        /// Default constructor.
+        /// </summary>
         public Class() { }
 
+        /// <summary>
+        /// Paramatized constructor.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="description"></param>
+        /// <param name="baseHitPoints"></param>
         public Class(string name, string description, int baseHitPoints)
         {
             Name = name;
@@ -78,6 +90,10 @@ namespace CharacterSheet.Classes
             classes.Add(wizard);
         }
 
+        /// <summary>
+        /// Method to return the classes.
+        /// </summary>
+        /// <returns></returns>
         public static List<Class> GetClasses() { return classes; }
 
         #endregion

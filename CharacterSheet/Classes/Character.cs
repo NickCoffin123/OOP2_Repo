@@ -11,6 +11,9 @@ using System.Threading.Tasks;
 
 namespace CharacterSheet.Classes
 {
+    /// <summary>
+    /// Main method.
+    /// </summary>
     public class Character
     {
 
@@ -42,8 +45,28 @@ namespace CharacterSheet.Classes
 
         #region Constructors
 
+        /// <summary>
+        /// Default constructor.
+        /// </summary>
         public Character() { }
 
+        /// <summary>
+        /// Paramatized constructor.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="characterClass"></param>
+        /// <param name="characterRace"></param>
+        /// <param name="characterAlignment"></param>
+        /// <param name="gender"></param>
+        /// <param name="level"></param>
+        /// <param name="strength"></param>
+        /// <param name="dexterity"></param>
+        /// <param name="constitution"></param>
+        /// <param name="intelligence"></param>
+        /// <param name="wisdom"></param>
+        /// <param name="charisma"></param>
+        /// <param name="armourClass"></param>
+        /// <param name="hitPoints"></param>
         public Character(string name, Class characterClass, Race characterRace, Constants.Alignment characterAlignment, string gender,
             int level, int strength, int dexterity, int constitution, int intelligence, int wisdom, int charisma, int armourClass, int hitPoints)
         {
@@ -71,6 +94,9 @@ namespace CharacterSheet.Classes
 
         #region Static Methods
 
+        /// <summary>
+        /// A method to create a default character.
+        /// </summary>
         public static void DefaultCharacter()
         {
             // Retrieve the "Druid" class and "Human" race from the static lists
@@ -83,6 +109,10 @@ namespace CharacterSheet.Classes
             characters.Add(nick);
         }
 
+        /// <summary>
+        /// A method to return the characters.
+        /// </summary>
+        /// <returns></returns>
         public static List<Character> GetCharacters() { return characters; }
 
 
