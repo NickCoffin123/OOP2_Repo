@@ -23,9 +23,13 @@ namespace CharacterSheet
         {
             InitializeComponent();
             LoadfrmMain();
+            this.Activated += frmMain_Activated;
         }
 
         #region GLOBAL VARIABLES
+
+
+
         #endregion
 
         #region Control Event Handlers
@@ -35,6 +39,10 @@ namespace CharacterSheet
             Class.InitializeDefaultClasses();
             Race.InitializeDefaultRaces();
             Character.DefaultCharacter();
+        }
+
+        private void frmMain_Activated(object sender, EventArgs e)
+        {
             PopulateListBoxCharacters();
         }
 
@@ -64,7 +72,20 @@ namespace CharacterSheet
                 frm.ShowDialog();
                 this.Show();
             }
+
+            //private void btnEditDroid_Click(object sender, EventArgs e)
+            //{
+            //    if (lboxDroids.SelectedIndex > -1)
+            //    {
+            //        frmDroidEditor frm = new frmDroidEditor(lboxDroids.SelectedItem.ToString());
+            //        frm.ShowDialog();
+            //        PopulateDroidList();
+            //        PopulateDroidDetails(null);
+            //    }
+        
         }
+
+
 
         private void btnExitCharacter_Click(object sender, EventArgs e)
         {

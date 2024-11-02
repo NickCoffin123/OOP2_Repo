@@ -11,12 +11,12 @@ using System.Threading.Tasks;
 
 namespace CharacterSheet.Classes
 {
-    internal class Character
+    public class Character
     {
 
         #region Class Scope Variables
 
-        private static List<Character> characters = new List<Character>();
+        public static List<Character> characters = new List<Character>();
 
         #endregion
 
@@ -25,16 +25,16 @@ namespace CharacterSheet.Classes
         public string Name {  get; private set; }
         public Class CharacterClass {  get; private set; }
         public Race CharacterRace { get; private set; }
-        public Constants.Alignment CharacterAlignment { get; private set; }
-        public string Gender {  get; private set; }
+        public Constants.Alignment CharacterAlignment { get; set; }
+        public string Gender {  get; set; }
         public int Level {  get; private set; }
-        public int Strength { get; private set; }
-        public int Dexterity { get; private set; }
-        public int Constitution {get; private set; }
-        public int Intelligence { get; private set; }
-        public int Wisdom {  get; private set; }
-        public int Charisma {  get; private set; }
-        public int ArmourClass {  get; private set; }
+        public int Strength { get; set; }
+        public int Dexterity { get; set; }
+        public int Constitution {get; set; }
+        public int Intelligence { get; set; }
+        public int Wisdom {  get; set; }
+        public int Charisma {  get; set; }
+        public int ArmourClass {  get; set; }
         public int Initiative => Dexterity;
         public int HitPoints { get; private set; }
 

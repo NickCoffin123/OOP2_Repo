@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace CharacterSheet.Classes
 {
-    internal class Class
+    public class Class
     {
 
         #region Class Scope Variables

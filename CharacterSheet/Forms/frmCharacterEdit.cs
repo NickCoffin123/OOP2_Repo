@@ -18,16 +18,48 @@ namespace CharacterSheet
 {
     public partial class frmCharacterEdit : Form
     {
+        #region Global Variables
+        private int remainingPoints = 27;
+        private Character characterToEdit;
+        #endregion
+
+        #region Constructors
+        // Default constructor for creating a new character
         public frmCharacterEdit()
         {
             InitializeComponent();
             LoadfrmCharacterEdit();
         }
 
-        #region Global Variables
+        // Overloaded constructor for editing an existing character
+        public frmCharacterEdit(Character character)
+        {
+            InitializeComponent();
+            characterToEdit = character;
+            LoadfrmCharacterEdit();
 
-        private int remainingPoints = 27;
+            if (characterToEdit != null)
+            {
+                // Populate fields with existing character data
+                txtName.Text = characterToEdit.Name;
+                cboGender.SelectedItem = characterToEdit.Gender;
+                cbxClass.SelectedItem = characterToEdit.CharacterClass.Name;
+                cbxRace.SelectedItem = characterToEdit.CharacterRace.Name;
+                cbxAlignment.SelectedItem = characterToEdit.CharacterAlignment.ToString();
+                nudStrength.Value = characterToEdit.Strength;
+                nudDexterity.Value = characterToEdit.Dexterity;
+                nudConstitution.Value = characterToEdit.Constitution;
+                nudIntelligence.Value = characterToEdit.Intelligence;
+                nudWisdom.Value = characterToEdit.Wisdom;
+                nudCharisma.Value = characterToEdit.Charisma;
+                txtHealth.Text = characterToEdit.HitPoints.ToString();
 
+                // Disable fields that shouldn’t be editable
+                txtName.Enabled = false;
+                cbxClass.Enabled = false;
+                cbxRace.Enabled = false;
+            }
+        }
         #endregion
 
         #region Control Event Handlers
@@ -45,6 +77,67 @@ namespace CharacterSheet
             this.Close();
         }
 
+        private void btnAccept_Click(object sender, EventArgs e)
+        {
+            string name = txtName.Text;
+            string gender = cboGender.SelectedItem?.ToString();
+
+            Class selectedClass = Class.GetClasses().FirstOrDefault(c => c.Name == cbxClass.SelectedItem.ToString());
+            Race selectedRace = Race.GetRaces().FirstOrDefault(r => r.Name == cbxRace.SelectedItem.ToString());
+            Constants.Alignment alignment = (Constants.Alignment)Enum.Parse(typeof(Constants.Alignment), cbxAlignment.SelectedItem.ToString());
+
+            int strength = (int)nudStrength.Value;
+            int dexterity = (int)nudDexterity.Value;
+            int constitution = (int)nudConstitution.Value;
+            int intelligence = (int)nudIntelligence.Value;
+            int wisdom = (int)nudWisdom.Value;
+            int charisma = (int)nudCharisma.Value;
+
+            if (characterToEdit != null)
+            {
+                // Update existing character
+                characterToEdit.Gender = gender;
+                characterToEdit.CharacterAlignment = alignment;
+                characterToEdit.Strength = strength;
+                characterToEdit.Dexterity = dexterity;
+                characterToEdit.Constitution = constitution;
+                characterToEdit.Intelligence = intelligence;
+                characterToEdit.Wisdom = wisdom;
+                characterToEdit.Charisma = charisma;
+            }
+            else
+            {
+                // Create a new character and add to the list
+                Character newCharacter = new Character(
+                    name,
+                    selectedClass,
+                    selectedRace,
+                    alignment,
+                    gender,
+                    level: 1,
+                    strength,
+                    dexterity,
+                    constitution,
+                    intelligence,
+                    wisdom,
+                    charisma,
+                    armourClass: 10,
+                    hitPoints: selectedClass.BaseHitPoints
+                );
+                Character.characters.Add(newCharacter);
+            }
+
+            this.Close();
+        }
+
+        private void Attribute_ValueChanged(object sender, EventArgs e)
+        {
+            UpdateRemainingPoints();
+        }
+        #endregion
+
+        #region Custom UI Functions and Methods
+
         private void NumericUpDownEvents()
         {
             nudStrength.ValueChanged += Attribute_ValueChanged;
@@ -53,11 +146,6 @@ namespace CharacterSheet
             nudIntelligence.ValueChanged += Attribute_ValueChanged;
             nudWisdom.ValueChanged += Attribute_ValueChanged;
             nudCharisma.ValueChanged += Attribute_ValueChanged;
-        }
-
-        private void Attribute_ValueChanged(object sender, EventArgs e)
-        {
-            UpdateRemainingPoints();
         }
 
         private void UpdateRemainingPoints()
@@ -85,7 +173,7 @@ namespace CharacterSheet
                 return 2;
             if (attributeValue >= 19 && attributeValue <= 20)
                 return 3;
-            
+
             return 0;
         }
 
@@ -100,10 +188,6 @@ namespace CharacterSheet
             nudWisdom.Enabled = enable || nudWisdom.Value < 20;
             nudCharisma.Enabled = enable || nudCharisma.Value < 20;
         }
-
-        #endregion
-
-        #region Custom UI Functions and Methods
 
         private void PopulateClassComboBox()
         {
@@ -147,7 +231,6 @@ namespace CharacterSheet
             }
         }
 
-
         private void cbxRace_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cbxRace.SelectedItem != null)
@@ -161,14 +244,7 @@ namespace CharacterSheet
                 }
             }
         }
-
-
-
-
         #endregion
-
-
     }
 }
-
 

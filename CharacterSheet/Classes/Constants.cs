@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace CharacterSheet.Classes
 {
-    internal class Constants
+    public class Constants
     {
 
         #region Alignment
