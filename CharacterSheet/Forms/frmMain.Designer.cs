@@ -32,6 +32,7 @@
             this.lbxCharacters = new System.Windows.Forms.ListBox();
             this.btnCreate = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
+            this.btnExitCharacter = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblCharacters
@@ -53,7 +54,7 @@
             // 
             // btnCreate
             // 
-            this.btnCreate.Location = new System.Drawing.Point(450, 135);
+            this.btnCreate.Location = new System.Drawing.Point(450, 119);
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new System.Drawing.Size(130, 48);
             this.btnCreate.TabIndex = 2;
@@ -63,7 +64,7 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(450, 244);
+            this.btnEdit.Location = new System.Drawing.Point(450, 212);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(130, 48);
             this.btnEdit.TabIndex = 3;
@@ -71,11 +72,22 @@
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
+            // btnExitCharacter
+            // 
+            this.btnExitCharacter.Location = new System.Drawing.Point(450, 305);
+            this.btnExitCharacter.Name = "btnExitCharacter";
+            this.btnExitCharacter.Size = new System.Drawing.Size(130, 48);
+            this.btnExitCharacter.TabIndex = 4;
+            this.btnExitCharacter.Text = "&Exit";
+            this.btnExitCharacter.UseVisualStyleBackColor = true;
+            this.btnExitCharacter.Click += new System.EventHandler(this.btnExitCharacter_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnExitCharacter);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnCreate);
             this.Controls.Add(this.lbxCharacters);
@@ -93,5 +105,6 @@
         private System.Windows.Forms.ListBox lbxCharacters;
         private System.Windows.Forms.Button btnCreate;
         private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Button btnExitCharacter;
     }
 }

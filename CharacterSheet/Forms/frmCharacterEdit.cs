@@ -73,13 +73,32 @@ namespace CharacterSheet
 
                 if (selectedClass != null)
                 {
-                    rtbRaceDescription.Text = selectedClass.Description;
+                    rtbClassDescription.Text = selectedClass.Description;
+                    txtHealth.Text = selectedClass.BaseHitPoints.ToString();
                 }
             }
         }
 
 
-            #endregion
+        private void cbxRace_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbxRace.SelectedItem != null)
+            {
+                string selectedRaceName = cbxRace.SelectedItem.ToString();
+                Race selectedRace = Race.GetRaces().FirstOrDefault(rc => rc.Name == selectedRaceName);
+
+                if (selectedRace != null)
+                {
+                    rtbRaceDescription.Text = selectedRace.Description;
+                }
+            }
+        }
+
+
+
+
+        #endregion
+
 
     }
 }

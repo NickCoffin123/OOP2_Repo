@@ -14,19 +14,45 @@ namespace CharacterSheet.Classes
     internal class Constants
     {
 
-        #region Class Scope Variables
+        #region Alignment
+
+        public enum Alignment
+        {
+            LawfulGood,
+            NeutralGood,
+            ChaoticGood,
+            LawfulNeutral,
+            TrueNeutral,
+            ChaoticNeutral,
+            LawfulEvil,
+            NeutralEvil,
+            ChaoticEvil
+        }
+
         #endregion
 
-        #region Properties
+        #region Attribute
+
+        public enum Attribute
+        {
+            Strength,
+            Dexerity,
+            Constitution,
+            Intelligence,
+            Wisdom,
+            Charisma
+        }
+
         #endregion
 
-        #region Constructors
-        #endregion
+        #region General
 
-        #region Custom Methods
-        #endregion
+        public enum General
+        {
+            ArmourClass = 10,
+            Speed = 6
+        }
 
-        #region Static Methods
         #endregion
 
 

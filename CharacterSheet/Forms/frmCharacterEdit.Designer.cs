@@ -66,6 +66,8 @@
             this.lblRaceDescription = new System.Windows.Forms.Label();
             this.rtbClassDescription = new System.Windows.Forms.RichTextBox();
             this.rtbRaceDescription = new System.Windows.Forms.RichTextBox();
+            this.cboLevel = new System.Windows.Forms.ComboBox();
+            this.lblLevel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nudStrength)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudDexterity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudConstitution)).BeginInit();
@@ -76,14 +78,14 @@
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(110, 35);
+            this.txtName.Location = new System.Drawing.Point(110, 10);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(121, 20);
             this.txtName.TabIndex = 0;
             // 
             // lblName
             // 
-            this.lblName.Location = new System.Drawing.Point(60, 38);
+            this.lblName.Location = new System.Drawing.Point(60, 13);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(44, 23);
             this.lblName.TabIndex = 1;
@@ -91,7 +93,7 @@
             // 
             // lblClass
             // 
-            this.lblClass.Location = new System.Drawing.Point(60, 83);
+            this.lblClass.Location = new System.Drawing.Point(60, 57);
             this.lblClass.Name = "lblClass";
             this.lblClass.Size = new System.Drawing.Size(44, 23);
             this.lblClass.TabIndex = 3;
@@ -100,7 +102,7 @@
             // cbxClass
             // 
             this.cbxClass.FormattingEnabled = true;
-            this.cbxClass.Location = new System.Drawing.Point(110, 80);
+            this.cbxClass.Location = new System.Drawing.Point(110, 53);
             this.cbxClass.Name = "cbxClass";
             this.cbxClass.Size = new System.Drawing.Size(121, 21);
             this.cbxClass.TabIndex = 4;
@@ -109,14 +111,15 @@
             // cbxRace
             // 
             this.cbxRace.FormattingEnabled = true;
-            this.cbxRace.Location = new System.Drawing.Point(110, 126);
+            this.cbxRace.Location = new System.Drawing.Point(110, 97);
             this.cbxRace.Name = "cbxRace";
             this.cbxRace.Size = new System.Drawing.Size(121, 21);
             this.cbxRace.TabIndex = 6;
+            this.cbxRace.SelectedIndexChanged += new System.EventHandler(this.cbxRace_SelectedIndexChanged);
             // 
             // lblRace
             // 
-            this.lblRace.Location = new System.Drawing.Point(60, 129);
+            this.lblRace.Location = new System.Drawing.Point(60, 101);
             this.lblRace.Name = "lblRace";
             this.lblRace.Size = new System.Drawing.Size(44, 23);
             this.lblRace.TabIndex = 5;
@@ -125,14 +128,14 @@
             // cbxAlignment
             // 
             this.cbxAlignment.FormattingEnabled = true;
-            this.cbxAlignment.Location = new System.Drawing.Point(110, 179);
+            this.cbxAlignment.Location = new System.Drawing.Point(110, 141);
             this.cbxAlignment.Name = "cbxAlignment";
             this.cbxAlignment.Size = new System.Drawing.Size(121, 21);
             this.cbxAlignment.TabIndex = 8;
             // 
             // lblAlignment
             // 
-            this.lblAlignment.Location = new System.Drawing.Point(44, 182);
+            this.lblAlignment.Location = new System.Drawing.Point(44, 145);
             this.lblAlignment.Name = "lblAlignment";
             this.lblAlignment.Size = new System.Drawing.Size(60, 23);
             this.lblAlignment.TabIndex = 7;
@@ -140,7 +143,7 @@
             // 
             // lblGender
             // 
-            this.lblGender.Location = new System.Drawing.Point(60, 234);
+            this.lblGender.Location = new System.Drawing.Point(60, 188);
             this.lblGender.Name = "lblGender";
             this.lblGender.Size = new System.Drawing.Size(44, 23);
             this.lblGender.TabIndex = 10;
@@ -148,7 +151,7 @@
             // 
             // txtGender
             // 
-            this.txtGender.Location = new System.Drawing.Point(110, 231);
+            this.txtGender.Location = new System.Drawing.Point(110, 185);
             this.txtGender.Name = "txtGender";
             this.txtGender.Size = new System.Drawing.Size(121, 20);
             this.txtGender.TabIndex = 9;
@@ -355,7 +358,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(591, 379);
+            this.btnCancel.Location = new System.Drawing.Point(578, 379);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(134, 43);
             this.btnCancel.TabIndex = 33;
@@ -404,11 +407,51 @@
             this.rtbRaceDescription.TabIndex = 38;
             this.rtbRaceDescription.Text = "";
             // 
+            // cboLevel
+            // 
+            this.cboLevel.DisplayMember = "(";
+            this.cboLevel.FormattingEnabled = true;
+            this.cboLevel.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20"});
+            this.cboLevel.Location = new System.Drawing.Point(110, 228);
+            this.cboLevel.Name = "cboLevel";
+            this.cboLevel.Size = new System.Drawing.Size(121, 21);
+            this.cboLevel.TabIndex = 40;
+            // 
+            // lblLevel
+            // 
+            this.lblLevel.Location = new System.Drawing.Point(60, 231);
+            this.lblLevel.Name = "lblLevel";
+            this.lblLevel.Size = new System.Drawing.Size(60, 23);
+            this.lblLevel.TabIndex = 39;
+            this.lblLevel.Text = "Level";
+            // 
             // frmCharacterEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cboLevel);
+            this.Controls.Add(this.lblLevel);
             this.Controls.Add(this.rtbRaceDescription);
             this.Controls.Add(this.rtbClassDescription);
             this.Controls.Add(this.lblRaceDescription);
@@ -501,5 +544,7 @@
         private System.Windows.Forms.Label lblRaceDescription;
         private System.Windows.Forms.RichTextBox rtbClassDescription;
         private System.Windows.Forms.RichTextBox rtbRaceDescription;
+        private System.Windows.Forms.ComboBox cboLevel;
+        private System.Windows.Forms.Label lblLevel;
     }
 }

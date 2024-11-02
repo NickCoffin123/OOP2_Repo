@@ -47,6 +47,12 @@ namespace CharacterSheet
             }
         }
 
+        private void btnExitCharacter_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+
 
         #endregion
 
