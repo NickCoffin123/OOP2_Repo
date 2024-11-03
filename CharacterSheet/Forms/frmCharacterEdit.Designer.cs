@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txtName = new System.Windows.Forms.TextBox();
             this.lblName = new System.Windows.Forms.Label();
             this.lblClass = new System.Windows.Forms.Label();
@@ -68,6 +69,7 @@
             this.cboLevel = new System.Windows.Forms.ComboBox();
             this.lblLevel = new System.Windows.Forms.Label();
             this.cboGender = new System.Windows.Forms.ComboBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.nudStrength)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudDexterity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudConstitution)).BeginInit();
@@ -81,7 +83,8 @@
             this.txtName.Location = new System.Drawing.Point(110, 10);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(121, 20);
-            this.txtName.TabIndex = 0;
+            this.txtName.TabIndex = 1;
+            this.toolTip1.SetToolTip(this.txtName, "Enter name here");
             // 
             // lblName
             // 
@@ -105,7 +108,8 @@
             this.cbxClass.Location = new System.Drawing.Point(110, 53);
             this.cbxClass.Name = "cbxClass";
             this.cbxClass.Size = new System.Drawing.Size(121, 21);
-            this.cbxClass.TabIndex = 4;
+            this.cbxClass.TabIndex = 2;
+            this.toolTip1.SetToolTip(this.cbxClass, "Pick class from list");
             this.cbxClass.SelectedIndexChanged += new System.EventHandler(this.cbxClass_SelectedIndexChanged);
             // 
             // cbxRace
@@ -114,7 +118,8 @@
             this.cbxRace.Location = new System.Drawing.Point(110, 97);
             this.cbxRace.Name = "cbxRace";
             this.cbxRace.Size = new System.Drawing.Size(121, 21);
-            this.cbxRace.TabIndex = 6;
+            this.cbxRace.TabIndex = 3;
+            this.toolTip1.SetToolTip(this.cbxRace, "Pick race from list");
             this.cbxRace.SelectedIndexChanged += new System.EventHandler(this.cbxRace_SelectedIndexChanged);
             // 
             // lblRace
@@ -131,7 +136,8 @@
             this.cbxAlignment.Location = new System.Drawing.Point(110, 141);
             this.cbxAlignment.Name = "cbxAlignment";
             this.cbxAlignment.Size = new System.Drawing.Size(121, 21);
-            this.cbxAlignment.TabIndex = 8;
+            this.cbxAlignment.TabIndex = 4;
+            this.toolTip1.SetToolTip(this.cbxAlignment, "Pick alignment from list");
             // 
             // lblAlignment
             // 
@@ -162,7 +168,8 @@
             this.nudStrength.Location = new System.Drawing.Point(350, 51);
             this.nudStrength.Name = "nudStrength";
             this.nudStrength.Size = new System.Drawing.Size(41, 20);
-            this.nudStrength.TabIndex = 12;
+            this.nudStrength.TabIndex = 7;
+            this.toolTip1.SetToolTip(this.nudStrength, "Strength points");
             this.nudStrength.Value = new decimal(new int[] {
             8,
             0,
@@ -174,7 +181,8 @@
             this.nudDexterity.Location = new System.Drawing.Point(350, 119);
             this.nudDexterity.Name = "nudDexterity";
             this.nudDexterity.Size = new System.Drawing.Size(41, 20);
-            this.nudDexterity.TabIndex = 14;
+            this.nudDexterity.TabIndex = 8;
+            this.toolTip1.SetToolTip(this.nudDexterity, "Dexterity points");
             this.nudDexterity.Value = new decimal(new int[] {
             8,
             0,
@@ -194,7 +202,8 @@
             this.nudConstitution.Location = new System.Drawing.Point(350, 190);
             this.nudConstitution.Name = "nudConstitution";
             this.nudConstitution.Size = new System.Drawing.Size(41, 20);
-            this.nudConstitution.TabIndex = 16;
+            this.nudConstitution.TabIndex = 9;
+            this.toolTip1.SetToolTip(this.nudConstitution, "Constitution points");
             this.nudConstitution.Value = new decimal(new int[] {
             8,
             0,
@@ -214,7 +223,8 @@
             this.nudIntelligence.Location = new System.Drawing.Point(350, 264);
             this.nudIntelligence.Name = "nudIntelligence";
             this.nudIntelligence.Size = new System.Drawing.Size(41, 20);
-            this.nudIntelligence.TabIndex = 18;
+            this.nudIntelligence.TabIndex = 10;
+            this.toolTip1.SetToolTip(this.nudIntelligence, "Intelligence points");
             this.nudIntelligence.Value = new decimal(new int[] {
             8,
             0,
@@ -234,7 +244,8 @@
             this.nudWisdom.Location = new System.Drawing.Point(350, 338);
             this.nudWisdom.Name = "nudWisdom";
             this.nudWisdom.Size = new System.Drawing.Size(41, 20);
-            this.nudWisdom.TabIndex = 20;
+            this.nudWisdom.TabIndex = 11;
+            this.toolTip1.SetToolTip(this.nudWisdom, "Wisdom points");
             this.nudWisdom.Value = new decimal(new int[] {
             8,
             0,
@@ -254,7 +265,8 @@
             this.nudCharisma.Location = new System.Drawing.Point(350, 405);
             this.nudCharisma.Name = "nudCharisma";
             this.nudCharisma.Size = new System.Drawing.Size(41, 20);
-            this.nudCharisma.TabIndex = 22;
+            this.nudCharisma.TabIndex = 12;
+            this.toolTip1.SetToolTip(this.nudCharisma, "Charisma points");
             this.nudCharisma.Value = new decimal(new int[] {
             8,
             0,
@@ -283,8 +295,9 @@
             this.txtExperience.Name = "txtExperience";
             this.txtExperience.ReadOnly = true;
             this.txtExperience.Size = new System.Drawing.Size(121, 20);
-            this.txtExperience.TabIndex = 23;
+            this.txtExperience.TabIndex = 0;
             this.txtExperience.Text = "27";
+            this.toolTip1.SetToolTip(this.txtExperience, "Experience points");
             // 
             // lblArmourClass
             // 
@@ -299,8 +312,9 @@
             this.txtArmourClass.Location = new System.Drawing.Point(591, 83);
             this.txtArmourClass.Name = "txtArmourClass";
             this.txtArmourClass.Size = new System.Drawing.Size(121, 20);
-            this.txtArmourClass.TabIndex = 25;
+            this.txtArmourClass.TabIndex = 0;
             this.txtArmourClass.Text = "10";
+            this.toolTip1.SetToolTip(this.txtArmourClass, "Armour class");
             // 
             // lblSpeed
             // 
@@ -317,6 +331,7 @@
             this.txtSpeed.Size = new System.Drawing.Size(121, 20);
             this.txtSpeed.TabIndex = 0;
             this.txtSpeed.Text = "6";
+            this.toolTip1.SetToolTip(this.txtSpeed, "Speed");
             // 
             // lblHealth
             // 
@@ -331,8 +346,9 @@
             this.txtHealth.Location = new System.Drawing.Point(591, 182);
             this.txtHealth.Name = "txtHealth";
             this.txtHealth.Size = new System.Drawing.Size(121, 20);
-            this.txtHealth.TabIndex = 29;
+            this.txtHealth.TabIndex = 0;
             this.txtHealth.Text = "0";
+            this.toolTip1.SetToolTip(this.txtHealth, "Health points");
             // 
             // lblInitiative
             // 
@@ -347,16 +363,19 @@
             this.txtInitative.Location = new System.Drawing.Point(591, 234);
             this.txtInitative.Name = "txtInitative";
             this.txtInitative.Size = new System.Drawing.Size(121, 20);
-            this.txtInitative.TabIndex = 31;
+            this.txtInitative.TabIndex = 0;
             this.txtInitative.Text = "12";
+            this.toolTip1.SetToolTip(this.txtInitative, "Initiative");
             // 
             // btnCancel
             // 
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.Location = new System.Drawing.Point(578, 379);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(134, 43);
-            this.btnCancel.TabIndex = 33;
+            this.btnCancel.TabIndex = 14;
             this.btnCancel.Text = "&Cancel";
+            this.toolTip1.SetToolTip(this.btnCancel, "Cancel button");
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
@@ -365,8 +384,9 @@
             this.btnAccept.Location = new System.Drawing.Point(97, 379);
             this.btnAccept.Name = "btnAccept";
             this.btnAccept.Size = new System.Drawing.Size(134, 43);
-            this.btnAccept.TabIndex = 34;
+            this.btnAccept.TabIndex = 13;
             this.btnAccept.Text = "&Accept";
+            this.toolTip1.SetToolTip(this.btnAccept, "Accept button");
             this.btnAccept.UseVisualStyleBackColor = true;
             this.btnAccept.Click += new System.EventHandler(this.btnAccept_Click);
             // 
@@ -430,7 +450,8 @@
             this.cboLevel.Location = new System.Drawing.Point(110, 228);
             this.cboLevel.Name = "cboLevel";
             this.cboLevel.Size = new System.Drawing.Size(121, 21);
-            this.cboLevel.TabIndex = 40;
+            this.cboLevel.TabIndex = 6;
+            this.toolTip1.SetToolTip(this.cboLevel, "Pick level from list");
             // 
             // lblLevel
             // 
@@ -450,12 +471,15 @@
             this.cboGender.Location = new System.Drawing.Point(110, 187);
             this.cboGender.Name = "cboGender";
             this.cboGender.Size = new System.Drawing.Size(121, 21);
-            this.cboGender.TabIndex = 41;
+            this.cboGender.TabIndex = 5;
+            this.toolTip1.SetToolTip(this.cboGender, "Pick gender from list");
             // 
             // frmCharacterEdit
             // 
+            this.AcceptButton = this.btnAccept;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.cboGender);
             this.Controls.Add(this.cboLevel);
@@ -553,5 +577,6 @@
         private System.Windows.Forms.ComboBox cboLevel;
         private System.Windows.Forms.Label lblLevel;
         private System.Windows.Forms.ComboBox cboGender;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
