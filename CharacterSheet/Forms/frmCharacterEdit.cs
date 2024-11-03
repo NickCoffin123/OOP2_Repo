@@ -289,6 +289,7 @@ namespace CharacterSheet
                 if (selectedClass != null)
                 {
                     rtbClassDescription.Text = selectedClass.Description;
+                    txtHealth.Text = selectedClass.BaseHitPoints.ToString();
                 }
             }
         }
