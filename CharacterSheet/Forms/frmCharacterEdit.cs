@@ -22,8 +22,10 @@ namespace CharacterSheet
     public partial class frmCharacterEdit : Form
     {
         #region Global Variables
+        
         private int remainingPoints = 31;
         private Character characterToEdit;
+        
         #endregion
 
         #region Constructors
@@ -278,8 +280,11 @@ namespace CharacterSheet
             }
         }
 
-        #endregion
-
+        /// <summary>
+        /// A method to display the class description and the health based on class.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void cbxClass_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cbxClass.SelectedItem != null)
@@ -294,6 +299,11 @@ namespace CharacterSheet
             }
         }
 
+        /// <summary>
+        /// A method to display the race description.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void cbxRace_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cbxRace.SelectedItem != null)
@@ -306,5 +316,9 @@ namespace CharacterSheet
                 }
             }
         }
+
+        #endregion
+
+
     }
 }

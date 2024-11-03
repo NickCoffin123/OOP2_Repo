@@ -11,6 +11,9 @@ using System.Threading.Tasks;
 
 namespace CharacterSheet.Classes
 {
+    /// <summary>
+    /// Main method.
+    /// </summary>
     internal class Tools
     {
     }
