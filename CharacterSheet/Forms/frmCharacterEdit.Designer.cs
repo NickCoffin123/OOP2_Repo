@@ -106,7 +106,7 @@
             this.cbxClass.Name = "cbxClass";
             this.cbxClass.Size = new System.Drawing.Size(121, 21);
             this.cbxClass.TabIndex = 4;
-
+            this.cbxClass.SelectedIndexChanged += new System.EventHandler(this.cbxClass_SelectedIndexChanged);
             // 
             // cbxRace
             // 
@@ -115,7 +115,7 @@
             this.cbxRace.Name = "cbxRace";
             this.cbxRace.Size = new System.Drawing.Size(121, 21);
             this.cbxRace.TabIndex = 6;
-
+            this.cbxRace.SelectedIndexChanged += new System.EventHandler(this.cbxRace_SelectedIndexChanged);
             // 
             // lblRace
             // 
@@ -300,7 +300,7 @@
             this.txtArmourClass.Name = "txtArmourClass";
             this.txtArmourClass.Size = new System.Drawing.Size(121, 20);
             this.txtArmourClass.TabIndex = 25;
-            this.txtArmourClass.Text = "0";
+            this.txtArmourClass.Text = "10";
             // 
             // lblSpeed
             // 
@@ -316,7 +316,7 @@
             this.txtSpeed.Name = "txtSpeed";
             this.txtSpeed.Size = new System.Drawing.Size(121, 20);
             this.txtSpeed.TabIndex = 0;
-            this.txtSpeed.Text = "0";
+            this.txtSpeed.Text = "6";
             // 
             // lblHealth
             // 
@@ -348,7 +348,7 @@
             this.txtInitative.Name = "txtInitative";
             this.txtInitative.Size = new System.Drawing.Size(121, 20);
             this.txtInitative.TabIndex = 31;
-            this.txtInitative.Text = "0";
+            this.txtInitative.Text = "12";
             // 
             // btnCancel
             // 

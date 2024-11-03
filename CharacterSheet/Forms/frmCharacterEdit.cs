@@ -22,7 +22,7 @@ namespace CharacterSheet
     public partial class frmCharacterEdit : Form
     {
         #region Global Variables
-        private int remainingPoints = 27;
+        private int remainingPoints = 31;
         private Character characterToEdit;
         #endregion
 
@@ -34,6 +34,7 @@ namespace CharacterSheet
         {
             InitializeComponent();
             LoadfrmCharacterEdit();
+
         }
 
         /// <summary>
@@ -78,7 +79,9 @@ namespace CharacterSheet
             PopulateClassComboBox();
             PopulateRaceComboBox();
             PopulateAlignmentComboBox();
+            SetInitialValues();
             NumericUpDownEvents();
+            UpdateRemainingPoints();
         }
 
         /// <summary>
@@ -163,7 +166,20 @@ namespace CharacterSheet
         #endregion
 
         #region Custom UI Functions and Methods
-        
+
+        /// <summary>
+        /// Sets initial default values for numeric controls to start at 8.
+        /// </summary>
+        private void SetInitialValues()
+        {
+            nudStrength.Value = 8;
+            nudDexterity.Value = 8;
+            nudConstitution.Value = 8;
+            nudIntelligence.Value = 8;
+            nudWisdom.Value = 8;
+            nudCharisma.Value = 8;
+        }
+
         /// <summary>
         /// Method for taking in the nud changed and updating the remaining points.
         /// </summary>
@@ -263,5 +279,31 @@ namespace CharacterSheet
         }
 
         #endregion
+
+        private void cbxClass_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbxClass.SelectedItem != null)
+            {
+                string selectedClassName = cbxClass.SelectedItem.ToString();
+                Class selectedClass = Class.GetClasses().FirstOrDefault(cls => cls.Name == selectedClassName);
+                if (selectedClass != null)
+                {
+                    rtbClassDescription.Text = selectedClass.Description;
+                }
+            }
+        }
+
+        private void cbxRace_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbxRace.SelectedItem != null)
+            {
+                string selectedRaceName = cbxRace.SelectedItem.ToString();
+                Race selectedRace = Race.GetRaces().FirstOrDefault(rc => rc.Name == selectedRaceName);
+                if (selectedRace != null)
+                {
+                    rtbRaceDescription.Text = selectedRace.Description;
+                }
+            }
+        }
     }
 }
