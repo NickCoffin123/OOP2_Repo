@@ -3,12 +3,14 @@
  * October 31, 2024.
  * Splash page form for project.
  */
+using CharacterSheet.Classes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -26,6 +28,7 @@ namespace CharacterSheet
         public frmSplashPage()
         {
             InitializeComponent();
+            PlaySound();
         }
 
         #region Control Event Handlers
@@ -48,9 +51,18 @@ namespace CharacterSheet
         private void btnEnter_Click(object sender, EventArgs e)
         {
             frmMain frm = new frmMain();
-            this.Hide();  
-            frm.ShowDialog();  
-            this.Show();   
+            this.Hide();
+            frm.ShowDialog();
+            this.Show();
+        }
+        #endregion
+
+        #region Music player
+
+        public void PlaySound()
+        {
+            SoundPlayer player = new SoundPlayer(Properties.Resources._04_The_Moonlighter);
+            player.Play();
         }
 
         #endregion

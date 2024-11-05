@@ -295,7 +295,7 @@
             this.txtExperience.Name = "txtExperience";
             this.txtExperience.ReadOnly = true;
             this.txtExperience.Size = new System.Drawing.Size(121, 20);
-            this.txtExperience.TabIndex = 0;
+            this.txtExperience.TabIndex = 17;
             this.txtExperience.Text = "27";
             this.toolTip1.SetToolTip(this.txtExperience, "Experience points");
             // 
@@ -312,7 +312,7 @@
             this.txtArmourClass.Location = new System.Drawing.Point(591, 83);
             this.txtArmourClass.Name = "txtArmourClass";
             this.txtArmourClass.Size = new System.Drawing.Size(121, 20);
-            this.txtArmourClass.TabIndex = 0;
+            this.txtArmourClass.TabIndex = 13;
             this.txtArmourClass.Text = "10";
             this.toolTip1.SetToolTip(this.txtArmourClass, "Armour class");
             // 
@@ -329,7 +329,7 @@
             this.txtSpeed.Location = new System.Drawing.Point(591, 129);
             this.txtSpeed.Name = "txtSpeed";
             this.txtSpeed.Size = new System.Drawing.Size(121, 20);
-            this.txtSpeed.TabIndex = 0;
+            this.txtSpeed.TabIndex = 14;
             this.txtSpeed.Text = "6";
             this.toolTip1.SetToolTip(this.txtSpeed, "Speed");
             // 
@@ -346,7 +346,7 @@
             this.txtHealth.Location = new System.Drawing.Point(591, 182);
             this.txtHealth.Name = "txtHealth";
             this.txtHealth.Size = new System.Drawing.Size(121, 20);
-            this.txtHealth.TabIndex = 0;
+            this.txtHealth.TabIndex = 15;
             this.txtHealth.Text = "0";
             this.toolTip1.SetToolTip(this.txtHealth, "Health points");
             // 
@@ -363,7 +363,7 @@
             this.txtInitative.Location = new System.Drawing.Point(591, 234);
             this.txtInitative.Name = "txtInitative";
             this.txtInitative.Size = new System.Drawing.Size(121, 20);
-            this.txtInitative.TabIndex = 0;
+            this.txtInitative.TabIndex = 16;
             this.txtInitative.Text = "12";
             this.toolTip1.SetToolTip(this.txtInitative, "Initiative");
             // 
