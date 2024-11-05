@@ -25,7 +25,7 @@ namespace CharacterSheet.Classes
 
         #region Properties
 
-        public string Name { get; private set; }
+        public string Name { get; set; }
         public Class CharacterClass { get; private set; }
         public Race CharacterRace { get; private set; }
         public Constants.Alignment CharacterAlignment { get; set; }

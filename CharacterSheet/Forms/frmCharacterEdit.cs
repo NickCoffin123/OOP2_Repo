@@ -102,55 +102,74 @@ namespace CharacterSheet
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void btnAccept_Click(object sender, EventArgs e)
+{
+    // Check if txtName is not null or empty
+    if (!string.IsNullOrEmpty(txtName.Text))
+    {
+        string name = txtName.Text;
+
+        // Retrieve gender
+        string gender = cboGender.SelectedItem?.ToString();
+
+        // Get selected class and race
+        Class selectedClass = Class.GetClasses().FirstOrDefault(c => c.Name == cbxClass.SelectedItem?.ToString());
+        Race selectedRace = Race.GetRaces().FirstOrDefault(r => r.Name == cbxRace.SelectedItem?.ToString());
+
+        // Parse alignment safely
+        Constants.Alignment alignment = (Constants.Alignment)Enum.Parse(typeof(Constants.Alignment), cbxAlignment.SelectedItem?.ToString());
+
+        // Retrieve character stats
+        int strength = (int)nudStrength.Value;
+        int dexterity = (int)nudDexterity.Value;
+        int constitution = (int)nudConstitution.Value;
+        int intelligence = (int)nudIntelligence.Value;
+        int wisdom = (int)nudWisdom.Value;
+        int charisma = (int)nudCharisma.Value;
+
+        // Check if editing an existing character
+        if (characterToEdit != null)
         {
-            string name = txtName.Text;
-            string gender = cboGender.SelectedItem?.ToString();
-
-            Class selectedClass = Class.GetClasses().FirstOrDefault(c => c.Name == cbxClass.SelectedItem.ToString());
-            Race selectedRace = Race.GetRaces().FirstOrDefault(r => r.Name == cbxRace.SelectedItem.ToString());
-            Constants.Alignment alignment = (Constants.Alignment)Enum.Parse(typeof(Constants.Alignment), cbxAlignment.SelectedItem.ToString());
-
-            int strength = (int)nudStrength.Value;
-            int dexterity = (int)nudDexterity.Value;
-            int constitution = (int)nudConstitution.Value;
-            int intelligence = (int)nudIntelligence.Value;
-            int wisdom = (int)nudWisdom.Value;
-            int charisma = (int)nudCharisma.Value;
-
-            if (characterToEdit != null)
-            {
-                characterToEdit.Gender = gender;
-                characterToEdit.CharacterAlignment = alignment;
-                characterToEdit.Strength = strength;
-                characterToEdit.Dexterity = dexterity;
-                characterToEdit.Constitution = constitution;
-                characterToEdit.Intelligence = intelligence;
-                characterToEdit.Wisdom = wisdom;
-                characterToEdit.Charisma = charisma;
-            }
-            else
-            {
-                Character newCharacter = new Character(
-                    name,
-                    selectedClass,
-                    selectedRace,
-                    alignment,
-                    gender,
-                    level: 1,
-                    strength,
-                    dexterity,
-                    constitution,
-                    intelligence,
-                    wisdom,
-                    charisma,
-                    armourClass: 10,
-                    hitPoints: selectedClass.BaseHitPoints
-                );
-                Character.characters.Add(newCharacter);
-            }
-
-            this.Close();
+            characterToEdit.Name = name;
+            characterToEdit.Gender = gender;
+            characterToEdit.CharacterAlignment = alignment;
+            characterToEdit.Strength = strength;
+            characterToEdit.Dexterity = dexterity;
+            characterToEdit.Constitution = constitution;
+            characterToEdit.Intelligence = intelligence;
+            characterToEdit.Wisdom = wisdom;
+            characterToEdit.Charisma = charisma;
         }
+        else
+        {
+            // Create a new character and add it to the list
+            Character newCharacter = new Character(
+                name,
+                selectedClass,
+                selectedRace,
+                alignment,
+                gender,
+                level: 1,
+                strength,
+                dexterity,
+                constitution,
+                intelligence,
+                wisdom,
+                charisma,
+                armourClass: 10,
+                hitPoints: selectedClass?.BaseHitPoints ?? 0
+            );
+            Character.characters.Add(newCharacter);
+        }
+
+        // Close the form after saving
+        this.Close();
+    }
+    else
+    {
+        MessageBox.Show("Name is required.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+    }
+}
+
 
         /// <summary>
         /// Event for changing the nud values
