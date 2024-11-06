@@ -109,14 +109,10 @@ namespace CharacterSheet
 
         string gender = cboGender.SelectedItem?.ToString();
 
-        // Get selected class and race
         Class selectedClass = Class.GetClasses().FirstOrDefault(c => c.Name == cbxClass.SelectedItem?.ToString());
         Race selectedRace = Race.GetRaces().FirstOrDefault(r => r.Name == cbxRace.SelectedItem?.ToString());
-
-        // Parse alignment safely
         Constants.Alignment alignment = (Constants.Alignment)Enum.Parse(typeof(Constants.Alignment), cbxAlignment.SelectedItem?.ToString());
 
-        // Retrieve character stats
         int strength = (int)nudStrength.Value;
         int dexterity = (int)nudDexterity.Value;
         int constitution = (int)nudConstitution.Value;
@@ -124,7 +120,6 @@ namespace CharacterSheet
         int wisdom = (int)nudWisdom.Value;
         int charisma = (int)nudCharisma.Value;
 
-        // Check if editing an existing character
         if (characterToEdit != null)
         {
             characterToEdit.Name = name;
@@ -139,7 +134,6 @@ namespace CharacterSheet
         }
         else
         {
-            // Create a new character and add it to the list
             Character newCharacter = new Character(
                 name,
                 selectedClass,
@@ -159,7 +153,6 @@ namespace CharacterSheet
             Character.characters.Add(newCharacter);
         }
 
-        // Close the form after saving
         this.Close();
     }
     else
