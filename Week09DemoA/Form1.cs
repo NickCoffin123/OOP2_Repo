@@ -21,5 +21,52 @@ namespace Week09DemoA
         {
             cbxOperator.SelectedIndex = 0;
         }
+
+        private void btnEqu_Click(object sender, EventArgs e)
+        {
+            double answer = 0;
+            bool valid = true;
+
+            switch (cbxOperator.SelectedItem.ToString())
+            {
+                case "+":
+                    answer = MyMath.Add((double)nud1.Value, (double)nud2.Value);
+                    break;
+                case "-":
+                    answer = MyMath.Subtract((double)nud1.Value, (double)nud2.Value);
+                    break;
+                case "*":
+                    answer = MyMath.Multiply((double)nud1.Value, (double)nud2.Value);
+                    break;
+                case "/":
+                    try
+                    {
+                        answer = MyMath.Divide((double)nud1.Value, (double)nud2.Value);
+                    }
+                    catch (DivideByZeroException ex)
+                    {
+                        lblMessage.Text = ex.Message;
+                        valid = false;
+                    }
+                    break;
+                case "x^y":
+                    answer = MyMath.PowPow((double)nud1.Value, (double)nud2.Value);
+                    break;
+                case "sqrt":
+                    try
+                    {
+                        answer = MyMath.Squrtle((double)nud1.Value);
+                    }
+                    catch (ArithmeticException ex)
+                    {
+                        lblMessage.Text = ex.Message;
+                        valid = false;
+                    }
+                    break;
+               
+            }
+            if (valid) lblAnswer.Text = answer.ToString();
+            else lblAnswer.Text = "Error";
+        }
     }
 }

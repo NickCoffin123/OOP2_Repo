@@ -1,0 +1,10 @@
+C:\OOP-Repo\OOP2_Repo\Week09DemoB\bin\Debug\Week09DemoB.exe.config
+C:\OOP-Repo\OOP2_Repo\Week09DemoB\bin\Debug\Week09DemoB.exe
+C:\OOP-Repo\OOP2_Repo\Week09DemoB\bin\Debug\Week09DemoB.pdb
+C:\OOP-Repo\OOP2_Repo\Week09DemoB\obj\Debug\Week09DemoB.csproj.AssemblyReference.cache
+C:\OOP-Repo\OOP2_Repo\Week09DemoB\obj\Debug\Week09DemoB.Form1.resources
+C:\OOP-Repo\OOP2_Repo\Week09DemoB\obj\Debug\Week09DemoB.Properties.Resources.resources
+C:\OOP-Repo\OOP2_Repo\Week09DemoB\obj\Debug\Week09DemoB.csproj.GenerateResource.cache
+C:\OOP-Repo\OOP2_Repo\Week09DemoB\obj\Debug\Week09DemoB.csproj.CoreCompileInputs.cache
+C:\OOP-Repo\OOP2_Repo\Week09DemoB\obj\Debug\Week09DemoB.exe
+C:\OOP-Repo\OOP2_Repo\Week09DemoB\obj\Debug\Week09DemoB.pdb

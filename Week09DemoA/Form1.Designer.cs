@@ -124,6 +124,7 @@
             this.btnEqu.TabIndex = 5;
             this.btnEqu.Text = "=";
             this.btnEqu.UseVisualStyleBackColor = true;
+            this.btnEqu.Click += new System.EventHandler(this.btnEqu_Click);
             // 
             // Form1
             // 

@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F67CA348-FAEE-402B-803C-56629A7D68B4}</ProjectGuid>
+    <ProjectGuid>{75171FEF-04B7-4C5B-9517-6BACCD2AE8DE}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Week09DemoA</RootNamespace>
-    <AssemblyName>Week09DemoA</AssemblyName>
+    <RootNamespace>Week09DemoB</RootNamespace>
+    <AssemblyName>Week09DemoB</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -52,7 +52,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="MyMath.cs" />
+    <Compile Include="MyFiles.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
