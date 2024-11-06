@@ -334,8 +334,8 @@ namespace CharacterSheet
             }
         }
 
-        #endregion
 
+        #endregion
 
     }
 }
