@@ -103,12 +103,10 @@ namespace CharacterSheet
         /// <param name="e"></param>
         private void btnAccept_Click(object sender, EventArgs e)
 {
-    // Check if txtName is not null or empty
     if (!string.IsNullOrEmpty(txtName.Text))
     {
         string name = txtName.Text;
 
-        // Retrieve gender
         string gender = cboGender.SelectedItem?.ToString();
 
         // Get selected class and race
