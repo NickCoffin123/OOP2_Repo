@@ -22,10 +22,10 @@ namespace CharacterSheet
     public partial class frmCharacterEdit : Form
     {
         #region Global Variables
-        
-        private int remainingPoints = 31;
+
+        private int remainingPoints = 27;
         private Character characterToEdit;
-        
+
         #endregion
 
         #region Constructors
@@ -83,7 +83,7 @@ namespace CharacterSheet
             PopulateAlignmentComboBox();
             SetInitialValues();
             NumericUpDownEvents();
-            UpdateRemainingPoints();
+            //UpdateRemainingPoints();
         }
 
         /// <summary>
@@ -102,64 +102,82 @@ namespace CharacterSheet
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void btnAccept_Click(object sender, EventArgs e)
-{
-    if (!string.IsNullOrEmpty(txtName.Text))
-    {
-        string name = txtName.Text;
-
-        string gender = cboGender.SelectedItem?.ToString();
-
-        Class selectedClass = Class.GetClasses().FirstOrDefault(c => c.Name == cbxClass.SelectedItem?.ToString());
-        Race selectedRace = Race.GetRaces().FirstOrDefault(r => r.Name == cbxRace.SelectedItem?.ToString());
-        Constants.Alignment alignment = (Constants.Alignment)Enum.Parse(typeof(Constants.Alignment), cbxAlignment.SelectedItem?.ToString());
-
-        int strength = (int)nudStrength.Value;
-        int dexterity = (int)nudDexterity.Value;
-        int constitution = (int)nudConstitution.Value;
-        int intelligence = (int)nudIntelligence.Value;
-        int wisdom = (int)nudWisdom.Value;
-        int charisma = (int)nudCharisma.Value;
-
-        if (characterToEdit != null)
         {
-            characterToEdit.Name = name;
-            characterToEdit.Gender = gender;
-            characterToEdit.CharacterAlignment = alignment;
-            characterToEdit.Strength = strength;
-            characterToEdit.Dexterity = dexterity;
-            characterToEdit.Constitution = constitution;
-            characterToEdit.Intelligence = intelligence;
-            characterToEdit.Wisdom = wisdom;
-            characterToEdit.Charisma = charisma;
-        }
-        else
-        {
-            Character newCharacter = new Character(
-                name,
-                selectedClass,
-                selectedRace,
-                alignment,
-                gender,
-                level: 1,
-                strength,
-                dexterity,
-                constitution,
-                intelligence,
-                wisdom,
-                charisma,
-                armourClass: 10,
-                hitPoints: selectedClass?.BaseHitPoints ?? 0
-            );
-            Character.characters.Add(newCharacter);
+
+            if (string.IsNullOrEmpty(txtName.Text))
+            {
+                MessageBox.Show("Name is required.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (cboGender.SelectedItem == null)
+            {
+                MessageBox.Show("Please select a gender.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (cbxClass.SelectedItem == null)
+            {
+                MessageBox.Show("Please select a class.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (cbxRace.SelectedItem == null)
+            {
+                MessageBox.Show("Please select a race.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            string name = txtName.Text;
+            string gender = cboGender.SelectedItem?.ToString();
+
+            Class selectedClass = Class.GetClasses().FirstOrDefault(c => c.Name == cbxClass.SelectedItem?.ToString());
+            Race selectedRace = Race.GetRaces().FirstOrDefault(r => r.Name == cbxRace.SelectedItem?.ToString());
+            Constants.Alignment alignment = (Constants.Alignment)Enum.Parse(typeof(Constants.Alignment), cbxAlignment.SelectedItem?.ToString());
+
+            int strength = (int)nudStrength.Value;
+            int dexterity = (int)nudDexterity.Value;
+            int constitution = (int)nudConstitution.Value;
+            int intelligence = (int)nudIntelligence.Value;
+            int wisdom = (int)nudWisdom.Value;
+            int charisma = (int)nudCharisma.Value;
+
+            if (characterToEdit != null)
+            {
+                characterToEdit.Name = name;
+                characterToEdit.Gender = gender;
+                characterToEdit.CharacterAlignment = alignment;
+                characterToEdit.Strength = strength;
+                characterToEdit.Dexterity = dexterity;
+                characterToEdit.Constitution = constitution;
+                characterToEdit.Intelligence = intelligence;
+                characterToEdit.Wisdom = wisdom;
+                characterToEdit.Charisma = charisma;
+            }
+            else
+            {
+                Character newCharacter = new Character(
+                    name,
+                    selectedClass,
+                    selectedRace,
+                    alignment,
+                    gender,
+                    level: 1,
+                    strength,
+                    dexterity,
+                    constitution,
+                    intelligence,
+                    wisdom,
+                    charisma,
+                    armourClass: 10,
+                    hitPoints: selectedClass?.BaseHitPoints ?? 0
+                );
+                Character.characters.Add(newCharacter);
+            }
+
+            this.Close();
         }
 
-        this.Close();
-    }
-    else
-    {
-        MessageBox.Show("Name is required.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-    }
-}
 
 
         /// <summary>
