@@ -82,15 +82,30 @@
             this.lblSound = new System.Windows.Forms.Label();
             this.lblSoundDescription = new System.Windows.Forms.Label();
             this.lblMusicDescription = new System.Windows.Forms.Label();
+            this.nudSound = new System.Windows.Forms.NumericUpDown();
+            this.nudMusic = new System.Windows.Forms.NumericUpDown();
+            this.lblCameraPerspective = new System.Windows.Forms.Label();
+            this.lblShowCoordinates = new System.Windows.Forms.Label();
+            this.lblHUDTransparency = new System.Windows.Forms.Label();
+            this.lblHudTransparencyDescription = new System.Windows.Forms.Label();
+            this.lblShowCoordinatesDescription = new System.Windows.Forms.Label();
+            this.lblCameraPerspectiveDescription = new System.Windows.Forms.Label();
+            this.nudHUDTransparency = new System.Windows.Forms.NumericUpDown();
+            this.cboShowCoordinates = new System.Windows.Forms.ComboBox();
+            this.cboCameraPerspective = new System.Windows.Forms.ComboBox();
             this.tabSettings.SuspendLayout();
             this.tabMovement.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudControler)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMouse)).BeginInit();
             this.tabVideo.SuspendLayout();
             this.tabAudio.SuspendLayout();
+            this.tabInterface.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudBrightness)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudFieldofView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudRenderDistance)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSound)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMusic)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudHUDTransparency)).BeginInit();
             this.SuspendLayout();
             // 
             // lblHeader
@@ -171,7 +186,7 @@
             this.nudControler.Size = new System.Drawing.Size(120, 20);
             this.nudControler.TabIndex = 14;
             this.nudControler.Value = new decimal(new int[] {
-            30,
+            50,
             0,
             0,
             0});
@@ -193,7 +208,7 @@
             this.nudMouse.Size = new System.Drawing.Size(120, 20);
             this.nudMouse.TabIndex = 13;
             this.nudMouse.Value = new decimal(new int[] {
-            30,
+            50,
             0,
             0,
             0});
@@ -460,6 +475,8 @@
             // tabAudio
             // 
             this.tabAudio.BackgroundImage = global::ReadWriteSettings.Properties.Resources.minecraftbackground;
+            this.tabAudio.Controls.Add(this.nudMusic);
+            this.tabAudio.Controls.Add(this.nudSound);
             this.tabAudio.Controls.Add(this.lblSoundDescription);
             this.tabAudio.Controls.Add(this.lblMusicDescription);
             this.tabAudio.Controls.Add(this.lblSound);
@@ -475,6 +492,15 @@
             // tabInterface
             // 
             this.tabInterface.BackgroundImage = global::ReadWriteSettings.Properties.Resources.minecraftbackground;
+            this.tabInterface.Controls.Add(this.cboCameraPerspective);
+            this.tabInterface.Controls.Add(this.cboShowCoordinates);
+            this.tabInterface.Controls.Add(this.nudHUDTransparency);
+            this.tabInterface.Controls.Add(this.lblHudTransparencyDescription);
+            this.tabInterface.Controls.Add(this.lblShowCoordinatesDescription);
+            this.tabInterface.Controls.Add(this.lblCameraPerspectiveDescription);
+            this.tabInterface.Controls.Add(this.lblHUDTransparency);
+            this.tabInterface.Controls.Add(this.lblShowCoordinates);
+            this.tabInterface.Controls.Add(this.lblCameraPerspective);
             this.tabInterface.Location = new System.Drawing.Point(4, 22);
             this.tabInterface.Name = "tabInterface";
             this.tabInterface.Padding = new System.Windows.Forms.Padding(3);
@@ -775,6 +801,138 @@
             this.lblMusicDescription.TabIndex = 14;
             this.lblMusicDescription.Text = "Sets the volume of the music";
             // 
+            // nudSound
+            // 
+            this.nudSound.Location = new System.Drawing.Point(615, 151);
+            this.nudSound.Name = "nudSound";
+            this.nudSound.Size = new System.Drawing.Size(120, 20);
+            this.nudSound.TabIndex = 29;
+            this.nudSound.Value = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            // 
+            // nudMusic
+            // 
+            this.nudMusic.Location = new System.Drawing.Point(615, 88);
+            this.nudMusic.Name = "nudMusic";
+            this.nudMusic.Size = new System.Drawing.Size(120, 20);
+            this.nudMusic.TabIndex = 30;
+            this.nudMusic.Value = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            // 
+            // lblCameraPerspective
+            // 
+            this.lblCameraPerspective.AutoSize = true;
+            this.lblCameraPerspective.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCameraPerspective.ForeColor = System.Drawing.Color.White;
+            this.lblCameraPerspective.Location = new System.Drawing.Point(37, 195);
+            this.lblCameraPerspective.Name = "lblCameraPerspective";
+            this.lblCameraPerspective.Size = new System.Drawing.Size(151, 20);
+            this.lblCameraPerspective.TabIndex = 13;
+            this.lblCameraPerspective.Text = "Camera Perspective";
+            // 
+            // lblShowCoordinates
+            // 
+            this.lblShowCoordinates.AutoSize = true;
+            this.lblShowCoordinates.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblShowCoordinates.ForeColor = System.Drawing.Color.White;
+            this.lblShowCoordinates.Location = new System.Drawing.Point(37, 123);
+            this.lblShowCoordinates.Name = "lblShowCoordinates";
+            this.lblShowCoordinates.Size = new System.Drawing.Size(139, 20);
+            this.lblShowCoordinates.TabIndex = 14;
+            this.lblShowCoordinates.Text = "Show Coordinates";
+            // 
+            // lblHUDTransparency
+            // 
+            this.lblHUDTransparency.AutoSize = true;
+            this.lblHUDTransparency.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHUDTransparency.ForeColor = System.Drawing.Color.White;
+            this.lblHUDTransparency.Location = new System.Drawing.Point(37, 51);
+            this.lblHUDTransparency.Name = "lblHUDTransparency";
+            this.lblHUDTransparency.Size = new System.Drawing.Size(145, 20);
+            this.lblHUDTransparency.TabIndex = 15;
+            this.lblHUDTransparency.Text = "HUD Transparency";
+            // 
+            // lblHudTransparencyDescription
+            // 
+            this.lblHudTransparencyDescription.AutoSize = true;
+            this.lblHudTransparencyDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHudTransparencyDescription.ForeColor = System.Drawing.Color.White;
+            this.lblHudTransparencyDescription.Location = new System.Drawing.Point(217, 51);
+            this.lblHudTransparencyDescription.Name = "lblHudTransparencyDescription";
+            this.lblHudTransparencyDescription.Size = new System.Drawing.Size(331, 20);
+            this.lblHudTransparencyDescription.TabIndex = 18;
+            this.lblHudTransparencyDescription.Text = "Set the transparency value for the hud display";
+            // 
+            // lblShowCoordinatesDescription
+            // 
+            this.lblShowCoordinatesDescription.AutoSize = true;
+            this.lblShowCoordinatesDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblShowCoordinatesDescription.ForeColor = System.Drawing.Color.White;
+            this.lblShowCoordinatesDescription.Location = new System.Drawing.Point(217, 123);
+            this.lblShowCoordinatesDescription.Name = "lblShowCoordinatesDescription";
+            this.lblShowCoordinatesDescription.Size = new System.Drawing.Size(396, 20);
+            this.lblShowCoordinatesDescription.TabIndex = 17;
+            this.lblShowCoordinatesDescription.Text = "Displays the current location coordinates on the screen";
+            // 
+            // lblCameraPerspectiveDescription
+            // 
+            this.lblCameraPerspectiveDescription.AutoSize = true;
+            this.lblCameraPerspectiveDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCameraPerspectiveDescription.ForeColor = System.Drawing.Color.White;
+            this.lblCameraPerspectiveDescription.Location = new System.Drawing.Point(217, 195);
+            this.lblCameraPerspectiveDescription.Name = "lblCameraPerspectiveDescription";
+            this.lblCameraPerspectiveDescription.Size = new System.Drawing.Size(381, 20);
+            this.lblCameraPerspectiveDescription.TabIndex = 16;
+            this.lblCameraPerspectiveDescription.Text = "Sets the perspective the camera is given in the game";
+            // 
+            // nudHUDTransparency
+            // 
+            this.nudHUDTransparency.Location = new System.Drawing.Point(657, 54);
+            this.nudHUDTransparency.Minimum = new decimal(new int[] {
+            25,
+            0,
+            0,
+            0});
+            this.nudHUDTransparency.Name = "nudHUDTransparency";
+            this.nudHUDTransparency.Size = new System.Drawing.Size(120, 20);
+            this.nudHUDTransparency.TabIndex = 31;
+            this.nudHUDTransparency.Value = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            // 
+            // cboShowCoordinates
+            // 
+            this.cboShowCoordinates.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboShowCoordinates.FormattingEnabled = true;
+            this.cboShowCoordinates.Items.AddRange(new object[] {
+            "On",
+            "Off"});
+            this.cboShowCoordinates.Location = new System.Drawing.Point(656, 122);
+            this.cboShowCoordinates.Name = "cboShowCoordinates";
+            this.cboShowCoordinates.Size = new System.Drawing.Size(121, 21);
+            this.cboShowCoordinates.TabIndex = 36;
+            // 
+            // cboCameraPerspective
+            // 
+            this.cboCameraPerspective.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboCameraPerspective.FormattingEnabled = true;
+            this.cboCameraPerspective.Items.AddRange(new object[] {
+            "First-person",
+            "Third-person front,",
+            "Third-person back"});
+            this.cboCameraPerspective.Location = new System.Drawing.Point(656, 197);
+            this.cboCameraPerspective.Name = "cboCameraPerspective";
+            this.cboCameraPerspective.Size = new System.Drawing.Size(121, 21);
+            this.cboCameraPerspective.TabIndex = 37;
+            // 
             // frmSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -801,9 +959,14 @@
             this.tabVideo.PerformLayout();
             this.tabAudio.ResumeLayout(false);
             this.tabAudio.PerformLayout();
+            this.tabInterface.ResumeLayout(false);
+            this.tabInterface.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudBrightness)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudFieldofView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudRenderDistance)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSound)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMusic)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudHUDTransparency)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -865,5 +1028,16 @@
         private System.Windows.Forms.Label lblMusicDescription;
         private System.Windows.Forms.Label lblSound;
         private System.Windows.Forms.Label lblMusic;
+        private System.Windows.Forms.NumericUpDown nudMusic;
+        private System.Windows.Forms.NumericUpDown nudSound;
+        private System.Windows.Forms.Label lblHUDTransparency;
+        private System.Windows.Forms.Label lblShowCoordinates;
+        private System.Windows.Forms.Label lblCameraPerspective;
+        private System.Windows.Forms.Label lblHudTransparencyDescription;
+        private System.Windows.Forms.Label lblShowCoordinatesDescription;
+        private System.Windows.Forms.Label lblCameraPerspectiveDescription;
+        private System.Windows.Forms.ComboBox cboCameraPerspective;
+        private System.Windows.Forms.ComboBox cboShowCoordinates;
+        private System.Windows.Forms.NumericUpDown nudHUDTransparency;
     }
 }

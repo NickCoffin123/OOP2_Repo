@@ -38,10 +38,9 @@ namespace ReadWriteSettings
             cboUpscaling.SelectedIndex = 1;
             #endregion
 
-            #region Audio
-            #endregion
-
             #region Interface
+            cboShowCoordinates.SelectedIndex = 1;
+            cboCameraPerspective.SelectedIndex = 0;
             #endregion
         }
 
