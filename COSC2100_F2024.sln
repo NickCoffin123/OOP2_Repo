@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Week09DemoA", "Week09DemoA\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Week09DemoB", "Week09DemoB\Week09DemoB.csproj", "{75171FEF-04B7-4C5B-9517-6BACCD2AE8DE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReadWriteSettings", "ReadWriteSettings\ReadWriteSettings.csproj", "{CE458E05-32E7-4B1B-A96A-C711AB5B4519}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -99,6 +101,10 @@ Global
 		{75171FEF-04B7-4C5B-9517-6BACCD2AE8DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{75171FEF-04B7-4C5B-9517-6BACCD2AE8DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{75171FEF-04B7-4C5B-9517-6BACCD2AE8DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE458E05-32E7-4B1B-A96A-C711AB5B4519}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE458E05-32E7-4B1B-A96A-C711AB5B4519}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE458E05-32E7-4B1B-A96A-C711AB5B4519}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE458E05-32E7-4B1B-A96A-C711AB5B4519}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

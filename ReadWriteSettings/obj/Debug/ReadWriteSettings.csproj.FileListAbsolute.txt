@@ -1,0 +1,11 @@
+C:\OOP-Repo\OOP2_Repo\ReadWriteSettings\bin\Debug\ReadWriteSettings.exe.config
+C:\OOP-Repo\OOP2_Repo\ReadWriteSettings\bin\Debug\ReadWriteSettings.exe
+C:\OOP-Repo\OOP2_Repo\ReadWriteSettings\bin\Debug\ReadWriteSettings.pdb
+C:\OOP-Repo\OOP2_Repo\ReadWriteSettings\obj\Debug\ReadWriteSettings.csproj.AssemblyReference.cache
+C:\OOP-Repo\OOP2_Repo\ReadWriteSettings\obj\Debug\ReadWriteSettings.frmSplashPage.resources
+C:\OOP-Repo\OOP2_Repo\ReadWriteSettings\obj\Debug\ReadWriteSettings.Properties.Resources.resources
+C:\OOP-Repo\OOP2_Repo\ReadWriteSettings\obj\Debug\ReadWriteSettings.frmSettings.resources
+C:\OOP-Repo\OOP2_Repo\ReadWriteSettings\obj\Debug\ReadWriteSettings.csproj.GenerateResource.cache
+C:\OOP-Repo\OOP2_Repo\ReadWriteSettings\obj\Debug\ReadWriteSettings.csproj.CoreCompileInputs.cache
+C:\OOP-Repo\OOP2_Repo\ReadWriteSettings\obj\Debug\ReadWriteSettings.exe
+C:\OOP-Repo\OOP2_Repo\ReadWriteSettings\obj\Debug\ReadWriteSettings.pdb
