@@ -55,7 +55,7 @@ namespace Week09DemoB
             {
                 MessageBox.Show(ex.Message, "Error writing file");
             }
-            
+
         }
 
         private void btnsaveas_Click(object sender, EventArgs e)
@@ -71,10 +71,12 @@ namespace Week09DemoB
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (rtbContent.Text != saveContent) {
+            if (rtbContent.Text != saveContent)
+            {
                 DialogResult result = MessageBox.Show("Do you want to save changes?", "save changes",
                     MessageBoxButtons.YesNoCancel);
 
+            }
         }
     }
 }

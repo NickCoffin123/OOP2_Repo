@@ -28,6 +28,14 @@ namespace ReadWriteSettings
         public bool RayTracing { get; set; } = Defaults.DefaultRayTracing;
         public bool Upscaling { get; set; } = Defaults.DefaultUpscaling;
 
+        public int Music { get; set; } = Defaults.DefaultMusic;
+        public int Sound { get; set; } = Defaults.DefaultSound;
+
+        public int HUDDTransparency { get; set; } = Defaults.DefaultHUDDTransparency;
+        public bool ShowCoordinates { get; set; } = Defaults.DefaultShowCoordinates;
+        public Defaults.CameraPerspective CameraPerspective { get; set; } = Defaults.DefaultCameraPerspective;
+
+
         #endregion
 
         #region Constructors
