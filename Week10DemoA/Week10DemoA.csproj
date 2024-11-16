@@ -47,11 +47,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Student.cs" />
+    <Compile Include="employeeSampleDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>employeeSampleDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="FormStudents.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormStudents.Designer.cs">
       <DependentUpon>FormStudents.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCountries.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCountries.Designer.cs">
+      <DependentUpon>frmCountries.cs</DependentUpon>
     </Compile>
     <Compile Include="frmEmployees.cs">
       <SubType>Form</SubType>
@@ -70,6 +81,9 @@
     <EmbeddedResource Include="FormStudents.resx">
       <DependentUpon>FormStudents.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmCountries.resx">
+      <DependentUpon>frmCountries.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmEmployees.resx">
       <DependentUpon>frmEmployees.cs</DependentUpon>
     </EmbeddedResource>
@@ -85,6 +99,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="employeeSampleDataSet.xsc">
+      <DependentUpon>employeeSampleDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="employeeSampleDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>employeeSampleDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="employeeSampleDataSet.xss">
+      <DependentUpon>employeeSampleDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\DataSources\Week10DemoA.Classes.Student.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

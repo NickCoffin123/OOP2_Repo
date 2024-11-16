@@ -19,13 +19,17 @@ namespace ReadWriteSettings
     {
 
         #region Global Variables
+        private GameSettings currentSettings;
         #endregion
 
         #region Constructors
 
-        public frmSettings()
+
+
+        public frmSettings(GameSettings settings)
         {
             InitializeComponent();
+            currentSettings = settings;
         }
 
         #endregion
@@ -95,25 +99,54 @@ namespace ReadWriteSettings
             #endregion
         }
 
+        private void btnLoad_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.Filter = "Text Files|*.txt|CSV Files|*.csv";
+            openFileDialog1.Title = "Open a file";
+            openFileDialog1.FileName = txtFileName.Text;
+            openFileDialog1.ShowDialog();
+            txtFileName.Text = openFileDialog1.FileName;
+
+            try
+            {
+                rtbContent.Text = MyFiles.ReadFromFile(txtFileName.Text);
+                saveContent = rtbContent.Text;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error reading file");
+            }
+        }
+
         #endregion
 
-        //private void btnLoad_Click(object sender, EventArgs e)
-        //{
-        //    openFileDialog1.Filter = "Text Files|*.txt|CSV Files|*.csv";
-        //    openFileDialog1.Title = "Open a file";
-        //    openFileDialog1.FileName = txtFileName.Text;
-        //    openFileDialog1.ShowDialog();
-        //    txtFileName.Text = openFileDialog1.FileName;
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            // Movement
+            currentSettings.InputDevice = (Defaults.InputDeviceOptions)cboInputDevice.SelectedIndex;
+            currentSettings.AutoJump = cboAutoJump.SelectedIndex;
+            currentSettings.InvertYAxis = cboInvertYAxis.SelectedIndex == 0;
+            currentSettings.MouseSensitivity = (int)nudMouse.Value;
+            currentSettings.ConstollerSensitivity = (int)nudControler.Value;
 
-        //    try
-        //    {
-        //        rtbContent.Text = MyFiles.ReadFromFile(txtfilepath.Text);
-        //        saveContent = rtbContent.Text;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show(ex.Message, "Error reading file");
-        //    }
-        //}
+            // Video
+            currentSettings.Brightness = (int)nudBrightness.Value;
+            currentSettings.FancyGraphics = cboFancyGraphics.SelectedIndex == 0;
+            currentSettings.VSync = cboVSync.SelectedIndex == 0;
+            currentSettings.FullScreen = cboFullscreen.SelectedIndex == 0;
+            currentSettings.RayTracing = cboRayTracing.SelectedIndex == 0;
+            currentSettings.Upscaling = cboUpscaling.SelectedIndex == 0;
+
+            // Audio
+            currentSettings.Music = (int)nudMusic.Value;
+            currentSettings.Sound = (int)nudSound.Value;
+
+            // Interface
+            currentSettings.HUDDTransparency = (int)nudHUDDTransparency.Value;
+            currentSettings.ShowCoordinates = cboShowCoordinates.SelectedIndex == 0;
+            currentSettings.CameraPerspective = (Defaults.CameraPerspective)cboCameraPerspective.SelectedIndex;
+
+            MessageBox.Show("Settings saved successfully!", "Success");
+        }
     }
 }

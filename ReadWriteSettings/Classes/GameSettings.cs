@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ReadWriteSettings
 {
-    internal class GameSettings
+    public class GameSettings
     {
         #region Global Variables
         #endregion

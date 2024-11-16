@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace ReadWriteSettings
 {
-    internal class Defaults
+    public class Defaults
     {
 
         #region Enums
