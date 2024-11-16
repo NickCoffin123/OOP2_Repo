@@ -1,4 +1,9 @@
-﻿using System;
+﻿/* Nick Coffin - 100555045.
+ * OOP - Assignment 4 Read Write Settings.
+ * November 12, 2024.
+ * Game Settings form for project.
+ */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

@@ -14,63 +14,58 @@ namespace ReadWriteSettings
 {
     internal class Tools
     {
-        // Method to save profile to file
-        public static void SaveProfileToFile(string filePath, PlayerProfile profile)
+        public static bool WriteToFile(String fileName, string content)
         {
             try
             {
-                string content = profile.BuildProfileString();
-                File.WriteAllText(filePath, content);
-            }
-            catch (UnauthorizedAccessException ex)
-            {
-                Console.WriteLine("Access denied. Unable to write to the file.");
-                Console.WriteLine(ex.Message);
-            }
-            catch (IOException ex)
-            {
-                Console.WriteLine("I/O error occurred while saving the file.");
-                Console.WriteLine(ex.Message);
+                //StreamWriter sw = new StreamWriter(fileName);
+                //sw.Write(content);
+                //sw.Close();
+
+                using (StreamWriter sw = new StreamWriter(fileName))
+                {
+                    sw.Write(content);
+                }
+                return true;
             }
             catch (Exception ex)
             {
-                Console.WriteLine("An unexpected error occurred.");
-                Console.WriteLine(ex.Message);
+                throw new Exception("Error writing to file: " + ex.Message);
             }
+
         }
 
-        // Method to load profile from file
-        public static string ReadFromFile(string filePath)
+        public static string ReadFromFile(String fileName)
         {
+            //StreamReader reader = new StreamReader(fileName);
+            //string content = reader.ReadToEnd();
+            //reader.Close();
+            //return content;
+
+            String content = String.Empty;
             try
             {
-                return File.ReadAllText(filePath);
+                using (StreamReader sr = new StreamReader(fileName))
+                {
+                    content = sr.ReadToEnd();
+                }
+
             }
             catch (FileNotFoundException ex)
             {
-                Console.WriteLine("File not found.");
-                Console.WriteLine(ex.Message);
-                return string.Empty;
-            }
-            catch (UnauthorizedAccessException ex)
-            {
-                Console.WriteLine("Access denied. Unable to read the file.");
-                Console.WriteLine(ex.Message);
-                return string.Empty;
-            }
-            catch (IOException ex)
-            {
-                Console.WriteLine("I/O error occurred while reading the file.");
-                Console.WriteLine(ex.Message);
-                return string.Empty;
+                throw new Exception("File not found: " + ex.Message);
             }
             catch (Exception ex)
             {
-                Console.WriteLine("An unexpected error occurred.");
-                Console.WriteLine(ex.Message);
-                return string.Empty;
+                throw new Exception("Error reading file: " + ex.Message);
             }
+            finally
+            {
+                // Do stuff here that always has to happen.
+            }
+            return content;
+
         }
     }
 }
-}
+

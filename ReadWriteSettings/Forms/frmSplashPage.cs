@@ -21,11 +21,11 @@ namespace ReadWriteSettings
         public frmSplashPage()
         {
             InitializeComponent();
-            //timer1.Tick += new EventHandler(timer1_Tick);
+            timer1.Tick += new EventHandler(timer1_Tick);
             PlaySound();
             frmSettings settingsForm = new frmSettings();
-            settingsForm.ShowDialog();
-            this.Close();
+            //settingsForm.ShowDialog();
+            //this.Close();
 
         }
 
