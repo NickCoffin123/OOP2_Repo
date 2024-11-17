@@ -1,4 +1,9 @@
-﻿using System;
+﻿/* Nick Coffin - 100555045.
+ * OOP - Assignment 4 Read Write Settings.
+ * November 12, 2024.
+ * Player profile file for project.
+ */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,11 +11,12 @@ using System.Threading.Tasks;
 
 namespace ReadWriteSettings
 {
+    [Serializable]
     internal class PlayerProfile
     {
         #region Properties
 
-        public string saveName { get; set; }
+
         public GameSettings Settings { get; set; }
 
 
@@ -18,9 +24,12 @@ namespace ReadWriteSettings
 
         #region Constructors
 
-        public PlayerProfile(string playerName)
+        /// <summary>
+        /// Constructor for the player profile
+        /// </summary>
+        public PlayerProfile()
         {
-            saveName = playerName;
+
             Settings = new GameSettings();
         }
 
@@ -29,9 +38,9 @@ namespace ReadWriteSettings
         #region Custom Methods
 
         /// <summary>
-        /// Builds a string representation of the player's profile and settings.
+        /// Method to write the settings to a file
         /// </summary>
-        /// <returns>A formatted string ready for writing to a file.</returns>
+        /// <returns></returns>
         public string BuildProfileOutput()
         {
             StringBuilder sb = new StringBuilder();

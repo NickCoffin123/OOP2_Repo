@@ -11,6 +11,10 @@ using System.Threading.Tasks;
 
 namespace ReadWriteSettings
 {
+    /// <summary>
+    /// Main method for class
+    /// </summary>
+    [Serializable]
     public class GameSettings
     {
         #region Global Variables

@@ -12,8 +12,18 @@ using System.Threading.Tasks;
 
 namespace ReadWriteSettings
 {
+    /// <summary>
+    /// Main method for class
+    /// </summary>
     internal class Tools
     {
+        /// <summary>
+        /// Method to write to a file
+        /// </summary>
+        /// <param name="fileName"></param>
+        /// <param name="content"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public static bool WriteToFile(String fileName, string content)
         {
             try
@@ -35,6 +45,12 @@ namespace ReadWriteSettings
 
         }
 
+        /// <summary>
+        /// Method to read from a file
+        /// </summary>
+        /// <param name="fileName"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public static string ReadFromFile(String fileName)
         {
             //StreamReader reader = new StreamReader(fileName);

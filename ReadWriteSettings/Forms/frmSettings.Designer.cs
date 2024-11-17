@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblHeader = new System.Windows.Forms.Label();
             this.tabSettings = new System.Windows.Forms.TabControl();
             this.tabMovement = new System.Windows.Forms.TabPage();
@@ -90,11 +91,12 @@
             this.lblCameraPerspective = new System.Windows.Forms.Label();
             this.btnLoad = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.btnSaveAs = new System.Windows.Forms.Button();
+            this.btnSaveBinary = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.txtFileName = new System.Windows.Forms.TextBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tabSettings.SuspendLayout();
             this.tabMovement.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudControler)).BeginInit();
@@ -131,7 +133,8 @@
             this.tabSettings.Name = "tabSettings";
             this.tabSettings.SelectedIndex = 0;
             this.tabSettings.Size = new System.Drawing.Size(805, 285);
-            this.tabSettings.TabIndex = 1;
+            this.tabSettings.TabIndex = 2;
+            this.toolTip1.SetToolTip(this.tabSettings, "Settings tabs");
             // 
             // tabMovement
             // 
@@ -169,7 +172,8 @@
             this.cboInvertYAxis.Location = new System.Drawing.Point(626, 223);
             this.cboInvertYAxis.Name = "cboInvertYAxis";
             this.cboInvertYAxis.Size = new System.Drawing.Size(121, 21);
-            this.cboInvertYAxis.TabIndex = 15;
+            this.cboInvertYAxis.TabIndex = 7;
+            this.toolTip1.SetToolTip(this.cboInvertYAxis, "Invert Y-axis");
             // 
             // nudControler
             // 
@@ -186,7 +190,8 @@
             0});
             this.nudControler.Name = "nudControler";
             this.nudControler.Size = new System.Drawing.Size(120, 20);
-            this.nudControler.TabIndex = 14;
+            this.nudControler.TabIndex = 6;
+            this.toolTip1.SetToolTip(this.nudControler, "Controler sensitivity");
             this.nudControler.Value = new decimal(new int[] {
             50,
             0,
@@ -208,7 +213,8 @@
             0});
             this.nudMouse.Name = "nudMouse";
             this.nudMouse.Size = new System.Drawing.Size(120, 20);
-            this.nudMouse.TabIndex = 13;
+            this.nudMouse.TabIndex = 5;
+            this.toolTip1.SetToolTip(this.nudMouse, "Mouse sensitivity");
             this.nudMouse.Value = new decimal(new int[] {
             50,
             0,
@@ -225,7 +231,8 @@
             this.cboAutoJump.Location = new System.Drawing.Point(625, 76);
             this.cboAutoJump.Name = "cboAutoJump";
             this.cboAutoJump.Size = new System.Drawing.Size(121, 21);
-            this.cboAutoJump.TabIndex = 12;
+            this.cboAutoJump.TabIndex = 4;
+            this.toolTip1.SetToolTip(this.cboAutoJump, "Auto-jump");
             // 
             // cboInputDevice
             // 
@@ -238,7 +245,8 @@
             this.cboInputDevice.Location = new System.Drawing.Point(625, 27);
             this.cboInputDevice.Name = "cboInputDevice";
             this.cboInputDevice.Size = new System.Drawing.Size(121, 21);
-            this.cboInputDevice.TabIndex = 11;
+            this.cboInputDevice.TabIndex = 3;
+            this.toolTip1.SetToolTip(this.cboInputDevice, "Input device");
             this.cboInputDevice.SelectedIndexChanged += new System.EventHandler(this.cboInputDevice_SelectedIndexChanged);
             // 
             // lblAutoJumpDescription
@@ -396,7 +404,8 @@
             this.cboFancyGraphics.Location = new System.Drawing.Point(657, 45);
             this.cboFancyGraphics.Name = "cboFancyGraphics";
             this.cboFancyGraphics.Size = new System.Drawing.Size(121, 21);
-            this.cboFancyGraphics.TabIndex = 35;
+            this.cboFancyGraphics.TabIndex = 9;
+            this.toolTip1.SetToolTip(this.cboFancyGraphics, "Fancy graphics");
             // 
             // cboVSync
             // 
@@ -408,7 +417,8 @@
             this.cboVSync.Location = new System.Drawing.Point(657, 75);
             this.cboVSync.Name = "cboVSync";
             this.cboVSync.Size = new System.Drawing.Size(121, 21);
-            this.cboVSync.TabIndex = 34;
+            this.cboVSync.TabIndex = 10;
+            this.toolTip1.SetToolTip(this.cboVSync, "V-sync");
             // 
             // cboFullscreen
             // 
@@ -420,7 +430,8 @@
             this.cboFullscreen.Location = new System.Drawing.Point(657, 105);
             this.cboFullscreen.Name = "cboFullscreen";
             this.cboFullscreen.Size = new System.Drawing.Size(121, 21);
-            this.cboFullscreen.TabIndex = 33;
+            this.cboFullscreen.TabIndex = 11;
+            this.toolTip1.SetToolTip(this.cboFullscreen, "Fullscreen");
             // 
             // cboRayTracing
             // 
@@ -432,7 +443,8 @@
             this.cboRayTracing.Location = new System.Drawing.Point(657, 193);
             this.cboRayTracing.Name = "cboRayTracing";
             this.cboRayTracing.Size = new System.Drawing.Size(121, 21);
-            this.cboRayTracing.TabIndex = 32;
+            this.cboRayTracing.TabIndex = 14;
+            this.toolTip1.SetToolTip(this.cboRayTracing, "Ray tracing");
             this.cboRayTracing.SelectedIndexChanged += new System.EventHandler(this.cboRayTracing_SelectedIndexChanged);
             // 
             // cboUpscaling
@@ -445,7 +457,8 @@
             this.cboUpscaling.Location = new System.Drawing.Point(657, 223);
             this.cboUpscaling.Name = "cboUpscaling";
             this.cboUpscaling.Size = new System.Drawing.Size(121, 21);
-            this.cboUpscaling.TabIndex = 31;
+            this.cboUpscaling.TabIndex = 15;
+            this.toolTip1.SetToolTip(this.cboUpscaling, "Upscaling");
             // 
             // nudRenderDistance
             // 
@@ -462,7 +475,8 @@
             0});
             this.nudRenderDistance.Name = "nudRenderDistance";
             this.nudRenderDistance.Size = new System.Drawing.Size(120, 20);
-            this.nudRenderDistance.TabIndex = 30;
+            this.nudRenderDistance.TabIndex = 12;
+            this.toolTip1.SetToolTip(this.nudRenderDistance, "Render distance");
             this.nudRenderDistance.Value = new decimal(new int[] {
             16,
             0,
@@ -484,7 +498,8 @@
             0});
             this.nudFieldofView.Name = "nudFieldofView";
             this.nudFieldofView.Size = new System.Drawing.Size(120, 20);
-            this.nudFieldofView.TabIndex = 29;
+            this.nudFieldofView.TabIndex = 13;
+            this.toolTip1.SetToolTip(this.nudFieldofView, "Field of view");
             this.nudFieldofView.Value = new decimal(new int[] {
             64,
             0,
@@ -496,7 +511,8 @@
             this.nudBrightness.Location = new System.Drawing.Point(658, 16);
             this.nudBrightness.Name = "nudBrightness";
             this.nudBrightness.Size = new System.Drawing.Size(120, 20);
-            this.nudBrightness.TabIndex = 28;
+            this.nudBrightness.TabIndex = 8;
+            this.toolTip1.SetToolTip(this.nudBrightness, "Brightness");
             this.nudBrightness.Value = new decimal(new int[] {
             50,
             0,
@@ -701,7 +717,8 @@
             this.nudMusic.Location = new System.Drawing.Point(615, 88);
             this.nudMusic.Name = "nudMusic";
             this.nudMusic.Size = new System.Drawing.Size(120, 20);
-            this.nudMusic.TabIndex = 30;
+            this.nudMusic.TabIndex = 16;
+            this.toolTip1.SetToolTip(this.nudMusic, "Music");
             this.nudMusic.Value = new decimal(new int[] {
             100,
             0,
@@ -713,7 +730,8 @@
             this.nudSound.Location = new System.Drawing.Point(615, 151);
             this.nudSound.Name = "nudSound";
             this.nudSound.Size = new System.Drawing.Size(120, 20);
-            this.nudSound.TabIndex = 29;
+            this.nudSound.TabIndex = 17;
+            this.toolTip1.SetToolTip(this.nudSound, "Sound");
             this.nudSound.Value = new decimal(new int[] {
             100,
             0,
@@ -795,7 +813,8 @@
             this.cboCameraPerspective.Location = new System.Drawing.Point(656, 197);
             this.cboCameraPerspective.Name = "cboCameraPerspective";
             this.cboCameraPerspective.Size = new System.Drawing.Size(121, 21);
-            this.cboCameraPerspective.TabIndex = 37;
+            this.cboCameraPerspective.TabIndex = 20;
+            this.toolTip1.SetToolTip(this.cboCameraPerspective, "Game perspective");
             // 
             // cboShowCoordinates
             // 
@@ -807,7 +826,8 @@
             this.cboShowCoordinates.Location = new System.Drawing.Point(656, 122);
             this.cboShowCoordinates.Name = "cboShowCoordinates";
             this.cboShowCoordinates.Size = new System.Drawing.Size(121, 21);
-            this.cboShowCoordinates.TabIndex = 36;
+            this.cboShowCoordinates.TabIndex = 19;
+            this.toolTip1.SetToolTip(this.cboShowCoordinates, "Show coordinates");
             // 
             // nudHUDTransparency
             // 
@@ -819,7 +839,8 @@
             0});
             this.nudHUDTransparency.Name = "nudHUDTransparency";
             this.nudHUDTransparency.Size = new System.Drawing.Size(120, 20);
-            this.nudHUDTransparency.TabIndex = 31;
+            this.nudHUDTransparency.TabIndex = 18;
+            this.toolTip1.SetToolTip(this.nudHUDTransparency, "HUDD transparency");
             this.nudHUDTransparency.Value = new decimal(new int[] {
             100,
             0,
@@ -897,8 +918,9 @@
             this.btnLoad.Location = new System.Drawing.Point(12, 80);
             this.btnLoad.Name = "btnLoad";
             this.btnLoad.Size = new System.Drawing.Size(95, 29);
-            this.btnLoad.TabIndex = 2;
+            this.btnLoad.TabIndex = 1;
             this.btnLoad.Text = "&Load";
+            this.toolTip1.SetToolTip(this.btnLoad, "Load file");
             this.btnLoad.UseVisualStyleBackColor = true;
             this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
@@ -907,27 +929,31 @@
             this.btnSave.Location = new System.Drawing.Point(583, 80);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(95, 29);
-            this.btnSave.TabIndex = 3;
+            this.btnSave.TabIndex = 21;
             this.btnSave.Text = "&Save";
+            this.toolTip1.SetToolTip(this.btnSave, "Save file");
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // btnSaveAs
+            // btnSaveBinary
             // 
-            this.btnSaveAs.Location = new System.Drawing.Point(684, 80);
-            this.btnSaveAs.Name = "btnSaveAs";
-            this.btnSaveAs.Size = new System.Drawing.Size(95, 29);
-            this.btnSaveAs.TabIndex = 4;
-            this.btnSaveAs.Text = "Save As";
-            this.btnSaveAs.UseVisualStyleBackColor = true;
+            this.btnSaveBinary.Location = new System.Drawing.Point(684, 80);
+            this.btnSaveBinary.Name = "btnSaveBinary";
+            this.btnSaveBinary.Size = new System.Drawing.Size(95, 29);
+            this.btnSaveBinary.TabIndex = 22;
+            this.btnSaveBinary.Text = "Save Binary";
+            this.toolTip1.SetToolTip(this.btnSaveBinary, "Save binary");
+            this.btnSaveBinary.UseVisualStyleBackColor = true;
+            this.btnSaveBinary.Click += new System.EventHandler(this.btnSaveBinary_Click);
             // 
             // btnCancel
             // 
             this.btnCancel.Location = new System.Drawing.Point(684, 415);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(95, 29);
-            this.btnCancel.TabIndex = 5;
+            this.btnCancel.TabIndex = 23;
             this.btnCancel.Text = "&Cancel";
+            this.toolTip1.SetToolTip(this.btnCancel, "Cancel");
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
@@ -950,7 +976,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.txtFileName);
             this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btnSaveAs);
+            this.Controls.Add(this.btnSaveBinary);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnLoad);
             this.Controls.Add(this.tabSettings);
@@ -991,7 +1017,7 @@
         private System.Windows.Forms.TabPage tabInterface;
         private System.Windows.Forms.Button btnLoad;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Button btnSaveAs;
+        private System.Windows.Forms.Button btnSaveBinary;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.TextBox txtFileName;
         private System.Windows.Forms.Label lblAutoJumpDescription;
@@ -1050,5 +1076,6 @@
         private System.Windows.Forms.NumericUpDown nudHUDTransparency;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

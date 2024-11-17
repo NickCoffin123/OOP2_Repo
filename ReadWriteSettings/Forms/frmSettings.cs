@@ -8,7 +8,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -20,13 +22,14 @@ namespace ReadWriteSettings
 
         #region Global Variables
         private GameSettings currentSettings;
-        private PlayerProfile playerProfile = new PlayerProfile("Default Player");
+        private PlayerProfile playerProfile = new PlayerProfile();
         #endregion
 
         #region Constructors
 
-
-
+        /// <summary>
+        /// Initial constructor for the form
+        /// </summary>
         public frmSettings()
         {
             InitializeComponent();
@@ -37,11 +40,21 @@ namespace ReadWriteSettings
 
         #region Control Event Handelers
 
+        /// <summary>
+        /// Method to cancel the application
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        /// <summary>
+        /// Method to keep the sensitivity locked depending on other settings
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void cboInputDevice_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cboInputDevice.SelectedIndex == 0)
@@ -61,6 +74,11 @@ namespace ReadWriteSettings
             }
         }
 
+        /// <summary>
+        /// Method to unlock the use of ray tracing
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void cboRayTracing_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cboRayTracing.SelectedIndex == 1)
@@ -74,17 +92,19 @@ namespace ReadWriteSettings
             }
         }
 
+        /// <summary>
+        /// Method to save a file
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSave_Click(object sender, EventArgs e)
         {
             try
             {
-                // Update player profile from form controls
+
                 UpdatePlayerProfileFromForm();
 
-                // Generate the output content using the PlayerProfile instance
                 string outputContent = playerProfile.BuildProfileOutput();
-
-                // Configure and show the SaveFileDialog
                 saveFileDialog1.Filter = "Text Files|*.txt|CSV Files|*.csv";
                 saveFileDialog1.Title = "Save a file";
                 saveFileDialog1.FileName = txtFileName.Text;
@@ -99,8 +119,6 @@ namespace ReadWriteSettings
                         MessageBox.Show("Please enter a valid file path.", "Validation Error");
                         return;
                     }
-
-                    // Save the updated profile to the file
                     Tools.WriteToFile(filePath, outputContent);
 
                     MessageBox.Show("Settings saved successfully!", "Success");
@@ -112,34 +130,24 @@ namespace ReadWriteSettings
             }
         }
 
-
-
-
-
-
+        /// <summary>
+        /// Method to load a file
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnLoad_Click(object sender, EventArgs e)
         {
             try
             {
-                // Configure and show the OpenFileDialog
                 openFileDialog1.Filter = "Text Files|*.txt|CSV Files|*.csv";
                 openFileDialog1.Title = "Open a file";
 
                 if (openFileDialog1.ShowDialog() == DialogResult.OK)
                 {
-                    // Get the selected file path
                     string filePath = openFileDialog1.FileName;
-
-                    // Update the TextBox to reflect the chosen file path
                     txtFileName.Text = filePath;
-
-                    // Read the content from the file
                     string fileContent = Tools.ReadFromFile(filePath);
-
-                    // Parse the content and update the PlayerProfile
                     UpdatePlayerProfileFromContent(fileContent);
-
-                    // Update the UI based on the loaded settings
                     UpdateFormFromPlayerProfile();
 
                     MessageBox.Show("Settings loaded successfully!", "Success");
@@ -151,11 +159,51 @@ namespace ReadWriteSettings
             }
         }
 
+        /// <summary>
+        /// Method to save as a binary file
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnSaveBinary_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                UpdatePlayerProfileFromForm();
+
+                saveFileDialog1.Filter = "Binary Files|*.bin";
+                saveFileDialog1.Title = "Save as Binary";
+                saveFileDialog1.FileName = "Settings.bin";
+
+                if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    string filePath = saveFileDialog1.FileName;
+                    txtFileName.Text = filePath;
+
+                    using (FileStream fs = new FileStream(filePath, FileMode.Create))
+                    {
+                        BinaryFormatter formatter = new BinaryFormatter();
+                        formatter.Serialize(fs, playerProfile);
+                    }
+
+                    MessageBox.Show("Settings saved as binary successfully!", "Success");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error saving binary file");
+            }
+        }
+
 
         #endregion
 
         #region Custom UI Functions and Methods
 
+        /// <summary>
+        /// Method to set the defaults when the form is loaded
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void frmSettings_Load(object sender, EventArgs e)
         {
             #region Movement
@@ -281,36 +329,40 @@ namespace ReadWriteSettings
             cboCameraPerspective.SelectedIndex = (int)playerProfile.Settings.CameraPerspective;
         }
 
+        /// <summary>
+        /// Method to update the form when the file is loaded
+        /// </summary>
         private void UpdatePlayerProfileFromForm()
         {
-            // Dynamically fetch values from controls
             playerProfile.Settings.InputDevice = (Defaults.InputDeviceOptions)cboInputDevice.SelectedIndex;
-            playerProfile.Settings.AutoJump = cboAutoJump.SelectedIndex == 0; // Assuming 0 = Enabled
+            playerProfile.Settings.AutoJump = cboAutoJump.SelectedIndex == 0;
             playerProfile.Settings.MouseSensitivity = (int)nudMouse.Value;
             playerProfile.Settings.ConstollerSensitivity = (int)nudControler.Value;
             playerProfile.Settings.InvertYAxis = cboInvertYAxis.SelectedIndex == 0;
             playerProfile.Settings.Brightness = (int)nudBrightness.Value;
-            playerProfile.Settings.FancyGraphics = cboFancyGraphics.SelectedIndex == 0; // Assuming 0 = Enabled
-            playerProfile.Settings.VSync = cboVSync.SelectedIndex == 0; // Assuming 0 = Enabled
-            playerProfile.Settings.FullScreen = cboFullscreen.SelectedIndex == 0; // Assuming 0 = Enabled
+            playerProfile.Settings.FancyGraphics = cboFancyGraphics.SelectedIndex == 0;
+            playerProfile.Settings.VSync = cboVSync.SelectedIndex == 0;
+            playerProfile.Settings.FullScreen = cboFullscreen.SelectedIndex == 0;
             playerProfile.Settings.RenderDistance = (int)nudRenderDistance.Value;
             playerProfile.Settings.FieldOfView = (int)nudFieldofView.Value;
-            playerProfile.Settings.RayTracing = cboRayTracing.SelectedIndex == 0; // Assuming 0 = Enabled
-            playerProfile.Settings.Upscaling = cboUpscaling.SelectedIndex == 0; // Assuming 0 = Enabled
+            playerProfile.Settings.RayTracing = cboRayTracing.SelectedIndex == 0;
+            playerProfile.Settings.Upscaling = cboUpscaling.SelectedIndex == 0;
             playerProfile.Settings.Music = (int)nudMusic.Value;
             playerProfile.Settings.Sound = (int)nudSound.Value;
             playerProfile.Settings.HUDDTransparency = (int)nudHUDTransparency.Value;
-            playerProfile.Settings.ShowCoordinates = cboShowCoordinates.SelectedIndex == 0; // Assuming 0 = Enabled
+            playerProfile.Settings.ShowCoordinates = cboShowCoordinates.SelectedIndex == 0;
             playerProfile.Settings.CameraPerspective = (Defaults.CameraPerspective)cboCameraPerspective.SelectedIndex;
         }
 
 
 
-        #endregion
 
 
         #endregion
 
+        #endregion
+
+       
 
     }
 }
