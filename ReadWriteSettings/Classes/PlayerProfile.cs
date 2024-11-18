@@ -63,7 +63,7 @@ namespace ReadWriteSettings
             sb.AppendLine($"HUD Transparency: {Settings.HUDDTransparency}");
             sb.AppendLine($"Show Coordinates: {Settings.ShowCoordinates}");
             sb.AppendLine($"Camera Perspective: {Settings.CameraPerspective}");
-
+            
             return sb.ToString();
         }
 

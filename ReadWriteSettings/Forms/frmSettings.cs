@@ -234,7 +234,8 @@ namespace ReadWriteSettings
         /// <param name="content">The file content as a string.</param>
         private void UpdatePlayerProfileFromContent(string content)
         {
-            string[] lines = content.Split(new[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
+            string[] lines = content.Split(new[] { '\n' });
+
 
             foreach (string line in lines)
             {
