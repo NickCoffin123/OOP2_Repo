@@ -1,0 +1,10 @@
+C:\OOP-Repo\OOP2_Repo\In-Class3\bin\Debug\In-Class3.exe.config
+C:\OOP-Repo\OOP2_Repo\In-Class3\bin\Debug\In-Class3.exe
+C:\OOP-Repo\OOP2_Repo\In-Class3\bin\Debug\In-Class3.pdb
+C:\OOP-Repo\OOP2_Repo\In-Class3\obj\Debug\In-Class3.csproj.AssemblyReference.cache
+C:\OOP-Repo\OOP2_Repo\In-Class3\obj\Debug\In_Class3.Properties.Resources.resources
+C:\OOP-Repo\OOP2_Repo\In-Class3\obj\Debug\In_Class3.TeamPlayer.resources
+C:\OOP-Repo\OOP2_Repo\In-Class3\obj\Debug\In-Class3.csproj.GenerateResource.cache
+C:\OOP-Repo\OOP2_Repo\In-Class3\obj\Debug\In-Class3.csproj.CoreCompileInputs.cache
+C:\OOP-Repo\OOP2_Repo\In-Class3\obj\Debug\In-Class3.exe
+C:\OOP-Repo\OOP2_Repo\In-Class3\obj\Debug\In-Class3.pdb
