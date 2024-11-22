@@ -1,4 +1,9 @@
-﻿using System;
+﻿/* Nick Coffin - 100555045.
+ * OOP - In class assignment 3 data binding.
+ * November 22, 2024.
+ * Main form.
+ */
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -28,15 +33,34 @@ namespace In_Class3
         /// <param name="e"></param>
         private void TeamPlayer_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'sportleaguesDataSet.teams' table. You can move, or remove it, as needed.
-            this.teamsTableAdapter.Fill(this.sportleaguesDataSet.teams);
+
             // TODO: This line of code loads data into the 'sportleaguesDataSet.DataTable1' table. You can move, or remove it, as needed.
             this.dataTable1TableAdapter.Fill(this.sportleaguesDataSet.DataTable1);
             // TODO: This line of code loads data into the 'sportleaguesDataSet.players' table. You can move, or remove it, as needed.
             this.playersTableAdapter.Fill(this.sportleaguesDataSet.players);
+            try
+            {
+                this.teamsTableAdapter.Fill(this.sportleaguesDataSet.teams);
 
+                if (cboPick.Items.Count > 0)
+                {
+                    cboPick.SelectedIndex = 0;
+                }
 
+                if (cboPick.SelectedValue != null)
+                {
+                    int selectedTeamID = Convert.ToInt32(cboPick.SelectedValue);
+                    this.dataTable1TableAdapter.FillByTeamID(sportleaguesDataSet.DataTable1, selectedTeamID);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("An error occourred: " + ex.Message);
+            }
         }
+
+
+
 
         /// <summary>
         /// Method to update the player info based on the team selected.
@@ -50,20 +74,15 @@ namespace In_Class3
                 if (cboPick.SelectedValue != null)
                 {
                     int selectedTeamID = Convert.ToInt32(cboPick.SelectedValue);
-
                     this.dataTable1TableAdapter.FillByTeamID(sportleaguesDataSet.DataTable1, selectedTeamID);
                 }
             }
-            catch (InvalidCastException)
-            {
-                MessageBox.Show("Please select a valid team.", "Invalid Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
             catch (Exception ex)
             {
-                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw new Exception("An error occourred: " + ex.Message);
             }
         }
 
-    
+
     }
 }

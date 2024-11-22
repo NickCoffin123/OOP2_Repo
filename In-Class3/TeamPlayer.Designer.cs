@@ -47,7 +47,7 @@
             this.dataTable1TableAdapter = new In_Class3.SportleaguesDataSetTableAdapters.DataTable1TableAdapter();
             this.teamsTableAdapter = new In_Class3.SportleaguesDataSetTableAdapters.teamsTableAdapter();
             this.playersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pibOne = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.teamsBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sportleaguesDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sportleaguesDataSet)).BeginInit();
@@ -56,7 +56,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.playersBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pibOne)).BeginInit();
             this.SuspendLayout();
             // 
             // lblPick
@@ -189,21 +189,24 @@
             // 
             this.playersBindingSource.DataMember = "players";
             // 
-            // pictureBox1
+            // pibOne
             // 
-            this.pictureBox1.Image = global::In_Class3.Properties.Resources.Hockeyflipped;
-            this.pictureBox1.Location = new System.Drawing.Point(651, 71);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(213, 422);
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
+            this.pibOne.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pibOne.Image = global::In_Class3.Properties.Resources.Hockeyflipped;
+            this.pibOne.Location = new System.Drawing.Point(651, 71);
+            this.pibOne.Name = "pibOne";
+            this.pibOne.Size = new System.Drawing.Size(213, 422);
+            this.pibOne.TabIndex = 3;
+            this.pibOne.TabStop = false;
             // 
             // TeamPlayer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(814, 364);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pibOne);
             this.Controls.Add(this.dgvMain);
             this.Controls.Add(this.cboPick);
             this.Controls.Add(this.lblPick);
@@ -219,7 +222,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.playersBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pibOne)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -245,7 +248,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn lastnameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn jerseynumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn isactiveDataGridViewTextBoxColumn;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pibOne;
     }
 }
 
