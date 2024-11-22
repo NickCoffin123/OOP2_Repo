@@ -36,11 +36,6 @@
             this.sportleaguesDataSet = new In_Class3.SportleaguesDataSet();
             this.teamsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dgvMain = new System.Windows.Forms.DataGridView();
-            this.regnumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.firstname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lastnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.jerseynumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.isactiveDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataTable1BindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dataTable1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.playersTableAdapter = new In_Class3.SportleaguesDataSetTableAdapters.playersTableAdapter();
@@ -48,6 +43,11 @@
             this.teamsTableAdapter = new In_Class3.SportleaguesDataSetTableAdapters.teamsTableAdapter();
             this.playersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pibOne = new System.Windows.Forms.PictureBox();
+            this.regnumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.firstname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lastnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jerseynumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.isactiveDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.teamsBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sportleaguesDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sportleaguesDataSet)).BeginInit();
@@ -123,47 +123,6 @@
             this.dgvMain.Size = new System.Drawing.Size(816, 294);
             this.dgvMain.TabIndex = 2;
             // 
-            // regnumber
-            // 
-            this.regnumber.DataPropertyName = "regnumber";
-            this.regnumber.HeaderText = "Registration Number";
-            this.regnumber.MinimumWidth = 6;
-            this.regnumber.Name = "regnumber";
-            this.regnumber.ReadOnly = true;
-            this.regnumber.Width = 150;
-            // 
-            // firstname
-            // 
-            this.firstname.DataPropertyName = "firstname";
-            this.firstname.HeaderText = "First Name";
-            this.firstname.MinimumWidth = 6;
-            this.firstname.Name = "firstname";
-            this.firstname.ReadOnly = true;
-            this.firstname.Width = 150;
-            // 
-            // lastnameDataGridViewTextBoxColumn
-            // 
-            this.lastnameDataGridViewTextBoxColumn.DataPropertyName = "lastname";
-            this.lastnameDataGridViewTextBoxColumn.HeaderText = "Last Name";
-            this.lastnameDataGridViewTextBoxColumn.Name = "lastnameDataGridViewTextBoxColumn";
-            this.lastnameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // jerseynumberDataGridViewTextBoxColumn
-            // 
-            this.jerseynumberDataGridViewTextBoxColumn.DataPropertyName = "jerseynumber";
-            this.jerseynumberDataGridViewTextBoxColumn.HeaderText = "Jersey Number";
-            this.jerseynumberDataGridViewTextBoxColumn.Name = "jerseynumberDataGridViewTextBoxColumn";
-            this.jerseynumberDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // isactiveDataGridViewTextBoxColumn
-            // 
-            this.isactiveDataGridViewTextBoxColumn.DataPropertyName = "isactive";
-            this.isactiveDataGridViewTextBoxColumn.HeaderText = "Player Active";
-            this.isactiveDataGridViewTextBoxColumn.Name = "isactiveDataGridViewTextBoxColumn";
-            this.isactiveDataGridViewTextBoxColumn.ReadOnly = true;
-            this.isactiveDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.isactiveDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
             // dataTable1BindingSource1
             // 
             this.dataTable1BindingSource1.DataMember = "DataTable1";
@@ -200,6 +159,49 @@
             this.pibOne.Size = new System.Drawing.Size(213, 422);
             this.pibOne.TabIndex = 3;
             this.pibOne.TabStop = false;
+            // 
+            // regnumber
+            // 
+            this.regnumber.DataPropertyName = "regnumber";
+            this.regnumber.HeaderText = "Registration Number";
+            this.regnumber.MinimumWidth = 6;
+            this.regnumber.Name = "regnumber";
+            this.regnumber.ReadOnly = true;
+            this.regnumber.Width = 150;
+            // 
+            // firstname
+            // 
+            this.firstname.DataPropertyName = "firstname";
+            this.firstname.HeaderText = "First Name";
+            this.firstname.MinimumWidth = 6;
+            this.firstname.Name = "firstname";
+            this.firstname.ReadOnly = true;
+            this.firstname.Width = 150;
+            // 
+            // lastnameDataGridViewTextBoxColumn
+            // 
+            this.lastnameDataGridViewTextBoxColumn.DataPropertyName = "lastname";
+            this.lastnameDataGridViewTextBoxColumn.HeaderText = "Last Name";
+            this.lastnameDataGridViewTextBoxColumn.Name = "lastnameDataGridViewTextBoxColumn";
+            this.lastnameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // jerseynumberDataGridViewTextBoxColumn
+            // 
+            this.jerseynumberDataGridViewTextBoxColumn.DataPropertyName = "jerseynumber";
+            this.jerseynumberDataGridViewTextBoxColumn.HeaderText = "Jersey Number";
+            this.jerseynumberDataGridViewTextBoxColumn.Name = "jerseynumberDataGridViewTextBoxColumn";
+            this.jerseynumberDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // isactiveDataGridViewTextBoxColumn
+            // 
+            this.isactiveDataGridViewTextBoxColumn.DataPropertyName = "isactive";
+            this.isactiveDataGridViewTextBoxColumn.FalseValue = "0";
+            this.isactiveDataGridViewTextBoxColumn.HeaderText = "Player Active";
+            this.isactiveDataGridViewTextBoxColumn.Name = "isactiveDataGridViewTextBoxColumn";
+            this.isactiveDataGridViewTextBoxColumn.ReadOnly = true;
+            this.isactiveDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.isactiveDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.isactiveDataGridViewTextBoxColumn.TrueValue = "1";
             // 
             // TeamPlayer
             // 
@@ -243,12 +245,12 @@
         private System.Windows.Forms.BindingSource sportleaguesDataSetBindingSource;
         private System.Windows.Forms.BindingSource playersBindingSource;
         private System.Windows.Forms.BindingSource teamsBindingSource1;
+        private System.Windows.Forms.PictureBox pibOne;
         private System.Windows.Forms.DataGridViewTextBoxColumn regnumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn firstname;
         private System.Windows.Forms.DataGridViewTextBoxColumn lastnameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn jerseynumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn isactiveDataGridViewTextBoxColumn;
-        private System.Windows.Forms.PictureBox pibOne;
     }
 }
 
