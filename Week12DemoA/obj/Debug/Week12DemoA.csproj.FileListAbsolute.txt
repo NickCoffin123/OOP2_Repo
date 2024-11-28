@@ -1,0 +1,10 @@
+C:\OOP-Repo\OOP2_Repo\Week12DemoA\bin\Debug\Week12DemoA.exe.config
+C:\OOP-Repo\OOP2_Repo\Week12DemoA\bin\Debug\Week12DemoA.exe
+C:\OOP-Repo\OOP2_Repo\Week12DemoA\bin\Debug\Week12DemoA.pdb
+C:\OOP-Repo\OOP2_Repo\Week12DemoA\obj\Debug\Week12DemoA.csproj.AssemblyReference.cache
+C:\OOP-Repo\OOP2_Repo\Week12DemoA\obj\Debug\Week12DemoA.frmCountries.resources
+C:\OOP-Repo\OOP2_Repo\Week12DemoA\obj\Debug\Week12DemoA.Properties.Resources.resources
+C:\OOP-Repo\OOP2_Repo\Week12DemoA\obj\Debug\Week12DemoA.csproj.GenerateResource.cache
+C:\OOP-Repo\OOP2_Repo\Week12DemoA\obj\Debug\Week12DemoA.csproj.CoreCompileInputs.cache
+C:\OOP-Repo\OOP2_Repo\Week12DemoA\obj\Debug\Week12DemoA.exe
+C:\OOP-Repo\OOP2_Repo\Week12DemoA\obj\Debug\Week12DemoA.pdb
