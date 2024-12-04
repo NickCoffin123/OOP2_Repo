@@ -46,6 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Game.cs" />
+    <Compile Include="Classes\Review.cs" />
+    <Compile Include="Classes\User.cs" />
     <Compile Include="Forms\frmGames.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,7 +67,7 @@
     <Compile Include="Forms\frmRegister.Designer.cs">
       <DependentUpon>frmRegister.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="Classes\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\frmGames.resx">
       <DependentUpon>frmGames.cs</DependentUpon>
@@ -98,9 +101,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Classes\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\Background.png" />
   </ItemGroup>

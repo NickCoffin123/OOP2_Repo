@@ -12,9 +12,21 @@ namespace VideoGameReviews.Forms
 {
     public partial class frmLogin : Form
     {
+
+        #region Global Variables
+        #endregion
+
+        #region Constructors
         public frmLogin()
         {
             InitializeComponent();
+        }
+        #endregion
+
+        #region Control Event Handelers
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
@@ -22,10 +34,14 @@ namespace VideoGameReviews.Forms
             frmRegister frm = new frmRegister();
             frm.ShowDialog();
         }
+        #endregion
 
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
+        #region Custom UI Functions and Methods
+        #endregion
+        
+
+        
+
+        
     }
 }

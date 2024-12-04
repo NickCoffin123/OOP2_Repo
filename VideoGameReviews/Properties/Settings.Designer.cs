@@ -22,5 +22,16 @@ namespace VideoGameReviews.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=localhost;Initial Catalog=VideoGameReviews;Integrated Security=True;T" +
+            "rustServerCertificate=True")]
+        public string dbCon {
+            get {
+                return ((string)(this["dbCon"]));
+            }
+        }
     }
 }
