@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.tsmFile = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmLogOut = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmWindow = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmClose = new System.Windows.Forms.ToolStripMenuItem();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.tslCurrentUser = new System.Windows.Forms.ToolStripStatusLabel();
             this.label1 = new System.Windows.Forms.Label();
             this.txtGameTitle = new System.Windows.Forms.TextBox();
@@ -46,6 +46,9 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.dgvGames = new System.Windows.Forms.DataGridView();
             this.dgvReviews = new System.Windows.Forms.DataGridView();
+            this.Title = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Genre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ReleaseDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudReview)).BeginInit();
@@ -61,33 +64,23 @@
             this.tsmWindow});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1090, 28);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(818, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tslCurrentUser});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 632);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1090, 26);
-            this.statusStrip1.TabIndex = 1;
-            this.statusStrip1.Text = "statusStrip1";
             // 
             // tsmFile
             // 
             this.tsmFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmLogOut});
             this.tsmFile.Name = "tsmFile";
-            this.tsmFile.Size = new System.Drawing.Size(46, 24);
+            this.tsmFile.Size = new System.Drawing.Size(37, 20);
             this.tsmFile.Text = "File";
             // 
             // tsmLogOut
             // 
             this.tsmLogOut.Name = "tsmLogOut";
-            this.tsmLogOut.Size = new System.Drawing.Size(224, 26);
+            this.tsmLogOut.Size = new System.Drawing.Size(117, 22);
             this.tsmLogOut.Text = "Log Out";
             // 
             // tsmWindow
@@ -95,35 +88,49 @@
             this.tsmWindow.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmClose});
             this.tsmWindow.Name = "tsmWindow";
-            this.tsmWindow.Size = new System.Drawing.Size(78, 24);
+            this.tsmWindow.Size = new System.Drawing.Size(63, 20);
             this.tsmWindow.Text = "Window";
             // 
             // tsmClose
             // 
             this.tsmClose.Name = "tsmClose";
-            this.tsmClose.Size = new System.Drawing.Size(224, 26);
+            this.tsmClose.Size = new System.Drawing.Size(103, 22);
             this.tsmClose.Text = "Close";
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tslCurrentUser});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 513);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 10, 0);
+            this.statusStrip1.Size = new System.Drawing.Size(818, 22);
+            this.statusStrip1.TabIndex = 1;
+            this.statusStrip1.Text = "statusStrip1";
             // 
             // tslCurrentUser
             // 
             this.tslCurrentUser.Name = "tslCurrentUser";
-            this.tslCurrentUser.Size = new System.Drawing.Size(15, 20);
+            this.tslCurrentUser.Size = new System.Drawing.Size(12, 17);
             this.tslCurrentUser.Text = "-";
             // 
             // label1
             // 
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label1.Location = new System.Drawing.Point(0, 30);
+            this.label1.Location = new System.Drawing.Point(0, 24);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1090, 150);
+            this.label1.Size = new System.Drawing.Size(818, 122);
             this.label1.TabIndex = 2;
             // 
             // txtGameTitle
             // 
             this.txtGameTitle.Enabled = false;
-            this.txtGameTitle.Location = new System.Drawing.Point(143, 61);
+            this.txtGameTitle.Location = new System.Drawing.Point(107, 50);
+            this.txtGameTitle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtGameTitle.Name = "txtGameTitle";
-            this.txtGameTitle.Size = new System.Drawing.Size(200, 22);
+            this.txtGameTitle.Size = new System.Drawing.Size(151, 20);
             this.txtGameTitle.TabIndex = 16;
             // 
             // lblReviewDescription
@@ -131,10 +138,9 @@
             this.lblReviewDescription.AutoSize = true;
             this.lblReviewDescription.BackColor = System.Drawing.Color.Transparent;
             this.lblReviewDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblReviewDescription.Location = new System.Drawing.Point(32, 121);
-            this.lblReviewDescription.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblReviewDescription.Location = new System.Drawing.Point(24, 98);
             this.lblReviewDescription.Name = "lblReviewDescription";
-            this.lblReviewDescription.Size = new System.Drawing.Size(104, 31);
+            this.lblReviewDescription.Size = new System.Drawing.Size(82, 25);
             this.lblReviewDescription.TabIndex = 15;
             this.lblReviewDescription.Text = "Review";
             // 
@@ -143,18 +149,18 @@
             this.lblGameTitle.AutoSize = true;
             this.lblGameTitle.BackColor = System.Drawing.Color.Transparent;
             this.lblGameTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGameTitle.Location = new System.Drawing.Point(32, 52);
-            this.lblGameTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblGameTitle.Location = new System.Drawing.Point(24, 42);
             this.lblGameTitle.Name = "lblGameTitle";
-            this.lblGameTitle.Size = new System.Drawing.Size(87, 31);
+            this.lblGameTitle.Size = new System.Drawing.Size(69, 25);
             this.lblGameTitle.TabIndex = 14;
             this.lblGameTitle.Text = "Game";
             // 
             // rtbReview
             // 
-            this.rtbReview.Location = new System.Drawing.Point(143, 105);
+            this.rtbReview.Location = new System.Drawing.Point(107, 85);
+            this.rtbReview.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rtbReview.Name = "rtbReview";
-            this.rtbReview.Size = new System.Drawing.Size(248, 63);
+            this.rtbReview.Size = new System.Drawing.Size(187, 52);
             this.rtbReview.TabIndex = 17;
             this.rtbReview.Text = "";
             // 
@@ -163,68 +169,102 @@
             this.lblReview.AutoSize = true;
             this.lblReview.BackColor = System.Drawing.Color.Transparent;
             this.lblReview.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblReview.Location = new System.Drawing.Point(571, 52);
-            this.lblReview.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblReview.Location = new System.Drawing.Point(428, 42);
             this.lblReview.Name = "lblReview";
-            this.lblReview.Size = new System.Drawing.Size(104, 31);
+            this.lblReview.Size = new System.Drawing.Size(82, 25);
             this.lblReview.TabIndex = 18;
             this.lblReview.Text = "Review";
             // 
             // nudReview
             // 
-            this.nudReview.Location = new System.Drawing.Point(697, 62);
+            this.nudReview.Location = new System.Drawing.Point(523, 50);
+            this.nudReview.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.nudReview.Maximum = new decimal(new int[] {
             10,
             0,
             0,
             0});
             this.nudReview.Name = "nudReview";
-            this.nudReview.Size = new System.Drawing.Size(109, 22);
+            this.nudReview.Size = new System.Drawing.Size(82, 20);
             this.nudReview.TabIndex = 19;
             // 
             // btnPost
             // 
-            this.btnPost.Location = new System.Drawing.Point(577, 117);
+            this.btnPost.Location = new System.Drawing.Point(433, 95);
+            this.btnPost.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnPost.Name = "btnPost";
-            this.btnPost.Size = new System.Drawing.Size(121, 49);
+            this.btnPost.Size = new System.Drawing.Size(91, 40);
             this.btnPost.TabIndex = 20;
             this.btnPost.Text = "&Post";
             this.btnPost.UseVisualStyleBackColor = true;
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(750, 117);
+            this.btnDelete.Location = new System.Drawing.Point(562, 95);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(121, 49);
+            this.btnDelete.Size = new System.Drawing.Size(91, 40);
             this.btnDelete.TabIndex = 21;
             this.btnDelete.Text = "&Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
             // 
             // dgvGames
             // 
+            this.dgvGames.AllowUserToAddRows = false;
+            this.dgvGames.AllowUserToDeleteRows = false;
             this.dgvGames.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvGames.Location = new System.Drawing.Point(0, 183);
+            this.dgvGames.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Title,
+            this.Genre,
+            this.ReleaseDate});
+            this.dgvGames.Location = new System.Drawing.Point(0, 149);
+            this.dgvGames.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvGames.Name = "dgvGames";
+            this.dgvGames.ReadOnly = true;
             this.dgvGames.RowHeadersWidth = 51;
             this.dgvGames.RowTemplate.Height = 24;
-            this.dgvGames.Size = new System.Drawing.Size(550, 446);
+            this.dgvGames.Size = new System.Drawing.Size(412, 362);
             this.dgvGames.TabIndex = 22;
             // 
             // dgvReviews
             // 
             this.dgvReviews.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvReviews.Location = new System.Drawing.Point(556, 183);
+            this.dgvReviews.Location = new System.Drawing.Point(417, 149);
+            this.dgvReviews.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvReviews.Name = "dgvReviews";
             this.dgvReviews.RowHeadersWidth = 51;
             this.dgvReviews.RowTemplate.Height = 24;
-            this.dgvReviews.Size = new System.Drawing.Size(534, 446);
+            this.dgvReviews.Size = new System.Drawing.Size(400, 362);
             this.dgvReviews.TabIndex = 23;
+            // 
+            // Title
+            // 
+            this.Title.DataPropertyName = "Title";
+            this.Title.HeaderText = "Title";
+            this.Title.Name = "Title";
+            this.Title.ReadOnly = true;
+            this.Title.Width = 140;
+            // 
+            // Genre
+            // 
+            this.Genre.DataPropertyName = "Genre";
+            this.Genre.HeaderText = "Genre";
+            this.Genre.Name = "Genre";
+            this.Genre.ReadOnly = true;
+            // 
+            // ReleaseDate
+            // 
+            this.ReleaseDate.DataPropertyName = "ReleaseDate";
+            this.ReleaseDate.HeaderText = "Release Date";
+            this.ReleaseDate.Name = "ReleaseDate";
+            this.ReleaseDate.ReadOnly = true;
+            this.ReleaseDate.Width = 95;
             // 
             // frmGames
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1090, 658);
+            this.ClientSize = new System.Drawing.Size(818, 535);
             this.Controls.Add(this.dgvReviews);
             this.Controls.Add(this.dgvGames);
             this.Controls.Add(this.btnDelete);
@@ -239,6 +279,7 @@
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmGames";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Games";
@@ -275,6 +316,9 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.DataGridView dgvGames;
         private System.Windows.Forms.DataGridView dgvReviews;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Title;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Genre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ReleaseDate;
     }
 }
 

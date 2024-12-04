@@ -44,11 +44,8 @@ namespace VideoGameReviews
                 throw new Exception(ex.Message);
             }
 
+            dgvGames.AutoGenerateColumns = false;
             dgvGames.DataSource = DBAL.Game.games;
-
-            //dataGridView1.AutoGenerateColumns = false;
-            //dataGridView1.DataSource = Country.countries;
-
         }
         #endregion
         
