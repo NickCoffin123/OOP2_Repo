@@ -31,6 +31,11 @@
             this.lblLoginTitle = new System.Windows.Forms.Label();
             this.lblUserName = new System.Windows.Forms.Label();
             this.lblPassword = new System.Windows.Forms.Label();
+            this.txtUsername = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.btnRegister = new System.Windows.Forms.Button();
+            this.btnSignIn = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblLoginTitle
@@ -72,6 +77,49 @@
             this.lblPassword.TabIndex = 2;
             this.lblPassword.Text = "Password";
             // 
+            // txtUsername
+            // 
+            this.txtUsername.Location = new System.Drawing.Point(326, 152);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(200, 22);
+            this.txtUsername.TabIndex = 3;
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.Location = new System.Drawing.Point(326, 203);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(200, 22);
+            this.txtPassword.TabIndex = 4;
+            // 
+            // btnRegister
+            // 
+            this.btnRegister.Location = new System.Drawing.Point(66, 327);
+            this.btnRegister.Name = "btnRegister";
+            this.btnRegister.Size = new System.Drawing.Size(121, 49);
+            this.btnRegister.TabIndex = 5;
+            this.btnRegister.Text = "&Register";
+            this.btnRegister.UseVisualStyleBackColor = true;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
+            // 
+            // btnSignIn
+            // 
+            this.btnSignIn.Location = new System.Drawing.Point(334, 327);
+            this.btnSignIn.Name = "btnSignIn";
+            this.btnSignIn.Size = new System.Drawing.Size(121, 49);
+            this.btnSignIn.TabIndex = 6;
+            this.btnSignIn.Text = "&Sign In";
+            this.btnSignIn.UseVisualStyleBackColor = true;
+            // 
+            // btnExit
+            // 
+            this.btnExit.Location = new System.Drawing.Point(602, 327);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(121, 49);
+            this.btnExit.TabIndex = 7;
+            this.btnExit.Text = "&Exit";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -79,6 +127,11 @@
             this.BackColor = System.Drawing.Color.Black;
             this.BackgroundImage = global::VideoGameReviews.Properties.Resources.Background;
             this.ClientSize = new System.Drawing.Size(800, 400);
+            this.Controls.Add(this.btnExit);
+            this.Controls.Add(this.btnSignIn);
+            this.Controls.Add(this.btnRegister);
+            this.Controls.Add(this.txtPassword);
+            this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.lblUserName);
             this.Controls.Add(this.lblLoginTitle);
@@ -96,5 +149,10 @@
         private System.Windows.Forms.Label lblLoginTitle;
         private System.Windows.Forms.Label lblUserName;
         private System.Windows.Forms.Label lblPassword;
+        private System.Windows.Forms.TextBox txtUsername;
+        private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.Button btnRegister;
+        private System.Windows.Forms.Button btnSignIn;
+        private System.Windows.Forms.Button btnExit;
     }
 }

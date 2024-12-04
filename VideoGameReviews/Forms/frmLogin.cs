@@ -16,5 +16,16 @@ namespace VideoGameReviews.Forms
         {
             InitializeComponent();
         }
+
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
+            frmRegister frm = new frmRegister();
+            frm.ShowDialog();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

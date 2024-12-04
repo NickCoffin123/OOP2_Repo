@@ -20,9 +20,9 @@ namespace VideoGameReviews
 
         private void frmGames_Load(object sender, EventArgs e)
         {
-            this.Hide();
-            frmLogin frm = new frmLogin();
-            frm.ShowDialog();
+            //this.Hide();
+            //frmLogin frm = new frmLogin();
+            //frm.ShowDialog();
         }
     }
 }
