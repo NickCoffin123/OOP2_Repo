@@ -1,0 +1,12 @@
+C:\OOP-Repo\OOP2_Repo\VideoGameReviews\bin\Debug\VideoGameReviews.exe.config
+C:\OOP-Repo\OOP2_Repo\VideoGameReviews\bin\Debug\VideoGameReviews.exe
+C:\OOP-Repo\OOP2_Repo\VideoGameReviews\bin\Debug\VideoGameReviews.pdb
+C:\OOP-Repo\OOP2_Repo\VideoGameReviews\obj\Debug\VideoGameReviews.csproj.AssemblyReference.cache
+C:\OOP-Repo\OOP2_Repo\VideoGameReviews\obj\Debug\VideoGameReviews.Properties.Resources.resources
+C:\OOP-Repo\OOP2_Repo\VideoGameReviews\obj\Debug\VideoGameReviews.csproj.GenerateResource.cache
+C:\OOP-Repo\OOP2_Repo\VideoGameReviews\obj\Debug\VideoGameReviews.csproj.CoreCompileInputs.cache
+C:\OOP-Repo\OOP2_Repo\VideoGameReviews\obj\Debug\VideoGameReviews.exe
+C:\OOP-Repo\OOP2_Repo\VideoGameReviews\obj\Debug\VideoGameReviews.pdb
+C:\OOP-Repo\OOP2_Repo\VideoGameReviews\obj\Debug\VideoGameReviews.frmGames.resources
+C:\OOP-Repo\OOP2_Repo\VideoGameReviews\obj\Debug\VideoGameReviews.Forms.frmLogin.resources
+C:\OOP-Repo\OOP2_Repo\VideoGameReviews\obj\Debug\VideoGameReviews.Forms.frmRegister.resources

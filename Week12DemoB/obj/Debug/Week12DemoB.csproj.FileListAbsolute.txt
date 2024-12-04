@@ -1,0 +1,12 @@
+C:\OOP-Repo\OOP2_Repo\Week12DemoB\bin\Debug\Week12DemoB.exe.config
+C:\OOP-Repo\OOP2_Repo\Week12DemoB\bin\Debug\Week12DemoB.exe
+C:\OOP-Repo\OOP2_Repo\Week12DemoB\bin\Debug\Week12DemoB.pdb
+C:\OOP-Repo\OOP2_Repo\Week12DemoB\obj\Debug\Week12DemoB.csproj.AssemblyReference.cache
+C:\OOP-Repo\OOP2_Repo\Week12DemoB\obj\Debug\Week12DemoB.Form1.resources
+C:\OOP-Repo\OOP2_Repo\Week12DemoB\obj\Debug\Week12DemoB.frmSub.resources
+C:\OOP-Repo\OOP2_Repo\Week12DemoB\obj\Debug\Week12DemoB.Properties.Resources.resources
+C:\OOP-Repo\OOP2_Repo\Week12DemoB\obj\Debug\Week12DemoB.csproj.GenerateResource.cache
+C:\OOP-Repo\OOP2_Repo\Week12DemoB\obj\Debug\Week12DemoB.csproj.CoreCompileInputs.cache
+C:\OOP-Repo\OOP2_Repo\Week12DemoB\obj\Debug\Week12DemoB.exe
+C:\OOP-Repo\OOP2_Repo\Week12DemoB\obj\Debug\Week12DemoB.pdb
+C:\OOP-Repo\OOP2_Repo\Week12DemoB\obj\Debug\Week12DemoB.frmBrother.resources
