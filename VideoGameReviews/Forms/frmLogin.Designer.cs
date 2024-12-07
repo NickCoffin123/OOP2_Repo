@@ -29,13 +29,14 @@
         private void InitializeComponent()
         {
             this.lblLoginTitle = new System.Windows.Forms.Label();
-            this.lblUserName = new System.Windows.Forms.Label();
-            this.lblPassword = new System.Windows.Forms.Label();
-            this.txtUsername = new System.Windows.Forms.TextBox();
-            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.lblPasskey = new System.Windows.Forms.Label();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.btnRegister = new System.Windows.Forms.Button();
             this.btnSignIn = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
+            this.nudPasskey = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPasskey)).BeginInit();
             this.SuspendLayout();
             // 
             // lblLoginTitle
@@ -53,43 +54,36 @@
             this.lblLoginTitle.Text = "Welcome";
             this.lblLoginTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblUserName
+            // lblEmail
             // 
-            this.lblUserName.AutoSize = true;
-            this.lblUserName.BackColor = System.Drawing.Color.Transparent;
-            this.lblUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUserName.Location = new System.Drawing.Point(179, 144);
-            this.lblUserName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(139, 31);
-            this.lblUserName.TabIndex = 1;
-            this.lblUserName.Text = "Username";
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.BackColor = System.Drawing.Color.Transparent;
+            this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmail.Location = new System.Drawing.Point(232, 143);
+            this.lblEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(81, 31);
+            this.lblEmail.TabIndex = 1;
+            this.lblEmail.Text = "Email";
             // 
-            // lblPassword
+            // lblPasskey
             // 
-            this.lblPassword.AutoSize = true;
-            this.lblPassword.BackColor = System.Drawing.Color.Transparent;
-            this.lblPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassword.Location = new System.Drawing.Point(179, 194);
-            this.lblPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(134, 31);
-            this.lblPassword.TabIndex = 2;
-            this.lblPassword.Text = "Password";
+            this.lblPasskey.AutoSize = true;
+            this.lblPasskey.BackColor = System.Drawing.Color.Transparent;
+            this.lblPasskey.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPasskey.Location = new System.Drawing.Point(179, 194);
+            this.lblPasskey.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPasskey.Name = "lblPasskey";
+            this.lblPasskey.Size = new System.Drawing.Size(134, 31);
+            this.lblPasskey.TabIndex = 2;
+            this.lblPasskey.Text = "Password";
             // 
-            // txtUsername
+            // txtEmail
             // 
-            this.txtUsername.Location = new System.Drawing.Point(326, 152);
-            this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(200, 22);
-            this.txtUsername.TabIndex = 3;
-            // 
-            // txtPassword
-            // 
-            this.txtPassword.Location = new System.Drawing.Point(326, 203);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(200, 22);
-            this.txtPassword.TabIndex = 4;
+            this.txtEmail.Location = new System.Drawing.Point(326, 152);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(200, 22);
+            this.txtEmail.TabIndex = 3;
             // 
             // btnRegister
             // 
@@ -109,6 +103,7 @@
             this.btnSignIn.TabIndex = 6;
             this.btnSignIn.Text = "&Sign In";
             this.btnSignIn.UseVisualStyleBackColor = true;
+            this.btnSignIn.Click += new System.EventHandler(this.btnSignIn_Click);
             // 
             // btnExit
             // 
@@ -120,6 +115,28 @@
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
+            // nudPasskey
+            // 
+            this.nudPasskey.Location = new System.Drawing.Point(326, 204);
+            this.nudPasskey.Maximum = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            0});
+            this.nudPasskey.Minimum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.nudPasskey.Name = "nudPasskey";
+            this.nudPasskey.Size = new System.Drawing.Size(200, 22);
+            this.nudPasskey.TabIndex = 8;
+            this.nudPasskey.Value = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -127,18 +144,19 @@
             this.BackColor = System.Drawing.Color.Black;
             this.BackgroundImage = global::VideoGameReviews.Properties.Resources.Background;
             this.ClientSize = new System.Drawing.Size(800, 400);
+            this.Controls.Add(this.nudPasskey);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnSignIn);
             this.Controls.Add(this.btnRegister);
-            this.Controls.Add(this.txtPassword);
-            this.Controls.Add(this.txtUsername);
-            this.Controls.Add(this.lblPassword);
-            this.Controls.Add(this.lblUserName);
+            this.Controls.Add(this.txtEmail);
+            this.Controls.Add(this.lblPasskey);
+            this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.lblLoginTitle);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            ((System.ComponentModel.ISupportInitialize)(this.nudPasskey)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -147,12 +165,12 @@
         #endregion
 
         private System.Windows.Forms.Label lblLoginTitle;
-        private System.Windows.Forms.Label lblUserName;
-        private System.Windows.Forms.Label lblPassword;
-        private System.Windows.Forms.TextBox txtUsername;
-        private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.Label lblEmail;
+        private System.Windows.Forms.Label lblPasskey;
+        private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Button btnRegister;
         private System.Windows.Forms.Button btnSignIn;
         private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.NumericUpDown nudPasskey;
     }
 }

@@ -10,12 +10,12 @@ namespace Week13DemoB
     {
         public static decimal ConvertFtoC(decimal farenheit)
         {
-            return (farenheit - 32) * 5 / 9;
+            return Math.Round((farenheit - 32) * 5 / 9,2);
         } 
 
         public static decimal ConvertCtoF(decimal celsius)
         {
-            return celsius * 9 / 5 + 32;
+            return Math.Round(celsius * 9 / 5 + 32,2);
         }
 
 

@@ -29,6 +29,7 @@ namespace VideoGameReviews.Forms
         {
             this.Close();
         }
+
         #endregion
 
         #region Custom UI Functions and Methods
