@@ -35,8 +35,9 @@ namespace VideoGameReviews.Forms
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            frmRegister frm = new frmRegister();
-            frm.ShowDialog();
+            frmRegister registerForm = new frmRegister();
+            registerForm.ShowDialog(); 
+            txtEmail.Text = frmRegister.lastRegistered;
         }
 
         private void btnSignIn_Click(object sender, EventArgs e)
@@ -52,14 +53,13 @@ namespace VideoGameReviews.Forms
 
             try
             {
-                // Call the GetUser method to verify login credentials
                 User user = User.GetUser(email, passkey);
 
                 if (user != null)
                 {
-                    LoggedInUser = user; // Set the logged-in user
-                    DialogResult = DialogResult.OK; // Set the dialog result to OK
-                    Close(); // Close the login form
+                    LoggedInUser = user;
+                    DialogResult = DialogResult.OK;
+                    Close();
                 }
                 else
                 {
@@ -75,6 +75,9 @@ namespace VideoGameReviews.Forms
         #endregion
 
         #region Custom UI Functions and Methods
+
+      
+
         #endregion
 
 

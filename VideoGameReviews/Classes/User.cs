@@ -106,7 +106,6 @@ namespace VideoGameReviews.DBAL
             }
         }
 
-
         #endregion
 
         #region Static Methods
@@ -244,6 +243,50 @@ namespace VideoGameReviews.DBAL
             catch (Exception ex)
             {
                 throw new Exception($"Error verifying user: {ex.Message}");
+            }
+        }
+
+        public static bool IsEmailUnique(string email)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(Settings.Default.dbCon))
+                {
+                    using (SqlCommand cmd = new SqlCommand("SELECT COUNT(UserID) FROM Users WHERE Email = @Email", conn))
+                    {
+                        cmd.CommandType = System.Data.CommandType.Text;
+                        cmd.Parameters.AddWithValue("@Email", email);
+
+                        conn.Open();
+                        int count = (int)cmd.ExecuteScalar();
+                        return count == 0;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error checking email uniqueness: {ex.Message}");
+            }
+        }
+
+        public static int GetNextUserId()
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(Settings.Default.dbCon))
+                {
+                    using (SqlCommand cmd = new SqlCommand("SELECT ISNULL(MAX(UserID), 0) + 1 FROM Users", conn))
+                    {
+                        cmd.CommandType = System.Data.CommandType.Text;
+
+                        conn.Open();
+                        return (int)cmd.ExecuteScalar(); // Increment the max UserID
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error generating UserID: {ex.Message}");
             }
         }
 
