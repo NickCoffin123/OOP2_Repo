@@ -9,6 +9,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -41,6 +42,7 @@ namespace VideoGameReviews
         public frmGames()
         {
             InitializeComponent();
+            PlaySound();
 
             this.AcceptButton = btnPost;
             this.CancelButton = btnDelete;
@@ -235,7 +237,11 @@ namespace VideoGameReviews
             }
         }
 
-
+        public void PlaySound()
+        {
+            SoundPlayer player = new SoundPlayer(Properties.Resources._04_The_Moonlighter);
+            player.Play();
+        }
 
         #endregion
 

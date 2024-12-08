@@ -101,7 +101,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\04 The Moonlighter.wav" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Background.png" />
   </ItemGroup>
