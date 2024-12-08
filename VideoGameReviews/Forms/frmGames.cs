@@ -237,6 +237,9 @@ namespace VideoGameReviews
             }
         }
 
+        /// <summary>
+        /// Song is my added feature
+        /// </summary>
         public void PlaySound()
         {
             SoundPlayer player = new SoundPlayer(Properties.Resources._04_The_Moonlighter);
