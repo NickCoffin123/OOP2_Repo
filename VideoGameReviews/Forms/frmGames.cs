@@ -39,6 +39,8 @@ namespace VideoGameReviews
             frmLogin frm = new frmLogin();
             frm.ShowDialog();
 
+            tslCurrentUser.Text = "Welcome - " + frmLogin.currentUser;
+
             try
             {
                 Game.PopulateGames();
@@ -52,6 +54,8 @@ namespace VideoGameReviews
             dgvGames.DataSource = DBAL.Game.games;
 
            }
+
+
 
 
         #endregion

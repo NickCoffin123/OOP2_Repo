@@ -16,6 +16,8 @@ namespace VideoGameReviews.Forms
 
         #region Global Variables
 
+        public static string currentUser = string.Empty;
+
         public User LoggedInUser { get; private set; }
 
         #endregion
@@ -59,6 +61,7 @@ namespace VideoGameReviews.Forms
                 {
                     LoggedInUser = user;
                     DialogResult = DialogResult.OK;
+                    currentUser = user.FirstName + " " + user.LastName;
                     Close();
                 }
                 else

@@ -69,7 +69,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1091, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1091, 30);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -78,7 +78,7 @@
             this.tsmFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmLogOut});
             this.tsmFile.Name = "tsmFile";
-            this.tsmFile.Size = new System.Drawing.Size(46, 24);
+            this.tsmFile.Size = new System.Drawing.Size(46, 26);
             this.tsmFile.Text = "File";
             // 
             // tsmLogOut
@@ -92,7 +92,7 @@
             this.tsmWindow.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmClose});
             this.tsmWindow.Name = "tsmWindow";
-            this.tsmWindow.Size = new System.Drawing.Size(78, 24);
+            this.tsmWindow.Size = new System.Drawing.Size(78, 26);
             this.tsmWindow.Text = "Window";
             // 
             // tsmClose
@@ -116,8 +116,8 @@
             // tslCurrentUser
             // 
             this.tslCurrentUser.Name = "tslCurrentUser";
-            this.tslCurrentUser.Size = new System.Drawing.Size(15, 20);
-            this.tslCurrentUser.Text = "-";
+            this.tslCurrentUser.Size = new System.Drawing.Size(85, 20);
+            this.tslCurrentUser.Text = "Welcome - ";
             // 
             // label1
             // 
