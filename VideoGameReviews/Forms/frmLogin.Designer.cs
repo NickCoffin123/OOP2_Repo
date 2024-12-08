@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblLoginTitle = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblPasskey = new System.Windows.Forms.Label();
@@ -36,6 +37,7 @@
             this.btnSignIn = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.nudPasskey = new System.Windows.Forms.NumericUpDown();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.nudPasskey)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,27 +73,29 @@
             this.lblPasskey.AutoSize = true;
             this.lblPasskey.BackColor = System.Drawing.Color.Transparent;
             this.lblPasskey.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPasskey.Location = new System.Drawing.Point(179, 194);
+            this.lblPasskey.Location = new System.Drawing.Point(191, 194);
             this.lblPasskey.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPasskey.Name = "lblPasskey";
-            this.lblPasskey.Size = new System.Drawing.Size(134, 31);
+            this.lblPasskey.Size = new System.Drawing.Size(122, 31);
             this.lblPasskey.TabIndex = 2;
-            this.lblPasskey.Text = "Password";
+            this.lblPasskey.Text = "PassKey";
             // 
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(326, 152);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(200, 22);
-            this.txtEmail.TabIndex = 3;
+            this.txtEmail.TabIndex = 1;
+            this.toolTip1.SetToolTip(this.txtEmail, "Email");
             // 
             // btnRegister
             // 
             this.btnRegister.Location = new System.Drawing.Point(66, 327);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(121, 49);
-            this.btnRegister.TabIndex = 5;
+            this.btnRegister.TabIndex = 4;
             this.btnRegister.Text = "&Register";
+            this.toolTip1.SetToolTip(this.btnRegister, "Register");
             this.btnRegister.UseVisualStyleBackColor = true;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
@@ -100,8 +104,9 @@
             this.btnSignIn.Location = new System.Drawing.Point(334, 327);
             this.btnSignIn.Name = "btnSignIn";
             this.btnSignIn.Size = new System.Drawing.Size(121, 49);
-            this.btnSignIn.TabIndex = 6;
+            this.btnSignIn.TabIndex = 3;
             this.btnSignIn.Text = "&Sign In";
+            this.toolTip1.SetToolTip(this.btnSignIn, "Sign In");
             this.btnSignIn.UseVisualStyleBackColor = true;
             this.btnSignIn.Click += new System.EventHandler(this.btnSignIn_Click);
             // 
@@ -110,8 +115,9 @@
             this.btnExit.Location = new System.Drawing.Point(602, 327);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(121, 49);
-            this.btnExit.TabIndex = 7;
+            this.btnExit.TabIndex = 5;
             this.btnExit.Text = "&Exit";
+            this.toolTip1.SetToolTip(this.btnExit, "Exit");
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
@@ -130,7 +136,8 @@
             0});
             this.nudPasskey.Name = "nudPasskey";
             this.nudPasskey.Size = new System.Drawing.Size(200, 22);
-            this.nudPasskey.TabIndex = 8;
+            this.nudPasskey.TabIndex = 2;
+            this.toolTip1.SetToolTip(this.nudPasskey, "PassKey");
             this.nudPasskey.Value = new decimal(new int[] {
             1000,
             0,
@@ -172,5 +179,6 @@
         private System.Windows.Forms.Button btnSignIn;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.NumericUpDown nudPasskey;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

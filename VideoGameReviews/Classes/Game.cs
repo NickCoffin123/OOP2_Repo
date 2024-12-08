@@ -1,4 +1,9 @@
-﻿using System;
+﻿/* Nick Coffin - 100555045.
+* OOP - Assignment 5 VideoGame Review.
+* December, 2024.
+* Game class.
+*/
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -32,9 +37,18 @@ namespace VideoGameReviews.DBAL
         #endregion
 
         #region Constructors
-
+        /// <summary>
+        /// Empty constructor
+        /// </summary>
         public Game() { }
 
+        /// <summary>
+        /// Paramatized constructor
+        /// </summary>
+        /// <param name="gameId"></param>
+        /// <param name="title"></param>
+        /// <param name="genre"></param>
+        /// <param name="releaseDate"></param>
         public Game(int gameId, string title, string genre, DateTime releaseDate)
         {
             GameId = gameId;
@@ -47,6 +61,10 @@ namespace VideoGameReviews.DBAL
 
         #region Custom Methods
 
+        /// <summary>
+        /// Method to add a game
+        /// </summary>
+        /// <exception cref="Exception"></exception>
         public void AddGame()
         {
             try
@@ -74,6 +92,10 @@ namespace VideoGameReviews.DBAL
             }
         }
 
+        /// <summary>
+        /// Method to update a game
+        /// </summary>
+        /// <exception cref="Exception"></exception>
         public void UpdateGame()
         {
             try
@@ -104,7 +126,12 @@ namespace VideoGameReviews.DBAL
         #endregion
 
         #region Static Methods
-
+        /// <summary>
+        /// Method to return one game
+        /// </summary>
+        /// <param name="gameId"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public static Game ReturnGame(int gameId)
         {
             try
@@ -142,9 +169,11 @@ namespace VideoGameReviews.DBAL
                 throw new Exception($"Error fetching game: {ex.Message}");
             }
         }
-
-
-
+        
+        /// <summary>
+        /// Method to populate the list of games
+        /// </summary>
+        /// <exception cref="Exception"></exception>
         public static void PopulateGames()
         {
             try
@@ -179,6 +208,11 @@ namespace VideoGameReviews.DBAL
 
         }
 
+        /// <summary>
+        /// Method to delete a game
+        /// </summary>
+        /// <param name="gameId"></param>
+        /// <exception cref="Exception"></exception>
         public static void DeleteGame(int gameId)
         {
             try

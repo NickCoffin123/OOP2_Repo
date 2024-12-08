@@ -1,4 +1,9 @@
-﻿using System;
+﻿/* Nick Coffin - 100555045.
+* OOP - Assignment 5 VideoGame Review.
+* December, 2024.
+* Login form.
+*/
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,6 +16,9 @@ using VideoGameReviews.DBAL;
 
 namespace VideoGameReviews.Forms
 {
+    /// <summary>
+    /// Main method
+    /// </summary>
     public partial class frmLogin : Form
     {
 
@@ -18,23 +26,40 @@ namespace VideoGameReviews.Forms
 
         public static string currentUser = string.Empty;
 
+        public static int currentID = 0;
         public User LoggedInUser { get; private set; }
 
         #endregion
 
         #region Constructors
+        /// <summary>
+        /// Main constructor
+        /// </summary>
         public frmLogin()
         {
             InitializeComponent();
+
+            this.AcceptButton = btnSignIn;
+            this.CancelButton = btnExit;
         }
         #endregion
 
         #region Control Event Handelers
+        /// <summary>
+        /// Method to exit
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
+        /// <summary>
+        /// Method to load the register form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnRegister_Click(object sender, EventArgs e)
         {
             frmRegister registerForm = new frmRegister();
@@ -42,6 +67,11 @@ namespace VideoGameReviews.Forms
             txtEmail.Text = frmRegister.lastRegistered;
         }
 
+        /// <summary>
+        /// Method to check the sign in
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSignIn_Click(object sender, EventArgs e)
         {
             string email = txtEmail.Text.Trim();
@@ -59,6 +89,7 @@ namespace VideoGameReviews.Forms
 
                 if (user != null)
                 {
+                    currentID = user.UserID;
                     LoggedInUser = user;
                     DialogResult = DialogResult.OK;
                     currentUser = user.FirstName + " " + user.LastName;

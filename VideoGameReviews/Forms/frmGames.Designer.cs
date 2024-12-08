@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.tsmFile = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmLogOut = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,8 +52,10 @@
             this.GameID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvReviews = new System.Windows.Forms.DataGridView();
             this.Rating = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ReviewId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Review = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ReviewDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudReview)).BeginInit();
@@ -69,7 +72,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1091, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(1091, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -78,28 +81,30 @@
             this.tsmFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmLogOut});
             this.tsmFile.Name = "tsmFile";
-            this.tsmFile.Size = new System.Drawing.Size(46, 26);
+            this.tsmFile.Size = new System.Drawing.Size(46, 24);
             this.tsmFile.Text = "File";
             // 
             // tsmLogOut
             // 
             this.tsmLogOut.Name = "tsmLogOut";
-            this.tsmLogOut.Size = new System.Drawing.Size(145, 26);
+            this.tsmLogOut.Size = new System.Drawing.Size(224, 26);
             this.tsmLogOut.Text = "Log Out";
+            this.tsmLogOut.Click += new System.EventHandler(this.tsmLogOut_Click);
             // 
             // tsmWindow
             // 
             this.tsmWindow.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmClose});
             this.tsmWindow.Name = "tsmWindow";
-            this.tsmWindow.Size = new System.Drawing.Size(78, 26);
+            this.tsmWindow.Size = new System.Drawing.Size(78, 24);
             this.tsmWindow.Text = "Window";
             // 
             // tsmClose
             // 
             this.tsmClose.Name = "tsmClose";
-            this.tsmClose.Size = new System.Drawing.Size(128, 26);
+            this.tsmClose.Size = new System.Drawing.Size(224, 26);
             this.tsmClose.Text = "Close";
+            this.tsmClose.Click += new System.EventHandler(this.tsmClose_Click);
             // 
             // statusStrip1
             // 
@@ -135,6 +140,7 @@
             this.txtGameTitle.Name = "txtGameTitle";
             this.txtGameTitle.Size = new System.Drawing.Size(200, 22);
             this.txtGameTitle.TabIndex = 16;
+            this.toolTip1.SetToolTip(this.txtGameTitle, "Game name");
             // 
             // lblReview
             // 
@@ -166,8 +172,9 @@
             this.rtbReview.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rtbReview.Name = "rtbReview";
             this.rtbReview.Size = new System.Drawing.Size(248, 63);
-            this.rtbReview.TabIndex = 17;
+            this.rtbReview.TabIndex = 1;
             this.rtbReview.Text = "";
+            this.toolTip1.SetToolTip(this.rtbReview, "Game review");
             // 
             // lblRating
             // 
@@ -192,7 +199,8 @@
             0});
             this.nudReview.Name = "nudReview";
             this.nudReview.Size = new System.Drawing.Size(109, 22);
-            this.nudReview.TabIndex = 19;
+            this.nudReview.TabIndex = 2;
+            this.toolTip1.SetToolTip(this.nudReview, "Game Rating");
             // 
             // btnPost
             // 
@@ -200,9 +208,11 @@
             this.btnPost.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPost.Name = "btnPost";
             this.btnPost.Size = new System.Drawing.Size(121, 49);
-            this.btnPost.TabIndex = 20;
+            this.btnPost.TabIndex = 3;
             this.btnPost.Text = "&Post";
+            this.toolTip1.SetToolTip(this.btnPost, "Post Review");
             this.btnPost.UseVisualStyleBackColor = true;
+            this.btnPost.Click += new System.EventHandler(this.btnPost_Click);
             // 
             // btnDelete
             // 
@@ -210,9 +220,11 @@
             this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(121, 49);
-            this.btnDelete.TabIndex = 21;
+            this.btnDelete.TabIndex = 4;
             this.btnDelete.Text = "&Delete";
+            this.toolTip1.SetToolTip(this.btnDelete, "Delete Review");
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // dgvGames
             // 
@@ -278,6 +290,7 @@
             this.dgvReviews.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvReviews.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Rating,
+            this.ReviewId,
             this.Review,
             this.ReviewDate});
             this.dgvReviews.Location = new System.Drawing.Point(556, 183);
@@ -288,6 +301,7 @@
             this.dgvReviews.RowTemplate.Height = 24;
             this.dgvReviews.Size = new System.Drawing.Size(533, 446);
             this.dgvReviews.TabIndex = 23;
+            this.dgvReviews.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvReviews_CellContentClick);
             // 
             // Rating
             // 
@@ -297,6 +311,16 @@
             this.Rating.Name = "Rating";
             this.Rating.ReadOnly = true;
             this.Rating.Width = 50;
+            // 
+            // ReviewId
+            // 
+            this.ReviewId.DataPropertyName = "ReviewID";
+            this.ReviewId.HeaderText = "ReviewId";
+            this.ReviewId.MinimumWidth = 6;
+            this.ReviewId.Name = "ReviewId";
+            this.ReviewId.ReadOnly = true;
+            this.ReviewId.Visible = false;
+            this.ReviewId.Width = 125;
             // 
             // Review
             // 
@@ -377,8 +401,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ReleaseDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn GameID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Rating;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ReviewId;
         private System.Windows.Forms.DataGridViewTextBoxColumn Review;
         private System.Windows.Forms.DataGridViewTextBoxColumn ReviewDate;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
 

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblLoginTitle = new System.Windows.Forms.Label();
             this.btnRegister = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
@@ -39,6 +40,7 @@
             this.lblLastName = new System.Windows.Forms.Label();
             this.lblFirstName = new System.Windows.Forms.Label();
             this.nudPassKey = new System.Windows.Forms.NumericUpDown();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.nudPassKey)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,8 +65,9 @@
             this.btnRegister.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(121, 49);
-            this.btnRegister.TabIndex = 8;
+            this.btnRegister.TabIndex = 5;
             this.btnRegister.Text = "&Register";
+            this.toolTip1.SetToolTip(this.btnRegister, "Register");
             this.btnRegister.UseVisualStyleBackColor = true;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
@@ -74,8 +77,9 @@
             this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(121, 49);
-            this.btnCancel.TabIndex = 9;
+            this.btnCancel.TabIndex = 6;
             this.btnCancel.Text = "&Cancel";
+            this.toolTip1.SetToolTip(this.btnCancel, "Cancel");
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
@@ -85,7 +89,8 @@
             this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(200, 22);
-            this.txtEmail.TabIndex = 12;
+            this.txtEmail.TabIndex = 3;
+            this.toolTip1.SetToolTip(this.txtEmail, "Enter email");
             // 
             // lblPassword
             // 
@@ -117,7 +122,8 @@
             this.txtLastName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(200, 22);
-            this.txtLastName.TabIndex = 17;
+            this.txtLastName.TabIndex = 2;
+            this.toolTip1.SetToolTip(this.txtLastName, "Enter Last Name");
             // 
             // txtFirstName
             // 
@@ -125,7 +131,8 @@
             this.txtFirstName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(200, 22);
-            this.txtFirstName.TabIndex = 16;
+            this.txtFirstName.TabIndex = 1;
+            this.toolTip1.SetToolTip(this.txtFirstName, "Enter First Name");
             // 
             // lblLastName
             // 
@@ -166,7 +173,8 @@
             0});
             this.nudPassKey.Name = "nudPassKey";
             this.nudPassKey.Size = new System.Drawing.Size(200, 22);
-            this.nudPassKey.TabIndex = 18;
+            this.nudPassKey.TabIndex = 4;
+            this.toolTip1.SetToolTip(this.nudPassKey, "Enter PassKey");
             this.nudPassKey.Value = new decimal(new int[] {
             1000,
             0,
@@ -213,5 +221,6 @@
         private System.Windows.Forms.Label lblLastName;
         private System.Windows.Forms.Label lblFirstName;
         private System.Windows.Forms.NumericUpDown nudPassKey;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

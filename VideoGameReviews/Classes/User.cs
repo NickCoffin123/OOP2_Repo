@@ -1,4 +1,9 @@
-﻿using System;
+﻿/* Nick Coffin - 100555045.
+* OOP - Assignment 5 VideoGame Review.
+* December, 2024.
+* User class.
+*/
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -10,6 +15,9 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace VideoGameReviews.DBAL
 {
+    /// <summary>
+    /// Main method for class
+    /// </summary>
     public class User
     {
         #region Global Variables
@@ -30,8 +38,19 @@ namespace VideoGameReviews.DBAL
 
         #region Constructors
 
+        /// <summary>
+        /// Empty Constructor
+        /// </summary>
         public User() { }
 
+        /// <summary>
+        /// Paramertized constructor
+        /// </summary>
+        /// <param name="userID"></param>
+        /// <param name="firstName"></param>
+        /// <param name="lastName"></param>
+        /// <param name="email"></param>
+        /// <param name="passKey"></param>
         public User(int userID, string firstName, string lastName, string email, int passKey)
         {
             UserID = userID;
@@ -45,11 +64,19 @@ namespace VideoGameReviews.DBAL
 
         #region Custom Methods
 
+        /// <summary>
+        /// To string override
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             return $"{FirstName} {LastName} ({Email})";
         }
 
+        /// <summary>
+        /// Method to add user
+        /// </summary>
+        /// <exception cref="Exception"></exception>
         public void AddUser()
         {
             try
@@ -79,6 +106,10 @@ namespace VideoGameReviews.DBAL
             }
         }
 
+        /// <summary>
+        /// Method to update user
+        /// </summary>
+        /// <exception cref="Exception"></exception>
         public void UpdateUser()
         {
             try
@@ -110,6 +141,12 @@ namespace VideoGameReviews.DBAL
 
         #region Static Methods
 
+        /// <summary>
+        /// Method to return one user
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public static User ReturnUser(int userId)
         {
             try
@@ -149,6 +186,11 @@ namespace VideoGameReviews.DBAL
             }
         }
 
+
+        /// <summary>
+        /// Method to populate list of users
+        /// </summary>
+        /// <exception cref="Exception"></exception>
         public static void PopulateUsers()
         {
             try
@@ -183,7 +225,12 @@ namespace VideoGameReviews.DBAL
             }
 
         }
-
+        
+        /// <summary>
+        /// Method to delete user
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <exception cref="Exception"></exception>
         public static void DeleteUser(int userId)
         {
             try
@@ -206,6 +253,13 @@ namespace VideoGameReviews.DBAL
             }
         }
 
+        /// <summary>
+        /// Method to get one user with a username and passkey
+        /// </summary>
+        /// <param name="email"></param>
+        /// <param name="passkey"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public static User GetUser(string email, int passkey)
         {
             try
@@ -246,6 +300,12 @@ namespace VideoGameReviews.DBAL
             }
         }
 
+        /// <summary>
+        /// Method to check if an email is unique
+        /// </summary>
+        /// <param name="email"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public static bool IsEmailUnique(string email)
         {
             try
@@ -269,6 +329,11 @@ namespace VideoGameReviews.DBAL
             }
         }
 
+        /// <summary>
+        /// Method to get the next user id
+        /// </summary>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public static int GetNextUserId()
         {
             try
@@ -280,7 +345,7 @@ namespace VideoGameReviews.DBAL
                         cmd.CommandType = System.Data.CommandType.Text;
 
                         conn.Open();
-                        return (int)cmd.ExecuteScalar(); // Increment the max UserID
+                        return (int)cmd.ExecuteScalar();
                     }
                 }
             }
