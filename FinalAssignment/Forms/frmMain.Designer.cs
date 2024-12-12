@@ -30,6 +30,10 @@
         {
             this.lblTitle = new System.Windows.Forms.Label();
             this.dgvWorkouts = new System.Windows.Forms.DataGridView();
+            this.WorkoutID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.WorkoutDesctiption = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Duration = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -39,10 +43,6 @@
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.nudDuration = new System.Windows.Forms.NumericUpDown();
             this.rabLightDark = new System.Windows.Forms.RadioButton();
-            this.WorkoutID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.WorkoutDesctiption = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Duration = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvWorkouts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudDuration)).BeginInit();
             this.SuspendLayout();
@@ -72,6 +72,35 @@
             this.dgvWorkouts.ReadOnly = true;
             this.dgvWorkouts.Size = new System.Drawing.Size(345, 310);
             this.dgvWorkouts.TabIndex = 2;
+            // 
+            // WorkoutID
+            // 
+            this.WorkoutID.DataPropertyName = "WorkoutID";
+            this.WorkoutID.HeaderText = "WorkoutID";
+            this.WorkoutID.Name = "WorkoutID";
+            this.WorkoutID.ReadOnly = true;
+            this.WorkoutID.Visible = false;
+            // 
+            // WorkoutDesctiption
+            // 
+            this.WorkoutDesctiption.DataPropertyName = "WorkoutDescription";
+            this.WorkoutDesctiption.HeaderText = "Desctiption";
+            this.WorkoutDesctiption.Name = "WorkoutDesctiption";
+            this.WorkoutDesctiption.ReadOnly = true;
+            // 
+            // Duration
+            // 
+            this.Duration.DataPropertyName = "Duration";
+            this.Duration.HeaderText = "Duration";
+            this.Duration.Name = "Duration";
+            this.Duration.ReadOnly = true;
+            // 
+            // Date
+            // 
+            this.Date.DataPropertyName = "WorkoutDate";
+            this.Date.HeaderText = "Date";
+            this.Date.Name = "Date";
+            this.Date.ReadOnly = true;
             // 
             // btnExit
             // 
@@ -109,6 +138,7 @@
             this.btnUtilities.TabIndex = 6;
             this.btnUtilities.Text = "&Utilities";
             this.btnUtilities.UseVisualStyleBackColor = true;
+            this.btnUtilities.Click += new System.EventHandler(this.btnUtilities_Click);
             // 
             // lblDescription
             // 
@@ -152,35 +182,6 @@
             this.rabLightDark.TabStop = true;
             this.rabLightDark.Text = "Light / Dark";
             this.rabLightDark.UseVisualStyleBackColor = true;
-            // 
-            // WorkoutID
-            // 
-            this.WorkoutID.DataPropertyName = "WorkoutID";
-            this.WorkoutID.HeaderText = "WorkoutID";
-            this.WorkoutID.Name = "WorkoutID";
-            this.WorkoutID.ReadOnly = true;
-            this.WorkoutID.Visible = false;
-            // 
-            // WorkoutDesctiption
-            // 
-            this.WorkoutDesctiption.DataPropertyName = "WorkoutDescription";
-            this.WorkoutDesctiption.HeaderText = "Desctiption";
-            this.WorkoutDesctiption.Name = "WorkoutDesctiption";
-            this.WorkoutDesctiption.ReadOnly = true;
-            // 
-            // Duration
-            // 
-            this.Duration.DataPropertyName = "Duration";
-            this.Duration.HeaderText = "Duration";
-            this.Duration.Name = "Duration";
-            this.Duration.ReadOnly = true;
-            // 
-            // Date
-            // 
-            this.Date.DataPropertyName = "WorkoutDate";
-            this.Date.HeaderText = "Date";
-            this.Date.Name = "Date";
-            this.Date.ReadOnly = true;
             // 
             // frmMain
             // 

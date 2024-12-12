@@ -25,12 +25,5 @@ namespace FinalAssignment.Classes
             if (height <= 0) throw new ArgumentException("Height must be greater than zero.");
             return Math.Round(weight / (height * height)); // Assuming height is in meters
         }
-
-        public static float CalculateCaloriesBurned(int duration, float weight, float met = 8.0f)
-        {
-            // MET (Metabolic Equivalent Task) * weight in kg * duration in hours
-            return met * weight * (duration / 60f);
-        }
-
     }
 }

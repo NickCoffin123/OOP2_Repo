@@ -1,4 +1,10 @@
-﻿using System;
+﻿/* 
+ * Nick Coffin - 100555045
+ * Final Assignment - AI in programming
+ * December 2024
+ * Utilities form
+ */
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,5 +22,20 @@ namespace FinalAssignment.Forms
         {
             InitializeComponent();
         }
+
+        private void btnBMI_Click(object sender, EventArgs e)
+        {
+            double height = (double)nudHeight.Value;
+            double weight = (double)nudWeight.Value;
+            try
+            {
+                lblBMIResult.Text = Classes.Utilities.CalculateBMI(weight, height).ToString();
+            }
+            catch (ArgumentException ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
     }
 }

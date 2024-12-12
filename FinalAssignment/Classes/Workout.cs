@@ -75,21 +75,53 @@ namespace FinalAssignment.Classes
             }
         }
 
+        /// <summary>
+        /// Chat GPT version
+        /// </summary>
+        /// <returns></returns>
+        //public void AddWorkout(string description, int duration, DateTime date)
+        //{
+        //    using (SqlConnection conn = new SqlConnection("your_connection_string"))
+        //    {
+        //        conn.Open();
+        //        SqlCommand cmd = new SqlCommand("spAddWorkout", conn);
+        //        cmd.CommandType = CommandType.StoredProcedure;
+        //        cmd.Parameters.AddWithValue("@WorkoutDescription", description);
+        //        cmd.Parameters.AddWithValue("@Duration", duration);
+        //        cmd.Parameters.AddWithValue("@WorkoutDate", date);
 
-        public void AddWorkout(string description, int duration, DateTime date)
+        //        cmd.ExecuteNonQuery();
+        //    }
+        //}
+
+        public void AddWorkout()
         {
-            using (SqlConnection conn = new SqlConnection("your_connection_string"))
+            try
             {
-                conn.Open();
-                SqlCommand cmd = new SqlCommand("spAddWorkout", conn);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@WorkoutDescription", description);
-                cmd.Parameters.AddWithValue("@Duration", duration);
-                cmd.Parameters.AddWithValue("@WorkoutDate", date);
+                using (SqlConnection conn = new SqlConnection(Settings.Default.dbConn))
+                {
+                    using (SqlCommand cmd = new SqlCommand("spAddWorkout", conn))
+                    {
+                        cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
-                cmd.ExecuteNonQuery();
+                        // Set the parameters
+                        cmd.Parameters.AddWithValue("@WorkoutDescription", WorkoutDescription);
+                        cmd.Parameters.AddWithValue("@Duration", Duration);
+                        cmd.Parameters.AddWithValue("@WorkoutDate", WorkoutDate);
+
+                        conn.Open();
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+
+                workouts.Add(this);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error adding workout: {ex.Message}");
             }
         }
+
 
 
         public override string ToString()
