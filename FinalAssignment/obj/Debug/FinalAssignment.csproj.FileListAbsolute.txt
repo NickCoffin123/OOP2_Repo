@@ -1,0 +1,12 @@
+C:\OOP-Repo\OOP2_Repo\FinalAssignment\bin\Debug\FinalAssignment.exe.config
+C:\OOP-Repo\OOP2_Repo\FinalAssignment\bin\Debug\FinalAssignment.exe
+C:\OOP-Repo\OOP2_Repo\FinalAssignment\bin\Debug\FinalAssignment.pdb
+C:\OOP-Repo\OOP2_Repo\FinalAssignment\obj\Debug\FinalAssignment.csproj.AssemblyReference.cache
+C:\OOP-Repo\OOP2_Repo\FinalAssignment\obj\Debug\FinalAssignment.frmMain.resources
+C:\OOP-Repo\OOP2_Repo\FinalAssignment\obj\Debug\FinalAssignment.Forms.frmSplash.resources
+C:\OOP-Repo\OOP2_Repo\FinalAssignment\obj\Debug\FinalAssignment.Forms.frmUtilities.resources
+C:\OOP-Repo\OOP2_Repo\FinalAssignment\obj\Debug\FinalAssignment.Properties.Resources.resources
+C:\OOP-Repo\OOP2_Repo\FinalAssignment\obj\Debug\FinalAssignment.csproj.GenerateResource.cache
+C:\OOP-Repo\OOP2_Repo\FinalAssignment\obj\Debug\FinalAssignment.csproj.CoreCompileInputs.cache
+C:\OOP-Repo\OOP2_Repo\FinalAssignment\obj\Debug\FinalAssignment.exe
+C:\OOP-Repo\OOP2_Repo\FinalAssignment\obj\Debug\FinalAssignment.pdb

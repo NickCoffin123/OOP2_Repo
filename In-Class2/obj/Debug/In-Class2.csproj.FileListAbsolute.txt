@@ -1,0 +1,9 @@
+C:\OOP-Repo\OOP2_Repo\In-Class2\bin\Debug\In-Class2.exe.config
+C:\OOP-Repo\OOP2_Repo\In-Class2\bin\Debug\In-Class2.exe
+C:\OOP-Repo\OOP2_Repo\In-Class2\bin\Debug\In-Class2.pdb
+C:\OOP-Repo\OOP2_Repo\In-Class2\obj\Debug\In-Class2.csproj.AssemblyReference.cache
+C:\OOP-Repo\OOP2_Repo\In-Class2\obj\Debug\In_Class2.Properties.Resources.resources
+C:\OOP-Repo\OOP2_Repo\In-Class2\obj\Debug\In-Class2.csproj.GenerateResource.cache
+C:\OOP-Repo\OOP2_Repo\In-Class2\obj\Debug\In-Class2.csproj.CoreCompileInputs.cache
+C:\OOP-Repo\OOP2_Repo\In-Class2\obj\Debug\In-Class2.exe
+C:\OOP-Repo\OOP2_Repo\In-Class2\obj\Debug\In-Class2.pdb
