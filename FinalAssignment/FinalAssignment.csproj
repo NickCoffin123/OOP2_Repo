@@ -106,5 +106,8 @@
   <ItemGroup>
     <None Include="Resources\Workout-Splash.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="DatabaseScript.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

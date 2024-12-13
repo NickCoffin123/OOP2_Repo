@@ -1,0 +1,91 @@
+﻿/*
+Mostly fine, I made changes here and there and kept what chat GPT started with
+overall its okay but I don't like just giving the reigns to AI, 
+I prefer to get started with my plans and ideas and give AI a more exact 
+prompt with what I'm looking for. I find this way to be counter productive
+as I have to make more changes than I usually do.
+*/
+
+-- Create the database
+USE Master;
+	DROP DATABASE IF EXISTS WorkoutTracking;
+	CREATE DATABASE WorkoutTracking;
+	ALTER DATABASE WorkoutTracking
+		COLLATE Latin1_General_CI_AS;
+	GO
+
+-- Use the database
+USE WorkoutTracking;
+
+DROP TABLE IF EXISTS Workout;
+DROP PROCEDURE IF EXISTS spAddWorkout;
+DROP PROCEDURE IF EXISTS spDeleteWorkout;
+
+/*
+CREATE TABLE Workouts (
+    WorkoutID INT PRIMARY KEY IDENTITY(1,1),
+    UserID INT FOREIGN KEY REFERENCES Users(UserID),
+    WorkoutType NVARCHAR(50) NOT NULL,
+    Duration INT NOT NULL,
+    CaloriesBurned FLOAT,
+    WorkoutDate DATETIME NOT NULL
+);
+
+*/
+
+CREATE TABLE Workouts (
+    WorkoutID INT PRIMARY KEY IDENTITY(1,1),
+    WorkoutDescription VARCHAR(255) NOT NULL,
+    Duration INT NOT NULL,
+    WorkoutDate DATE NOT NULL
+);
+
+-- Insert sample workouts into the Workouts table
+INSERT INTO Workouts (WorkoutDescription, Duration, WorkoutDate)
+VALUES 
+    ('Running', 30, '2024-12-01'),
+    ('Weight Lifting', 45, '2024-12-02'),
+    ('Yoga', 60, '2024-12-01'),
+    ('Cycling', 40, '2024-12-03'),
+    ('Swimming', 50, '2024-12-01'),
+    ('HIIT Training', 30, '2024-12-04'),
+    ('Pilates', 45, '2024-12-02'),
+    ('Running', 25, '2024-12-01'),
+    ('Bodyweight Exercises', 20, '2024-12-05');
+
+
+/*
+CREATE PROCEDURE AddWorkout
+    @UserID INT,
+    @WorkoutType NVARCHAR(50),
+    @Duration INT,
+    @CaloriesBurned FLOAT,
+    @WorkoutDate DATETIME
+AS
+BEGIN
+    INSERT INTO Workouts (UserID, WorkoutType, Duration, CaloriesBurned, WorkoutDate)
+    VALUES (@UserID, @WorkoutType, @Duration, @CaloriesBurned, @WorkoutDate);
+END;
+*/
+GO
+CREATE PROCEDURE spAddWorkout
+    @WorkoutDescription VARCHAR(255),
+    @Duration INT,
+    @WorkoutDate DATE
+AS
+BEGIN
+    INSERT INTO Workouts (WorkoutDescription, Duration, WorkoutDate)
+    VALUES (@WorkoutDescription, @Duration, @WorkoutDate);
+END;
+
+GO
+CREATE PROCEDURE spDeleteWorkout
+    @WorkoutID INT
+AS
+BEGIN
+    -- Delete the workout with the specified WorkoutID
+    DELETE FROM Workouts
+    WHERE WorkoutID = @WorkoutID;
+END;
+GO
+
