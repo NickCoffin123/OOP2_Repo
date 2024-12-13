@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblTitle = new System.Windows.Forms.Label();
             this.dgvWorkouts = new System.Windows.Forms.DataGridView();
             this.WorkoutID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,6 +44,7 @@
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.nudDuration = new System.Windows.Forms.NumericUpDown();
             this.rabLightDark = new System.Windows.Forms.RadioButton();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvWorkouts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudDuration)).BeginInit();
             this.SuspendLayout();
@@ -51,8 +53,9 @@
             // 
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.Location = new System.Drawing.Point(0, 2);
+            this.lblTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(798, 77);
+            this.lblTitle.Size = new System.Drawing.Size(1064, 95);
             this.lblTitle.TabIndex = 1;
             this.lblTitle.Text = "Workout Log";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -67,11 +70,13 @@
             this.WorkoutDesctiption,
             this.Duration,
             this.Date});
-            this.dgvWorkouts.Location = new System.Drawing.Point(388, 82);
+            this.dgvWorkouts.Location = new System.Drawing.Point(517, 101);
+            this.dgvWorkouts.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvWorkouts.Name = "dgvWorkouts";
             this.dgvWorkouts.ReadOnly = true;
+            this.dgvWorkouts.RowHeadersWidth = 51;
             this.dgvWorkouts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvWorkouts.Size = new System.Drawing.Size(345, 310);
+            this.dgvWorkouts.Size = new System.Drawing.Size(460, 382);
             this.dgvWorkouts.TabIndex = 2;
             this.dgvWorkouts.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvWorkouts_CellContentClick);
             // 
@@ -79,109 +84,132 @@
             // 
             this.WorkoutID.DataPropertyName = "WorkoutID";
             this.WorkoutID.HeaderText = "WorkoutID";
+            this.WorkoutID.MinimumWidth = 6;
             this.WorkoutID.Name = "WorkoutID";
             this.WorkoutID.ReadOnly = true;
             this.WorkoutID.Visible = false;
+            this.WorkoutID.Width = 125;
             // 
             // WorkoutDesctiption
             // 
             this.WorkoutDesctiption.DataPropertyName = "WorkoutDescription";
             this.WorkoutDesctiption.HeaderText = "Desctiption";
+            this.WorkoutDesctiption.MinimumWidth = 6;
             this.WorkoutDesctiption.Name = "WorkoutDesctiption";
             this.WorkoutDesctiption.ReadOnly = true;
+            this.WorkoutDesctiption.Width = 125;
             // 
             // Duration
             // 
             this.Duration.DataPropertyName = "Duration";
             this.Duration.HeaderText = "Duration";
+            this.Duration.MinimumWidth = 6;
             this.Duration.Name = "Duration";
             this.Duration.ReadOnly = true;
+            this.Duration.Width = 125;
             // 
             // Date
             // 
             this.Date.DataPropertyName = "WorkoutDate";
             this.Date.HeaderText = "Date";
+            this.Date.MinimumWidth = 6;
             this.Date.Name = "Date";
             this.Date.ReadOnly = true;
+            this.Date.Width = 125;
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(583, 406);
+            this.btnExit.Location = new System.Drawing.Point(777, 500);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(131, 32);
+            this.btnExit.Size = new System.Drawing.Size(175, 39);
             this.btnExit.TabIndex = 6;
             this.btnExit.Text = "&Exit";
+            this.toolTip1.SetToolTip(this.btnExit, "Exit");
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(219, 406);
+            this.btnAdd.Location = new System.Drawing.Point(292, 500);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(131, 32);
+            this.btnAdd.Size = new System.Drawing.Size(175, 39);
             this.btnAdd.TabIndex = 3;
             this.btnAdd.Text = "&Add Workout";
+            this.toolTip1.SetToolTip(this.btnAdd, "Add Workout");
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(37, 406);
+            this.btnDelete.Location = new System.Drawing.Point(49, 500);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(131, 32);
+            this.btnDelete.Size = new System.Drawing.Size(175, 39);
             this.btnDelete.TabIndex = 4;
             this.btnDelete.Text = "&Delete Workout";
+            this.toolTip1.SetToolTip(this.btnDelete, "Delete Workout");
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUtilities
             // 
-            this.btnUtilities.Location = new System.Drawing.Point(405, 406);
+            this.btnUtilities.Location = new System.Drawing.Point(540, 500);
+            this.btnUtilities.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnUtilities.Name = "btnUtilities";
-            this.btnUtilities.Size = new System.Drawing.Size(131, 32);
+            this.btnUtilities.Size = new System.Drawing.Size(175, 39);
             this.btnUtilities.TabIndex = 5;
             this.btnUtilities.Text = "&Utilities";
+            this.toolTip1.SetToolTip(this.btnUtilities, "Utilities Page");
             this.btnUtilities.UseVisualStyleBackColor = true;
             this.btnUtilities.Click += new System.EventHandler(this.btnUtilities_Click);
             // 
             // lblDescription
             // 
             this.lblDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescription.Location = new System.Drawing.Point(37, 144);
+            this.lblDescription.Location = new System.Drawing.Point(49, 177);
+            this.lblDescription.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDescription.Name = "lblDescription";
-            this.lblDescription.Size = new System.Drawing.Size(145, 34);
+            this.lblDescription.Size = new System.Drawing.Size(193, 42);
             this.lblDescription.TabIndex = 7;
             this.lblDescription.Text = "Description";
             // 
             // lblDuration
             // 
             this.lblDuration.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDuration.Location = new System.Drawing.Point(42, 219);
+            this.lblDuration.Location = new System.Drawing.Point(56, 270);
+            this.lblDuration.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDuration.Name = "lblDuration";
-            this.lblDuration.Size = new System.Drawing.Size(140, 34);
+            this.lblDuration.Size = new System.Drawing.Size(187, 42);
             this.lblDuration.TabIndex = 8;
             this.lblDuration.Text = "Duration";
             // 
             // txtDescription
             // 
-            this.txtDescription.Location = new System.Drawing.Point(177, 153);
+            this.txtDescription.Location = new System.Drawing.Point(236, 188);
+            this.txtDescription.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(120, 20);
+            this.txtDescription.Size = new System.Drawing.Size(159, 22);
             this.txtDescription.TabIndex = 1;
+            this.toolTip1.SetToolTip(this.txtDescription, "Workout Description");
             // 
             // nudDuration
             // 
-            this.nudDuration.Location = new System.Drawing.Point(177, 229);
+            this.nudDuration.Location = new System.Drawing.Point(236, 282);
+            this.nudDuration.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.nudDuration.Name = "nudDuration";
-            this.nudDuration.Size = new System.Drawing.Size(120, 20);
+            this.nudDuration.Size = new System.Drawing.Size(160, 22);
             this.nudDuration.TabIndex = 2;
+            this.toolTip1.SetToolTip(this.nudDuration, "Workout Duration");
             // 
             // rabLightDark
             // 
             this.rabLightDark.AutoSize = true;
-            this.rabLightDark.Location = new System.Drawing.Point(12, 62);
+            this.rabLightDark.Location = new System.Drawing.Point(16, 76);
+            this.rabLightDark.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rabLightDark.Name = "rabLightDark";
-            this.rabLightDark.Size = new System.Drawing.Size(82, 17);
+            this.rabLightDark.Size = new System.Drawing.Size(95, 20);
             this.rabLightDark.TabIndex = 18;
             this.rabLightDark.TabStop = true;
             this.rabLightDark.Text = "Light / Dark";
@@ -190,9 +218,9 @@
             // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(735, 450);
+            this.ClientSize = new System.Drawing.Size(980, 554);
             this.Controls.Add(this.rabLightDark);
             this.Controls.Add(this.nudDuration);
             this.Controls.Add(this.txtDescription);
@@ -204,6 +232,7 @@
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.dgvWorkouts);
             this.Controls.Add(this.lblTitle);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
@@ -231,6 +260,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn WorkoutDesctiption;
         private System.Windows.Forms.DataGridViewTextBoxColumn Duration;
         private System.Windows.Forms.DataGridViewTextBoxColumn Date;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
 
