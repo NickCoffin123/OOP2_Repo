@@ -76,14 +76,14 @@
             this.nudHeight.Location = new System.Drawing.Point(268, 202);
             this.nudHeight.Name = "nudHeight";
             this.nudHeight.Size = new System.Drawing.Size(120, 20);
-            this.nudHeight.TabIndex = 3;
+            this.nudHeight.TabIndex = 1;
             // 
             // nudWeight
             // 
             this.nudWeight.Location = new System.Drawing.Point(422, 202);
             this.nudWeight.Name = "nudWeight";
             this.nudWeight.Size = new System.Drawing.Size(120, 20);
-            this.nudWeight.TabIndex = 4;
+            this.nudWeight.TabIndex = 2;
             // 
             // lblWeight
             // 
@@ -108,7 +108,7 @@
             this.btnBMI.Location = new System.Drawing.Point(332, 244);
             this.btnBMI.Name = "btnBMI";
             this.btnBMI.Size = new System.Drawing.Size(139, 23);
-            this.btnBMI.TabIndex = 13;
+            this.btnBMI.TabIndex = 3;
             this.btnBMI.Text = "&Calculate";
             this.btnBMI.UseVisualStyleBackColor = true;
             this.btnBMI.Click += new System.EventHandler(this.btnBMI_Click);
@@ -118,18 +118,20 @@
             this.button3.Location = new System.Drawing.Point(187, 390);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(139, 23);
-            this.button3.TabIndex = 15;
+            this.button3.TabIndex = 4;
             this.button3.Text = "&Workout Log";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
             this.button4.Location = new System.Drawing.Point(473, 390);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(139, 23);
-            this.button4.TabIndex = 16;
+            this.button4.TabIndex = 5;
             this.button4.Text = "&Exit";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // rabLightDark
             // 

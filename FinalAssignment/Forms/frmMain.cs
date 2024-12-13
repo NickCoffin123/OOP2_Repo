@@ -204,6 +204,9 @@ namespace FinalAssignment
             InitializeComponent();
             frmSplash splash = new frmSplash();
             splash.ShowDialog();
+
+            AcceptButton = btnAdd;
+            CancelButton = btnExit;
             try
             {
                 Classes.Workout.PopulateWorkouts();

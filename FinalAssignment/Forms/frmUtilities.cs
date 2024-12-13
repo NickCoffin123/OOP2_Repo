@@ -24,6 +24,9 @@ namespace FinalAssignment.Forms
         public frmUtilities()
         {
             InitializeComponent();
+
+            AcceptButton = btnBMI;
+            CancelButton = button4;
         }
 
         private void btnBMI_Click(object sender, EventArgs e)
@@ -97,5 +100,16 @@ namespace FinalAssignment.Forms
 
         }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            frmMain main = new frmMain();
+            main.Show();
+            this.Close();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

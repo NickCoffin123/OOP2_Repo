@@ -109,7 +109,7 @@
             this.btnExit.Location = new System.Drawing.Point(583, 406);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(131, 32);
-            this.btnExit.TabIndex = 3;
+            this.btnExit.TabIndex = 6;
             this.btnExit.Text = "&Exit";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
@@ -119,7 +119,7 @@
             this.btnAdd.Location = new System.Drawing.Point(219, 406);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(131, 32);
-            this.btnAdd.TabIndex = 4;
+            this.btnAdd.TabIndex = 3;
             this.btnAdd.Text = "&Add Workout";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -129,7 +129,7 @@
             this.btnDelete.Location = new System.Drawing.Point(37, 406);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(131, 32);
-            this.btnDelete.TabIndex = 5;
+            this.btnDelete.TabIndex = 4;
             this.btnDelete.Text = "&Delete Workout";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -139,7 +139,7 @@
             this.btnUtilities.Location = new System.Drawing.Point(405, 406);
             this.btnUtilities.Name = "btnUtilities";
             this.btnUtilities.Size = new System.Drawing.Size(131, 32);
-            this.btnUtilities.TabIndex = 6;
+            this.btnUtilities.TabIndex = 5;
             this.btnUtilities.Text = "&Utilities";
             this.btnUtilities.UseVisualStyleBackColor = true;
             this.btnUtilities.Click += new System.EventHandler(this.btnUtilities_Click);
@@ -167,14 +167,14 @@
             this.txtDescription.Location = new System.Drawing.Point(177, 153);
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(120, 20);
-            this.txtDescription.TabIndex = 9;
+            this.txtDescription.TabIndex = 1;
             // 
             // nudDuration
             // 
             this.nudDuration.Location = new System.Drawing.Point(177, 229);
             this.nudDuration.Name = "nudDuration";
             this.nudDuration.Size = new System.Drawing.Size(120, 20);
-            this.nudDuration.TabIndex = 10;
+            this.nudDuration.TabIndex = 2;
             // 
             // rabLightDark
             // 
