@@ -28,7 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.timer1 = new System.Windows.Forms.Timer();
+            this.lblTitleInfo = new System.Windows.Forms.Label();
             this.SuspendLayout();
+            // 
+            // lblTitleInfo
+            // 
+            this.lblTitleInfo.Location = new System.Drawing.Point(27, 116);
+            this.lblTitleInfo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTitleInfo.Name = "lblTitleInfo";
+            this.lblTitleInfo.Size = new System.Drawing.Size(75, 41);
+            this.lblTitleInfo.TabIndex = 4;
+            this.lblTitleInfo.Text = "Nick Coffin\r\nOOP - 2\r\nOctober, 31";
             // 
             // frmSplash
             // 
@@ -37,6 +48,7 @@
             this.BackgroundImage = global::FinalAssignment.Properties.Resources.Workout_Splash;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(484, 229);
+            this.Controls.Add(this.lblTitleInfo);
             this.DoubleBuffered = true;
             this.Name = "frmSplash";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -46,5 +58,8 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label lblTitleInfo;
     }
 }

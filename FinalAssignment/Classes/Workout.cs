@@ -47,34 +47,6 @@ namespace FinalAssignment.Classes
 
         #region Custom Methods
 
-        public void DeleteWorkout(int workoutID)
-        {
-            try
-            {
-                using (SqlConnection conn = new SqlConnection("your_connection_string"))
-                {
-                    conn.Open();
-                    SqlCommand cmd = new SqlCommand("spDeleteWorkout", conn);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@WorkoutID", workoutID);
-
-                    int rowsAffected = cmd.ExecuteNonQuery();
-                    if (rowsAffected > 0)
-                    {
-                        MessageBox.Show("Workout deleted successfully.");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Workout not found.");
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"An error occurred: {ex.Message}");
-            }
-        }
-
         /// <summary>
         /// Chat GPT version
         /// </summary>
@@ -132,6 +104,34 @@ namespace FinalAssignment.Classes
         #endregion
 
         #region Static Methods
+
+        public static void DeleteWorkout(int workoutID)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection("your_connection_string"))
+                {
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand("spDeleteWorkout", conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@WorkoutID", workoutID);
+
+                    int rowsAffected = cmd.ExecuteNonQuery();
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("Workout deleted successfully.");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Workout not found.");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}");
+            }
+        }
 
 
         public static void PopulateWorkouts()

@@ -70,8 +70,10 @@
             this.dgvWorkouts.Location = new System.Drawing.Point(388, 82);
             this.dgvWorkouts.Name = "dgvWorkouts";
             this.dgvWorkouts.ReadOnly = true;
+            this.dgvWorkouts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgvWorkouts.Size = new System.Drawing.Size(345, 310);
             this.dgvWorkouts.TabIndex = 2;
+            this.dgvWorkouts.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvWorkouts_CellContentClick);
             // 
             // WorkoutID
             // 
@@ -110,6 +112,7 @@
             this.btnExit.TabIndex = 3;
             this.btnExit.Text = "&Exit";
             this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnAdd
             // 
@@ -129,6 +132,7 @@
             this.btnDelete.TabIndex = 5;
             this.btnDelete.Text = "&Delete Workout";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUtilities
             // 
@@ -182,6 +186,7 @@
             this.rabLightDark.TabStop = true;
             this.rabLightDark.Text = "Light / Dark";
             this.rabLightDark.UseVisualStyleBackColor = true;
+            this.rabLightDark.CheckedChanged += new System.EventHandler(this.rabLightDark_CheckedChanged);
             // 
             // frmMain
             // 
@@ -200,6 +205,7 @@
             this.Controls.Add(this.dgvWorkouts);
             this.Controls.Add(this.lblTitle);
             this.Name = "frmMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.dgvWorkouts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudDuration)).EndInit();
